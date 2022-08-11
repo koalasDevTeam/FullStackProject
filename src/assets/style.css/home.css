@@ -48,9 +48,9 @@
 .logo-cont a{
     margin-left: 0!important;
 }
-.logo-cont a img{
+/* .logo-cont a img{
    width: 250px;
-}
+} */
 
 .menu-cont{
     display: flex;
