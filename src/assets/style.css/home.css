@@ -25,46 +25,11 @@ a, p {
     font-weight: 300;
 }
 
-footer {
-    padding: 3em 4em 1em;
-    background: rgb(1,118,170);
-    background: linear-gradient(0deg, rgba(1,118,170,1) 0%, rgba(0,165,181,1) 100%);
+.page-cont{
+    max-width: 1200px;
+    margin: auto;
 }
 
-footer a {
-    text-decoration: none;
-}
-
-footer h4 {
-    font-size: 20px;
-    margin-bottom: 1em;
-}
-
-footer .logo-cont {
-    margin-bottom: 10px;
-}
-
-footer .socials-menu .fa {
-    font-size: 24px;
-    margin-right: 1em;
-}
-
-footer, footer a, .footer p, .copyright p, .button, .fa {
-    color: #fff;
-}
-
-footer .contact-menu li {
-    padding-bottom: 0.5em;
-}
-
-footer .contact-menu .fa {
-    font-size: 16px;
-    margin-right: 0.8em;
-}
-
-.a{
-    height: 400px;
-}
 
 .header-cont{
     width: 100%;
@@ -228,6 +193,48 @@ footer .contact-menu .fa {
     font-size: 14px;
     padding-top: 1em;
     border-top: 1px solid #fff;
+}
+
+
+footer {
+    padding: 3em 4em 1em;
+    background: rgb(1,118,170);
+    background: linear-gradient(0deg, rgba(1,118,170,1) 0%, rgba(0,165,181,1) 100%);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer h4 {
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+footer .logo-cont {
+    margin-bottom: 10px;
+}
+
+footer .socials-menu .fa {
+    font-size: 24px;
+    margin-right: 1em;
+}
+
+footer, footer a, .footer p, .copyright p, .button, .fa {
+    color: #fff;
+}
+
+footer .contact-menu li {
+    padding-bottom: 0.5em;
+}
+
+footer .contact-menu .fa {
+    font-size: 16px;
+    margin-right: 0.8em;
+}
+
+.a{
+    height: 400px;
 }
 
 /*responsive*/
