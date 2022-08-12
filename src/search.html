@@ -1,133 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CareSearch - Search</title>
-    <link rel="stylesheet" href="./assets/style.css/search.css">
-    <link rel="stylesheet" href="./vanillaSelectBox.css">
+    <link rel="stylesheet" href="./assets/style.css/search.css" />
+    <link rel="stylesheet" href="./vanillaSelectBox.css" />
     <script src="./vanillaSelectBox.js"></script>
-</head>
-<body>
-
-<header class="header-cont">
-
-    <nav>
+  </head>
+  <body>
+    <header class="header-cont">
+      <nav>
         <div class="logo-cont">
-            <a href="../index.html">
-                <img src="./assets/img/logo-care-search-eng.svg" alt="">
-            </a>
+          <a href="../index.html">
+            <img src="./assets/img/logo-care-search-eng.svg" alt="" />
+          </a>
         </div>
-        
+
         <div class="menu-cont">
-            <a href="../index.html#services">Services</a>
-            <a href="../index.html#benefits">Benefits</a>
-            <a href="../index.html#contact">Contact</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../index.html#benefits">Benefits</a>
+          <a href="../index.html#contact">Contact</a>
 
-            <div class="login-cont">
-                <a href="">Login</a>
-            </div>
+          <div class="login-cont">
+            <a href="">Login</a>
+          </div>
         </div>
-        
-    </nav>
-</header>  
-<!--*****************************************************************************************************************-->
+      </nav>
+    </header>
+    <!--*****************************************************************************************************************-->
 
+    <h1 style="margin: 2em auto; width: 50%; text-align: center">
+      Encuentra la persona perfecta para tu cuidado
+    </h1>
 
-<h1 style="margin: 2em auto; width:50%; text-align:center">Encuentra la persona perfecta para tu cuidado</h1>
+    <form
+      action=""
+      style="display: flex; margin-top: 3em; justify-content: center"
+    >
+      <select name="" id="" style="width: 300px">
+        <option value="" disabled selected style="display: none">
+          ¿Qué asistencia necesitas?
+        </option>
+        <option value="">enfermera/o</option>
+        <option value="">auxiliar</option>
+        <option value="">niñera</option>
+        <option value="">asistente</option>
+      </select>
 
-<form action="" style="display: flex; margin-top: 3em; justify-content: center;">
+      <select name="" id="" style="margin-left: 2em; width: 300px">
+        <option value="" disabled selected style="display: none">
+          ¿En qué ciudad?
+        </option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+        <option value="">una ciudad</option>
+      </select>
 
-<select name="" id="" style="width: 300px;">
-    <option value="" disabled selected style="display: none;">¿Qué asistencia necesitas?</option>
-    <option value="">enfermera/o</option>
-    <option value="">auxiliar</option>
-    <option value="">niñera</option>
-    <option value="">asistente</option>
-</select>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          margin-left: 2em;
+          width: 300px;
+        "
+      >
+        <label for="vol">Coste máximo por hora : 6€ - 50€</label>
+        <input type="range" id="vol" name="vol" min="0" max="50" />
+      </div>
+    </form>
 
-<select name="" id="" style="margin-left:2em;width: 300px;" >
-    <option value="" disabled selected style="display: none;">¿En qué ciudad?</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-</select>
+    <!--*****************************************************************************************************************-->
 
-<div style="display: flex; flex-direction:column; margin-left: 2em;width: 300px">
-    <label for="vol">Coste máximo por hora : 6€ - 50€</label>
-    <input type="range" id="vol" name="vol" min="0" max="50">
-</div>
-
-</form>
-
-<!--*****************************************************************************************************************-->
-
-<section class="search-result-cont" style="display:flex;  flex-direction:column;align-items:center; margin-top:2em">
-    <div class="search-result-item" style="display: flex; align-items: center;padding: 2em;">
-        <img src="./assets/img/helpers/1.jpg" alt="" style="width: 280px; border-radius:50%">
-        <div style="margin-left:70px">
-        <p style="width: 600px; margin-bottom: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!</p>
-        <div>
-        <h6 style="font-size: 22px; color:rgb(204, 69, 28)">4.5/5</h6>
-        <button style="width:200px; height: 50px; border: none; background-color:#0a8391; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">contact</button>
-        <button style="width:200px; height: 50px; border: none; background-color:#1625af; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">perfil</button>
+    <section
+      class="search-result-cont"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2em;
+      "
+    >
+      <div
+        class="search-result-item"
+        style="display: flex; align-items: center; padding: 2em"
+      >
+        <img
+          src="./assets/img/helpers/1.jpg"
+          alt=""
+          style="width: 280px; border-radius: 50%"
+        />
+        <div style="margin-left: 70px">
+          <p style="width: 600px; margin-bottom: 2em">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic
+            rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est
+            ab veritatis, distinctio maiores assumenda obcaecati velit facere
+            dicta quasi placeat laudantium inventore pariatur!
+          </p>
+          <div>
+            <h6 style="font-size: 22px; color: rgb(204, 69, 28)">4.5/5</h6>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #0a8391;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+              onclick="window.location.href='contactStuff.html'"
+            >
+              contact
+            </button>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #1625af;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+            >
+              perfil
+            </button>
+          </div>
         </div>
+      </div>
+      <div
+        class="search-result-item"
+        style="display: flex; align-items: center; padding: 2em"
+      >
+        <img
+          src="./assets/img/helpers/2.jpg"
+          alt=""
+          style="width: 280px; border-radius: 50%"
+        />
+        <div style="margin-left: 70px">
+          <p style="width: 600px; margin-bottom: 2em">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic
+            rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est
+            ab veritatis, distinctio maiores assumenda obcaecati velit facere
+            dicta quasi placeat laudantium inventore pariatur!
+          </p>
+          <div>
+            <h6 style="font-size: 22px; color: rgb(204, 69, 28)">4.5/5</h6>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #0a8391;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+              onclick="window.location.href='contactStuff.html'"
+            >
+              contact
+            </button>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #1625af;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+            >
+              perfil
+            </button>
+          </div>
         </div>
-    </div>
-    <div class="search-result-item" style="display: flex; align-items: center;padding: 2em;">
-        <img src="./assets/img/helpers/2.jpg" alt="" style="width: 280px; border-radius:50%">
-        <div style="margin-left:70px">
-            <p style="width: 600px; margin-bottom: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!</p>
-            <div>
-            <h6 style="font-size: 22px; color:rgb(204, 69, 28)">4.5/5</h6>
-            <button style="width:200px; height: 50px; border: none; background-color:#0a8391; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">contact</button>
-            <button style="width:200px; height: 50px; border: none; background-color:#1625af; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">perfil</button>
-            </div>
-            </div>
-    </div>
-    <div class="search-result-item" style="display: flex; align-items: center;padding: 2em;">
-        <img src="./assets/img/helpers/3.jpg" alt="" style="width: 280px; border-radius:50%">
-        <div style="margin-left:70px">
-            <p style="width: 600px; margin-bottom: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!</p>
-            <div>
-            <h6 style="font-size: 22px; color:rgb(204, 69, 28)">4.5/5</h6>
-            <button style="width:200px; height: 50px; border: none; background-color:#0a8391; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">contact</button>
-            <button style="width:200px; height: 50px; border: none; background-color:#1625af; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">perfil</button>
-    
+      </div>
+      <div
+        class="search-result-item"
+        style="display: flex; align-items: center; padding: 2em"
+      >
+        <img
+          src="./assets/img/helpers/3.jpg"
+          alt=""
+          style="width: 280px; border-radius: 50%"
+        />
+        <div style="margin-left: 70px">
+          <p style="width: 600px; margin-bottom: 2em">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic
+            rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est
+            ab veritatis, distinctio maiores assumenda obcaecati velit facere
+            dicta quasi placeat laudantium inventore pariatur!
+          </p>
+          <div>
+            <h6 style="font-size: 22px; color: rgb(204, 69, 28)">4.5/5</h6>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #0a8391;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+              onclick="window.location.href='contactStuff.html'"
+            >
+              contact
+            </button>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #1625af;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+            >
+              perfil
+            </button>
+          </div>
         </div>
-            </div>
-    </div>
-    <div class="search-result-item" style="display: flex; align-items: center;padding: 2em;">
-        <img src="./assets/img/helpers/4.jpg" alt="" style="width: 280px; border-radius:50%">
-        <div style="margin-left:70px">
-            <p style="width: 600px; margin-bottom: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!</p>
-            <div>
-            <h6 style="font-size: 22px; color:rgb(204, 69, 28)">4.5/5</h6>
-            <button style="width:200px; height: 50px; border: none; background-color:#0a8391; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">contact</button>
-            <button style="width:200px; height: 50px; border: none; background-color:#1625af; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">perfil</button>
-
+      </div>
+      <div
+        class="search-result-item"
+        style="display: flex; align-items: center; padding: 2em"
+      >
+        <img
+          src="./assets/img/helpers/4.jpg"
+          alt=""
+          style="width: 280px; border-radius: 50%"
+        />
+        <div style="margin-left: 70px">
+          <p style="width: 600px; margin-bottom: 2em">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic
+            rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est
+            ab veritatis, distinctio maiores assumenda obcaecati velit facere
+            dicta quasi placeat laudantium inventore pariatur!
+          </p>
+          <div>
+            <h6 style="font-size: 22px; color: rgb(204, 69, 28)">4.5/5</h6>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #0a8391;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+              onclick="window.location.href='contactStuff.html'"
+            >
+              contact
+            </button>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #1625af;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+            >
+              perfil
+            </button>
+          </div>
         </div>
-            </div>
-    </div>
-    <div class="search-result-item" style="display: flex; align-items: center;padding: 2em;">
-        <img src="./assets/img/helpers/5.jpg" alt="" style="width: 280px; border-radius:50%">
-        <div style="margin-left:70px">
-            <p style="width: 600px; margin-bottom: 2em;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!</p>
-            <div>
-            <h6 style="font-size: 22px; color:rgb(204, 69, 28)">4.5/5</h6>
-            <button style="width:200px; height: 50px; border: none; background-color:#0a8391; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">contact</button>
-            <button style="width:200px; height: 50px; border: none; background-color:#1625af; color:#fff; font-size: 18px; font-weight: bold; margin-top: 2em;">perfil</button>
-
+      </div>
+      <div
+        class="search-result-item"
+        style="display: flex; align-items: center; padding: 2em"
+      >
+        <img
+          src="./assets/img/helpers/5.jpg"
+          alt=""
+          style="width: 280px; border-radius: 50%"
+        />
+        <div style="margin-left: 70px">
+          <p style="width: 600px; margin-bottom: 2em">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic
+            rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est
+            ab veritatis, distinctio maiores assumenda obcaecati velit facere
+            dicta quasi placeat laudantium inventore pariatur!
+          </p>
+          <div>
+            <h6 style="font-size: 22px; color: rgb(204, 69, 28)">4.5/5</h6>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #0a8391;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+              onclick="window.location.href='contactStuff.html'"
+            >
+              contact
+            </button>
+            <button
+              style="
+                width: 200px;
+                height: 50px;
+                border: none;
+                background-color: #1625af;
+                color: #fff;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 2em;
+              "
+            >
+              perfil
+            </button>
+          </div>
         </div>
-            </div>
-    </div>
-</section>
-
-</body>
+      </div>
+    </section>
+  </body>
 </html>
