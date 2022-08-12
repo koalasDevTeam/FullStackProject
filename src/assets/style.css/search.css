@@ -90,3 +90,79 @@
 }
 /*****************************************************/
 
+.search-title{
+    margin: 2em auto; 
+    width: 50%; 
+    text-align: center;
+}
+
+.search-form{
+    display: flex; 
+    margin-top: 3em; 
+    justify-content: center;
+
+}
+.search-form select{
+    width: 300px;
+}
+.search-form select:nth-child(2){
+    margin-left: 2em;
+}
+
+.cost-range{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+    width: 300px;  
+}
+
+.search-result-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.search-result-item{
+    display: flex;
+    align-items: center;
+    padding: 2em;
+}
+.search-result-item img{
+    width: 280px;
+    border-radius: 50%;
+}
+.search-result-item h6{
+    font-size: 22px;
+    color: rgb(204, 69, 28)
+}
+
+.item-text-cont{
+    margin-left: 70px;
+}
+.item-text-cont p{
+    width: 600px; 
+    margin-bottom: 2em;
+}
+
+.btn-contact{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #0a8391;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+.btn-perfil{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #1625af;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2em;          
+}
