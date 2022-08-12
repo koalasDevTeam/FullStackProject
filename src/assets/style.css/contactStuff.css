@@ -26,6 +26,8 @@ input {
 }
 .form-content textarea {
   padding: 6px 0px 6px 9px;
+  resize: none;
+  height: 120px;
 }
 .form-content button {
   height: 40px;
