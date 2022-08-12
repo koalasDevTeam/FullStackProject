@@ -105,7 +105,7 @@ p {
     font-weight: 300;
 }
 
-.header-text-cont button {
+.header-text-cont a button {
     background-color: #00a5b5;
     width: 200px;
     height: 50px;
@@ -116,9 +116,10 @@ p {
     font-weight: bolder;
     font-size: 18px;
     cursor: pointer;
+    border-radius: 8px;
 }
 
-.header-text-cont button:hover {
+.header-text-cont a button:hover {
     background-color: #0a8391;
 }
 

@@ -40,7 +40,7 @@
 
 
 .logo-cont a img{
-    width: 250px;
+    width: 240px;
  }
 
 .menu-cont{
@@ -146,23 +146,35 @@
 }
 
 .btn-contact{
-    width: 200px;
+    width: 132px;
     height: 50px;
     border: none;
-    background-color: #0a8391;
+    background-color: #00a5b5;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     margin-top: 2em;
+    cursor: pointer;
+    border-radius: 8px; 
+}
+
+.btn-contact:hover{
+    background-color: #0a8391;
 }
 
 .btn-perfil{
-    width: 200px;
+    width: 132px;
     height: 50px;
     border: none;
-    background-color: #1625af;
+    background-color: #0176aa;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-    margin-top: 2em;          
+    margin-top: 2em;
+    cursor: pointer;   
+    border-radius: 8px;       
+}
+
+.btn-perfil:hover{
+    background-color: #078bc4;
 }
