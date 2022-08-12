@@ -30,6 +30,11 @@ p {
     margin: auto;
 }
 
+.page-cont-big{
+  background-color: #f2f2f2;
+  padding: 3em 0;
+}
+
 
 /* header */
 
@@ -193,10 +198,13 @@ p {
 .services-cont {
     margin-top: 50px;
     margin-bottom: 60px;
+    
 }
 
 .services-cont_group-cards {
     display: flex;
+    max-width: 1200px;
+    margin:auto;
 }
 
 .services-cont_cart {
@@ -205,7 +213,9 @@ p {
 
 .services-cont_title {
     text-align: center;
-    margin-bottom: 60px;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 35px;
 }
 
 .services-cont_title p {
@@ -254,7 +264,7 @@ p {
     flex-wrap: wrap;
     margin: auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .benefits-cont-box img {
