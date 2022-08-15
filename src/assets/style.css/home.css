@@ -16,12 +16,24 @@ h1 {
     line-height: 1.2;
 }
 
-p {
+h2,
+h3,
+.services-cont-cart_title,
+.benefits-cont-box-title {
+    color: #002D5D;
+}
+
+h2 {
+    font-size: 42px;
+}
+
+p, label {
     color: #323e48;
 }
 
 a,
-p {
+p,
+label {
     font-weight: 300;
 }
 
@@ -142,7 +154,7 @@ p {
 }
 
 .intro-cont {
-    padding: 4em 4em;
+    padding: 4em 0em;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -264,12 +276,12 @@ p {
     flex-wrap: wrap;
     margin: auto;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .benefits-cont-box img {
     display: block;
-    margin: auto;
+    margin: 1em auto;
     width: 100px;
 }
 
@@ -330,12 +342,14 @@ footer .socials-menu .fa {
     margin-right: 1em;
 }
 
-footer,
+.header-subtitle,
+footer h4,
 footer a,
 .footer p,
 .copyright p,
 .button,
-.fa {
+.fa,
+.formulario-registro .button {
     color: #fff;
 }
 
