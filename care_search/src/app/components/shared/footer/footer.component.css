@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+h2,
+h3,
+.services-cont-cart_title,
+.benefits-cont-box-title {
+  color: #002d5d;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+p,
+label {
+  color: #323e48;
+}
+
+a,
+p,
+label {
+  font-weight: 300;
+}
+
+.page-cont {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.page-cont-big {
+  background-color: #f2f2f2;
+  padding: 3em 0;
+}
+
+
+
+/* intro */
+
+.intro-cont,
+.footer,
+.socials-menu {
+  display: flex;
+}
+
+
+
+
+
+.color-blue-one {
+  background-color: #00a5b5;
+}
+
+.color-blue-two {
+  background-color: #0176aa;
+}
+
+.intro-cont-a,
+.intro-cont-b,
+.footer-item-b,
+.footer-item-c {
+  flex: 1;
+}
+
+
+
+/* footer */
+
+.footer {
+  padding-bottom: 1em;
+}
+
+.footer-item-a,
+.footer-item-b,
+.footer-item-c {
+  padding-bottom: 2em;
+}
+
+.footer-item-a {
+  flex: 2;
+}
+
+.footer-item-a,
+.footer-item-b {
+  padding-right: 2em;
+}
+
+.copyright p {
+  font-size: 14px;
+  padding-top: 1em;
+  border-top: 1px solid #fff;
+}
+
+footer {
+  padding: 3em 4em 1em;
+  background: rgb(1, 118, 170);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 118, 170, 1) 0%,
+    rgba(0, 165, 181, 1) 100%
+  );
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer h4 {
+  font-size: 20px;
+  margin-bottom: 1em;
+}
+
+footer .logo-cont {
+  margin-bottom: 10px;
+}
+
+footer .socials-menu .fa {
+  font-size: 24px;
+  margin-right: 1em;
+}
+
+.header-subtitle,
+footer h4,
+footer a,
+.footer p,
+.copyright p,
+.button,
+.fa,
+.formulario-registro .button {
+  color: #fff;
+}
+
+footer .contact-menu li {
+  padding-bottom: 0.5em;
+}
+
+footer .contact-menu .fa {
+  font-size: 16px;
+  margin-right: 0.8em;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 900px) {
+  .menu-mv {
+    display: block;
+    position: absolute;
+    right: 2em;
+  }
+  .header-cont {
+    position: relative;
+  }
+  .header-cont nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #1075a9;
+    width: 180px;
+    padding: 3.5em 0;
+    border-bottom-left-radius: 25px;
+    display: none;
+  }
+  .header-cont nav::after {
+    content: "×";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-weight: bolder;
+    top: 0.5em;
+    left: 0.5em;
+    font-size: 22px;
+    color: #fff;
+    /* background-color: #08a5b6; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .header-cont nav a {
+    margin: 0 0 1em 0;
+  }
+  .menu-cont {
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  .login-cont {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding-top: 1.5em;
+    margin-top: 0.5em;
+    border-top: 2px solid #fff;
+    width: 150%;
+    transform: translateX(-15%);
+  }
+  .login-cont a {
+    margin: 0 !important;
+    width: 100%;
+    text-align: center;
+  }
+  .header-text-con {
+    margin-top: 4em;
+  }
+  .services-cont_cart {
+    margin-top: 30px;
+  }
+  .services-cont_group-cards {
+    flex-direction: column;
+  }
+  .services-cont_cart h4 {
+    text-align: center;
+  }
+  .services-cont_cart img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-cont-cart_content p {
+    padding-right: 0px;
+  }
+
+  .services-cont-cart_content p {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .footer {
+    display: block;
+  }
+  .footer-item-a,
+  .footer-item-b {
+    padding-right: 0em;
+  }
+  .benefits-cont-box-text {
+    width: 80%;
+    margin: 1em auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-cont {
+    padding: 2em;
+    background-position: top;
+  }
+  .header-text-cont {
+    width: 95%;
+  }
+  .header-text-cont h1 {
+    font-size: 25px;
+    margin-bottom: 2em;
+  }
+  .header-text-cont h4 {
+    font-size: 18px;
+    display: none;
+  }
+  .header-text-cont button {
+    margin-bottom: 6em;
+  }
+  .intro-cont {
+    display: block;
+  }
+  .intro-cont-a {
+    padding-right: 0em;
+  }
+  .intro-cont-b {
+    padding-left: 0em;
+  }
+  .footer {
+    padding-bottom: 0em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro-cont {
+    padding: 2em 2em;
+  }
+  footer {
+    padding: 3em 2em 1em;
+  }
+}

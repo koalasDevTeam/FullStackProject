@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.page-cont {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .page-cont-big {
+    background-color: #f2f2f2;
+    padding: 3em 0;
+  }
+
+
+/* benefits */
+
+.benefits-cont {
+    /*display: flex;*/
+    margin-top: 50px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .benefits-cont-title {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .benefits-cont-title p {
+    font-size: 20px;
+  }
+  
+  .benefits-cont-bigbox {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .benefits-cont-box img {
+    display: block;
+    margin: 1em auto;
+    width: 100px;
+  }
+  
+  .benefits-cont-box-text {
+    width: 300px;
+    margin: 1em auto;
+  }
+  
