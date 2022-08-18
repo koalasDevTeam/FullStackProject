@@ -1,71 +1,63 @@
- <!--*****************************************************************************************************************-->
+<!--*****************************************************************************************************************-->
 
- <h1 class="search-title">
-    Encuentra la persona perfecta para tu cuidado
-</h1>
+<h1 class="search-title">Encuentra la persona perfecta para tu cuidado</h1>
 
 <form action="" class="search-form">
-    <select name="" id="">
+  <select name="" id="">
     <option value="" disabled selected style="display: none">
       ¿Qué asistencia necesitas?
     </option>
-    <option value="">enfermera/o</option>
-    <option value="">auxiliar</option>
-    <option value="">niñera</option>
-    <option value="">asistente</option>
+    <option value="">Mostrar todos</option>
+    <option value="">Cuidadora interna a domicilio</option>
+    <option value="">Atencion personal</option>
+    <option value="">Cuidado infantil</option>
+    <option value="">Cuidado a domicilio por hora</option>
   </select>
 
-    <select name="" id="">
+  <select name="" id="">
     <option value="" disabled selected style="display: none">
       ¿En qué ciudad?
     </option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
-    <option value="">una ciudad</option>
+    <option value="">Las Palmas</option>
+    <option value="">Mogan</option>
+    <option value="">Galdar</option>
+    <option value="">Arucas</option>
+    <option value="">Tejeda</option>
   </select>
+  <button>Buscar</button>
 
-    <div class="cost-range">
-        <label for="vol">Coste máximo por hora : 6€ - 50€</label>
-        <input type="range" id="vol" name="vol" min="0" max="50" />
-    </div>
+  <!-- <div class="cost-range">
+    <label for="vol">Coste máximo por hora : 6€ - 50€</label>
+    <input type="range" id="vol" name="vol" min="0" max="50" />
+  </div> -->
 </form>
 
 <!--*****************************************************************************************************************-->
 
 <section class="search-result-cont">
-    <div class="search-result-item">
-        <img src="./assets/img/helpers/1.jpg" alt="" />
-        <div class="item-text-cont">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!
-            </p>
-            <div>
-                <h6>4.5/5</h6>
-                <button
-                
-                class="btn-contact"
-                >
-                 contact
-                </button>
-                
-                <button
-                routerLink="/profile"
-                routerLinkActive="active"
-                class="btn-perfil" 
-               >
-          perfil
-        </button>
+  <div *ngFor="let helper of helpersArr; index as i" class="search-result-item">
+    <img src="./assets/img/helpers/1.jpg" alt="" />
+    <div class="item-text-cont">
+      <h3><i class="bx bx-health"></i> {{ helper.name }}</h3>
+      <h4>{{ helper.work }}</h4>
+      <p>
+        {{ helper.info }}
+      </p>
+      <div>
+        <h6>{{ helper.score }}/5</h6>
+        <button class="btn-contact">Contact</button>
 
-       
-            </div>
-        </div>
+        <button
+          routerLink="/profile"
+          routerLinkActive="active"
+          class="btn-perfil"
+        >
+          Perfil
+        </button>
+      </div>
     </div>
-    <!-- <div class="search-result-item">
+  </div>
+  <!-- <div class="search-result-item">
         <img src="./assets/img/helpers/2.jpg" alt="" />
         <div class="item-text-cont">
             <p>
@@ -126,7 +118,4 @@
             </div>
         </div>
     </div> -->
-
 </section>
-
-
