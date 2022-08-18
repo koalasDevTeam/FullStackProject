@@ -69,6 +69,10 @@ footer .contact-menu svg {
   margin-right: 0.5em;
 }
 
+footer .socials-menu a:hover  {
+ opacity: 0.8;
+}
+
 footer h4,
 footer a,
 .footer p,

@@ -76,3 +76,153 @@
 .footer-item-c {
   flex: 1;
 }
+
+
+
+/*responsive*/
+
+@media screen and (max-width: 900px) {
+  .menu-mv {
+    display: block;
+    position: absolute;
+    right: 2em;
+  }
+  .header-cont {
+    position: relative;
+  }
+  .header-cont nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #1075a9;
+    width: 180px;
+    padding: 3.5em 0;
+    border-bottom-left-radius: 25px;
+    display: none;
+  }
+  .header-cont nav::after {
+    content: "×";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-weight: bolder;
+    top: 0.5em;
+    left: 0.5em;
+    font-size: 22px;
+    color: #fff;
+    /* background-color: #08a5b6; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .header-cont nav a {
+    margin: 0 0 1em 0;
+  }
+  .menu-cont {
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  .login-cont {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding-top: 1.5em;
+    margin-top: 0.5em;
+    border-top: 2px solid #fff;
+    width: 150%;
+    transform: translateX(-15%);
+  }
+  .login-cont a {
+    margin: 0 !important;
+    width: 100%;
+    text-align: center;
+  }
+  .header-text-con {
+    margin-top: 4em;
+  }
+  .services-cont_cart {
+    margin-top: 30px;
+  }
+  .services-cont_group-cards {
+    flex-direction: column;
+  }
+  .services-cont_cart h4 {
+    text-align: center;
+  }
+  .services-cont_cart img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-cont-cart_content p {
+    padding-right: 0px;
+  }
+
+  .services-cont-cart_content p {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .footer {
+    display: block;
+  }
+  .footer-item-a,
+  .footer-item-b {
+    padding-right: 0em;
+  }
+  .benefits-cont-box-text {
+    width: 80%;
+    margin: 1em auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-cont {
+    padding: 2em;
+    background-position: top;
+  }
+  .header-text-cont {
+    width: 95%;
+  }
+  .header-text-cont h1 {
+    font-size: 25px;
+    margin-bottom: 2em;
+  }
+  .header-text-cont h4 {
+    font-size: 18px;
+    display: none;
+  }
+  .header-text-cont button {
+    margin-bottom: 6em;
+  }
+  .intro-cont {
+    display: block;
+  }
+  .intro-cont p{
+    width: 80%;
+    margin: auto;
+  }
+  .intro-cont-a {
+    padding-right: 0em;
+  }
+  .intro-cont-b {
+    padding-left: 0em;
+  }
+  .footer {
+    padding-bottom: 0em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro-cont {
+    padding: 2em 2em;
+  }
+  footer {
+    padding: 3em 2em 1em;
+  }
+}

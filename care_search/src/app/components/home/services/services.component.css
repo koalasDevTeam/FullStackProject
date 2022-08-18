@@ -38,6 +38,7 @@
     max-width: 1200px;
     margin: auto;
     margin-bottom: 35px;
+    font-size: 20px;
   }
   
   .services-cont_title p {
@@ -61,3 +62,46 @@
     text-align: justify;
     padding-right: 38px;
   }
+
+  
+/*responsive*/
+
+@media screen and (max-width: 900px) {
+  .services-cont_cart h4 {
+  text-align: center;
+}
+
+.services-cont_title {
+  width: 80%;
+  margin: auto;
+  font-size: 16px;
+}
+ 
+
+  .services-cont_cart {
+    margin-top: 30px;
+  }
+  .services-cont_group-cards {
+    flex-direction: column;
+  }
+  .services-cont_cart h3 {
+    text-align: center;
+  }
+  
+  .services-cont_cart img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-cont-cart_content p {
+    padding-right: 0px;
+  }
+
+  .services-cont-cart_content p {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  
+}
+

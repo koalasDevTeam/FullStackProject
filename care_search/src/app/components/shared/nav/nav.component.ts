@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  public mvView: boolean=false;
+
+  getMv(value:boolean){
+    this.mvView=value;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+   
+
+    
+
   }
+
 
 }
