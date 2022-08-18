@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    line-height: 1.2;
+}
+
+h2,
+h3,
+.services-cont-cart_title,
+.benefits-cont-box-title {
+    color: #002D5D;
+}
+
+h2 {
+    font-size: 42px;
+}
+
+p, label {
+    color: #323e48;
+}
+
+a,
+p,
+label {
+    font-weight: 300;
+}
