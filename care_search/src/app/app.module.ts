@@ -16,6 +16,10 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserContactComponent } from './components/search/user-contact/user-contact.component';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,9 @@ import { UserContactComponent } from './components/search/user-contact/user-cont
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
