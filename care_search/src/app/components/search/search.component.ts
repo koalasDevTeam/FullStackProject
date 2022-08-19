@@ -92,9 +92,12 @@ export class SearchComponent implements OnInit {
 
     if(filterList.length === 0){
      this.noMatches= "No hay coincidencias, prueba otra vez!"
+    }else{
+    this.noMatches = ""
     }
-
     this.resultsList = filterList
+
+    
  
   }
 
