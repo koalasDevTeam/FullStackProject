@@ -25,6 +25,12 @@
   border-radius: 5px;
   padding: 5px;
 }
+.message {
+  height: 400px;
+}
+.message h3 {
+  margin-top: 52px;
+}
 .search-form .group-button-menu {
   background-color: aliceblue;
   width: 110px;
