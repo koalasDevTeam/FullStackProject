@@ -58,7 +58,9 @@
       </div>
     </div>
   </div>
-  <h3 *ngIf="resultsList.length === 0">{{ noMatches }}</h3>
+  <div class="message">
+    <h3 *ngIf="resultsList.length === 0">{{ noMatches }}</h3>
+  </div>
 
   <!-- <div class="search-result-item">
         <img src="./assets/img/helpers/2.jpg" alt="" />
