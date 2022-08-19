@@ -47,7 +47,7 @@
     font-weight: 300;
   }
   
-  .header-text-cont a button {
+  .header-text-cont a  {
     background-color: #00a5b5;
     width: 200px;
     height: 50px;
@@ -59,9 +59,13 @@
     font-size: 18px;
     cursor: pointer;
     border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  .header-text-cont a button:hover {
+  .header-text-cont a:hover {
     background-color: #0a8391;
   }
   
