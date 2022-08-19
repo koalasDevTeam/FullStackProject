@@ -21,21 +21,18 @@ export class SearchComponent implements OnInit {
   constructor() { }
 
   optionsWorkArr = [
-    
-    {name:"Mostrar todos", value:1},
-    {name:"Cuidador interna a domicilio", value:2},
-    {name:"Atencion personal", value:3},
-    {name:"Cuidado infantil", value:4},
-    {name:"Cuidado a domicilio por hora", value:5}
+    {name:"Cuidador interna a domicilio", value:1},
+    {name:"Atencion personal", value:2},
+    {name:"Cuidado infantil", value:3},
+    {name:"Cuidado a domicilio por hora", value:4}
   ]
 
   optionsLocationArr = [
-{city:"Cualquier lugar", value:1},
-  {city:"Las Palmas", value:2},
-  {city:"Mogan", value:3},
-  {city:"Galdar", value:4},
-  {city:"Arucas", value:5},
-  {city:"Tejeda", value:6}
+  {city:"Las Palmas", value:1},
+  {city:"Mogan", value:2},
+  {city:"Galdar", value:3},
+  {city:"Arucas", value:4},
+  {city:"Tejeda", value:5}
 
 ]
   helpersArr = [
@@ -83,13 +80,14 @@ export class SearchComponent implements OnInit {
   }
  
   result(){
-  console.log("My input two: ",this.printedOption,"city: ",this.selectedOption)
+  
 
-  let filterList= this.helpersArr.filter((item, i)=> {
-    return item.work === this.printedOption && item.location === this.selectedOption}
-    )
+  let filterList= this.helpersArr.filter((helper)=> {
+    return helper.work === this.printedOption && helper.location === this.selectedOption
+  })
 
-    this.resultsList = filterList 
+    this.resultsList = filterList  
+    console.log(this.resultsList)
  
   }
 
