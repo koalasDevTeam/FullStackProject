@@ -2,8 +2,6 @@ import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 
-
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -15,7 +13,9 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
  selectedOption: string = "";
   printedOption: string = "";
-  noMatches: string = "";
+  noMatches: string = "No hay coincidencias, prueba otra vez!";
+
+  
 
   
   constructor() { }
@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
   optionsWorkArr = [
     
     {name:"Mostrar todos", value:1},
-    {name:"Cuidadora interna a domicilio", value:2},
+    {name:"Cuidador interna a domicilio", value:2},
     {name:"Atencion personal", value:3},
     {name:"Cuidado infantil", value:4},
     {name:"Cuidado a domicilio por hora", value:5}
@@ -82,7 +82,6 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
  
-
   result(){
   console.log("My input two: ",this.printedOption,"city: ",this.selectedOption)
 
@@ -90,14 +89,7 @@ export class SearchComponent implements OnInit {
     return item.work === this.printedOption && item.location === this.selectedOption}
     )
 
-    if(filterList.length === 0){
-     this.noMatches= "No hay coincidencias, prueba otra vez!"
-    }else{
-    this.noMatches = ""
-    }
-    this.resultsList = filterList
-
-    
+    this.resultsList = filterList 
  
   }
 

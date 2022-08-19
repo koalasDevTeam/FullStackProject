@@ -9,7 +9,7 @@
 /*****************************************************/
 
 .search-title {
-  margin: 4em auto 2em auto;
+  margin: 6em auto 2em auto;
   width: 50%;
   text-align: center;
 }
@@ -20,7 +20,27 @@
   justify-content: center;
 }
 .search-form select {
-  width: 300px;
+  width: 255px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.search-form .group-button-menu {
+  background-color: aliceblue;
+  width: 110px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  margin: 6px;
+  color: #078bc4;
+}
+.search-form .group-button-menu:hover {
+  background-color: rgb(218, 236, 252);
+  width: 110px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  margin: 6px;
 }
 .search-form select:nth-child(2) {
   margin-left: 2em;

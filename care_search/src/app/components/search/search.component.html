@@ -20,13 +20,15 @@
         {{ location.city }}
       </option>
     </select>
-    <button type="submit" manage>Buscar</button>
+    <button type="submit" manage class="group-button-menu">Buscar</button>
     <!-- <div class="cost-range">
     <label for="vol">Coste máximo por hora : 6€ - 50€</label>
     <input type="range" id="vol" name="vol" min="0" max="50" />
   </div> -->
   </form>
-  <button type="cleanList" (click)="cleanList()">Limpiar Lista</button>
+  <button type="cleanList" (click)="cleanList()" class="group-button-menu">
+    Quitar filtros
+  </button>
 </div>
 <!--*****************************************************************************************************************-->
 
@@ -56,7 +58,8 @@
       </div>
     </div>
   </div>
-  <h3>{{ noMatches }}</h3>
+  <h3 *ngIf="resultsList.length === 0">{{ noMatches }}</h3>
+
   <!-- <div class="search-result-item">
         <img src="./assets/img/helpers/2.jpg" alt="" />
         <div class="item-text-cont">
