@@ -1,4 +1,3 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -8,16 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 
-
-
 export class SearchComponent implements OnInit {
  selectedOption: string = "";
   printedOption: string = "";
   noMatches: string = "No hay coincidencias, prueba otra vez!";
 
-  
-
-  
   constructor() { }
 
   optionsWorkArr = [
@@ -97,6 +91,12 @@ export class SearchComponent implements OnInit {
     this.printedOption = "";
 
  
+  }
+
+
+  sendingId(id:number){
+    id.toString()
+    window.location.href = window.location.origin + '/profile/#' + id;
   }
 
 }

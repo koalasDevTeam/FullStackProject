@@ -1,21 +1,22 @@
 <section class="profile-cont">
   <div class="profile-cont-box">
     <div class="profile-person">
-      <img src="{{ helpersArr[3].img }}" alt="Begoña Benítez Benítez" />
+      <img src="{{ helpersArr[0].img }}" alt="Begoña Benítez Benítez" />
       <h1 class="profile-title">
-        {{ helpersArr[3].name }}
+        {{ helpersArr[0].name }}
       </h1>
     </div>
     <div class="about-me">
-      <h3><i>Sobre mí</i></h3>
-      <p>
-        {{ helpersArr[3].info }}
-      </p>
+      <h3>
+        <i>Sobre mí</i> -
+        <small>{{ helpersArr[0].work }} en {{ helpersArr[0].location }}</small>
+      </h3>
+      <p>{{ helpersArr[0].info }}</p>
     </div>
 
     <div class="contacts">
-      <h6>Valoración {{ helpersArr[3].score }}/5</h6>
-      <h5>Precio: {{ helpersArr[3].price }}</h5>
+      <h6>Valoración {{ helpersArr[0].score }}/5</h6>
+      <h5>Precio: {{ helpersArr[0].price }}</h5>
       <button class="btn-contact">contacto</button>
       <button routerLink="/search" routerLinkActive="active" class="btn-perfil">
         Volver
