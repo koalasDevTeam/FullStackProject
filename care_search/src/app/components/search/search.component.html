@@ -51,11 +51,7 @@
         <h6>{{ helper.score }}/5</h6>
         <button class="btn-contact">Contacto</button>
 
-        <button
-          routerLink="/profile"
-          routerLinkActive="active"
-          class="btn-perfil"
-        >
+        <button class="btn-perfil" (click)="sendingId(helper.id)">
           Perfil
         </button>
       </div>

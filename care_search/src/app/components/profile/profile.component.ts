@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Output, ElementRef, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+ id: string=""
   constructor() { }
+
  helpersArr = [
     {
       id: 1,
@@ -50,7 +50,29 @@ export class ProfileComponent implements OnInit {
        price:"20€/Hora",
     }
   ]
-  ngOnInit(): void {
-  }
+
+    ngOnInit(){
+     
+        const locationHashUrl = window.location.hash
+
+        this.id = locationHashUrl.slice(1)
+
+       const resultItem = this.helpersArr.filter((item,i)=>{ 
+          let gettingId = item.id
+
+          let idToString= gettingId.toString()
+
+          return idToString === this.id
+          
+        } ) 
+
+        this.helpersArr = resultItem
+        
+        
+ 
+    
+    } 
+
+
 
 }
