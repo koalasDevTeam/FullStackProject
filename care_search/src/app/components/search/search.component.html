@@ -1,8 +1,10 @@
 <!--*****************************************************************************************************************-->
 
-<h1 class="search-title">Encuentra la persona perfecta para tu cuidado</h1>
+
 <div class="search-form">
-  <form action="" (ngSubmit)="result()">
+  <h1 class="search-title">Encuentra la persona perfecta para tu cuidado</h1>
+  <div class="form-inputs-cont">
+  <form action="" >
     <select name="workOptions" id="" [(ngModel)]="printedOption">
       <option value="" disabled selected style="display: none">
         ¿Qué asistencia necesitas?
@@ -20,18 +22,23 @@
         {{ location.city }}
       </option>
     </select>
-    <button type="submit" manage class="group-button-menu">Buscar</button>
+    <div class="form-btn-cont">
+      <button (click)="result()" manage class="group-button-menu">Buscar</button>
+      <button type="cleanList" (click)="cleanList()" class="group-button-menu">
+        Mostrar todos
+      </button>
+      <button type="cleanList" (click)="cleanList()" class="group-button-menu">
+        Quitar filtros
+      </button>
+    </div>
+   
     <!-- <div class="cost-range">
     <label for="vol">Coste máximo por hora : 6€ - 50€</label>
     <input type="range" id="vol" name="vol" min="0" max="50" />
   </div> -->
   </form>
-  <button type="cleanList" (click)="cleanList()" class="group-button-menu">
-    Mostrar todos
-  </button>
-  <button type="cleanList" (click)="cleanList()" class="group-button-menu">
-    Quitar filtros
-  </button>
+  
+</div>
 </div>
 <!--*****************************************************************************************************************-->
 
@@ -42,24 +49,46 @@
   >
     <img [src]="helper.img" alt="" />
     <div class="item-text-cont">
+      <h6 class="score">{{ helper.score }}/5</h6>
       <h3><i class="bx bx-health"></i> {{ helper.name }}</h3>
       <h4>{{ helper.work }}</h4>
-      <p>
+
+      <!-- para cuando el texto es muy largo -->
+      <p *ngIf=" helper.info.length>285" >
+        {{ helper.info.substring(0,285) }}<span class="more-info"  routerLink="/profile">...</span>
+      </p>
+       <!-- para cuando el texto es corto -->
+      <p *ngIf=" helper.info.length<=285" >
         {{ helper.info }}
       </p>
-      <div>
-        <h6>{{ helper.score }}/5</h6>
-        <button class="btn-contact">Contacto</button>
 
-        <button class="btn-perfil" (click)="sendingId(helper.id)">
+      
+      <div class="btn-cont">
+       
+        <button
+        (click)="setContactModal(helper)"
+         class="btn-contact">Contacto</button>
+
+        <button
+          routerLink="/profile"
+          class="btn-perfil"
+        >
           Perfil
         </button>
       </div>
     </div>
   </div>
   <div [ngClass]="{ message: resultsList.length === 0 }">
+    <img [src]="noFoundIllustration" alt="" />
     <h3 *ngIf="resultsList.length === 0">{{ noMatches }}</h3>
   </div>
+
+  <!-- mostrar el modal de contacto -->
+<ng-container *ngIf="showModal">
+  <app-user-contact [helper] ="helperSelected"  (event)="closeContact()"></app-user-contact>
+</ng-container>
+
+
 
   <!-- <div class="search-result-item">
         <img src="./assets/img/helpers/2.jpg" alt="" />

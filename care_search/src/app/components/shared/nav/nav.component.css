@@ -15,6 +15,7 @@
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 8;
   background-color: #fff;
   padding: 2em 4em 1em 3em;
 }

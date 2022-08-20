@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -9,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class SearchComponent implements OnInit {
  selectedOption: string = "";
-  printedOption: string = "";
-  noMatches: string = "No hay coincidencias, prueba otra vez!";
+ printedOption: string = "";
+ noMatches: string = "No hay coincidencias, ¡prueba otra vez!";
+ noFoundIllustration: string = "./assets/img/illustrations/no_found_illustration.svg"
+ noFoundIllustrationMb: string = "./assets/img/illustrations/no_found_illustration_mb.svg"
+ showModal: boolean = false;
+ helperSelected : any;
+
+
 
   constructor() { }
 
@@ -42,7 +48,7 @@ export class SearchComponent implements OnInit {
     {
       id: 2,
       name: "Mariana Perez",
-      work: "Cuidadora interna a domicilio",
+      work: "Cuidador interna a domicilio",
       img: "./assets/img/users/2.jpg",
       info: "Cuidadora experimentada con mas de 8 años de experiencia en este sector. Ofrezco los mejores cuidados y atenciones como interna",
       location:"Las Palmas",
@@ -97,6 +103,20 @@ export class SearchComponent implements OnInit {
   sendingId(id:number){
     id.toString()
     window.location.href = window.location.origin + '/profile/#' + id;
+  }
+
+  //to show contact modal
+
+  setContactModal(helper:any){
+    this.showModal = true;
+    this.helperSelected = helper;
+  }
+  hideContactModal(){
+    this.showModal = false;
+  }
+
+  closeContact(){
+    this.showModal = false;
   }
 
 }
