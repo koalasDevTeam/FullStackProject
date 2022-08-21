@@ -8,6 +8,30 @@
   font-family: "Poppins", sans-serif;
 }
 
+h1 {
+    font-size: 42px;
+    color: #002D5D;
+    margin-bottom: 20px;
+}
+
+.check-register {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.check-register a {
+    color: #00a5b5;
+}
+
+.check-register p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.check-register div {
+    margin-right: 6px;
+}
 
 /* formulario */
 
@@ -16,8 +40,7 @@
 }
 
 .register-cont {
-   padding-top: 10em;
-   display: flex;
+   padding: 10em 0 5em;
     max-width: 400px;
     margin: auto;
 }

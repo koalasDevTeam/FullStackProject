@@ -1,24 +1,14 @@
-
-    
-	<section class="register-cont">
+ 	<section class="register-cont">
+		<h1>Registro</h1>
 		<form class="formulario-registro">
-			<input type="text" id="nombre" name="nombre" placeholder="Nombre*" required>
-			<input type="text" id="primer_apellido" name="primer_apellido" placeholder="Primer apellido*" required>
-			<input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Segundo apellido*" required>
-			<input type="text" id="dni" name="dni" placeholder="DNI*" required>
-			<input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de nacimiento*" required>
-			<select name="sexo" id="sexo" required>
-			 	<option disabled selected>Género*</option>
-				<option value="hombre">Hombre</option>
-				<option value="mujer">Mujer</option>
-			</select>
-			<input type="email" id="correo_electronico" name="correo_electronico" placeholder="Correo electrónico*" required>
-			<input type="text" id="telefono" name="telefono" placeholder="Teléfono*" required>
-			<input type="text" id="direccion" name="direccion" placeholder="Dirección*" required>
-			<div class="foto-perfil">
-				<label for="documento_identidad">Imagen de perfil*</label>
-				<input type="file" name="imagen_perfil" id="imagen_perfil">
+			<input type="text" [(ngModel)]="emailUser" name="email" placeholder="Correo electrónico*" required>
+			<input type="text" [(ngModel)]="passwordUser" name="password" placeholder="Contraseña*" required>
+			<div class="check-register">
+				<div>
+					<input type="checkbox" [(ngModel)]="privacyUser" name="privacy" value="S">
+				</div>
+				<p>He leído y acepto la <a href="/politica-de-privacidad">Política de Privacidad</a>.</p>
 			</div>
-			<input type="submit" id="boton_registrarse" name="boton_registrarse" class="button color-blue-one" value="Confirmar">			
+			<button type="button" class="button color-blue-one" (click)="save()">Confirmar</button>
  		</form>
 	</section>

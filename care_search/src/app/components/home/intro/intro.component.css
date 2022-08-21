@@ -50,19 +50,18 @@
 .color-blue-one {
   background-color: #00a5b5;
   color: #fff;
-  font-weight: bolder;
 }
+
 .color-blue-one:hover {
   background-color: #0a8391;
   color: #fff;
 }
 
-
 .color-blue-two {
   background-color: #0176aa;
   color: #fff;
-  font-weight: bolder;
 }
+
 .color-blue-two:hover {
   background-color: #028bc5;
   color: #fff;
