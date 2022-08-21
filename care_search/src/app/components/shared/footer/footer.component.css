@@ -1,6 +1,8 @@
 .footer,
 .socials-menu,
-.contact-menu a {
+.contact-menu a,
+.copyright,
+.text-legal {
   display: flex;
 }
 
@@ -32,10 +34,22 @@
   padding-right: 2em;
 }
 
-.copyright p {
-  font-size: 14px;
+.copyright {
   padding-top: 1em;
   border-top: 1px solid #fff;
+  justify-content: space-between;
+}
+
+.copyright p {
+  margin: 0 0.5em;
+}
+
+.copyright p, .copyright a {
+  font-size: 12px;
+}
+
+.text-legal {
+  align-items: center;
 }
 
 footer {
