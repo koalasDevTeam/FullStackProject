@@ -55,7 +55,7 @@
 
       <!-- para cuando el texto es muy largo -->
       <p *ngIf=" helper.info.length>285" >
-        {{ helper.info.substring(0,285) }}<span class="more-info"  routerLink="/profile">...</span>
+        {{ helper.info.substring(0,285) }}<span class="more-info"  routerLink="/profile" (click)="sendingId(helper.id)">...</span>
       </p>
        <!-- para cuando el texto es corto -->
       <p *ngIf=" helper.info.length<=285" >
@@ -72,6 +72,7 @@
         <button
           routerLink="/profile"
           class="btn-perfil"
+          (click)="sendingId(helper.id)"
         >
           Perfil
         </button>
