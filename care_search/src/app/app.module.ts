@@ -13,6 +13,7 @@ import { ServicesComponent } from './components/home/services/services.component
 import { BenefitsComponent } from './components/home/benefits/benefits.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { PerfileComponent } from './components/perfile/perfile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserContactComponent } from './components/search/user-contact/user-contact.component';
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BenefitsComponent,
     NavComponent,
     FooterComponent,
-    UserContactComponent
+    UserContactComponent,
+    PerfileComponent
   ],
   imports: [
     BrowserModule,

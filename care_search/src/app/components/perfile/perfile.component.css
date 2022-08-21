@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+  }
+
+.wrapper {
+    padding: 10em 0 5em;
+    max-width: 800px;
+    margin: auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-2:nth-of-type(1) {
+    margin-right: 0.5em;
+}
+
+.flex-2:nth-of-type(2) {
+    margin-left: 0.5em;
+}
+
+.cambiar-imagen-perfil {
+    width: 100%;
+    margin-bottom: 2em;
+    position: relative;
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.editar-perfil .cambiar-imagen-perfil i {
+    left: 47%;
+    top: 35%;
+    bottom: 50%;
+    right: 50%;
+    color: #fff;
+    font-size: 48px;
+}
+
+.editar-perfil .cambiar-imagen-perfil input {
+    margin: 0;
+    opacity: 0;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+}
+
+.editar-perfil textarea {
+    resize: none;
+    height: 120px;
+}
+
+.editar-perfil label {
+    font-size: 14px;
+    font-weight: 400;
+}
+ 
+.editar-perfil input, .editar-perfil select, .editar-perfil textarea {
+    width: 100%;
+    margin: 0.2em 0 1em;
+    color: #1b2126;
+    font-weight: 300;
+    padding: 0.7em 1em;
+    border-radius: 8px;
+    border: 1px solid rgb(176, 176, 202);
+}
+
+.cambiar-imagen-perfil img, .cambiar-imagen-perfil:before {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.cambiar-imagen-perfil i, .cambiar-imagen-perfil:before {
+    position: absolute;
+}
+  
+.cambiar-imagen-perfil:before {
+    content: "";
+    background-color: rgba(0,0,0,0.5);
+}
+
+.editar-perfil .button {
+    width: 150px;
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0.7em 2.3em;
+    border-radius: 8px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.color-blue-one {
+    background-color: #00a5b5;
+}
+ 
+::-webkit-input-placeholder {
+    color: #323E48;
+}
+ 
+:-moz-placeholder {
+    color: #323E48;
+}
+ 
+::-moz-placeholder {
+    color: #323E48;
+}
+ 
+:-ms-input-placeholder {
+    color: #323E48;
+}  
+
+
+/*responsive*/
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 100%;
+        padding: 10em 2em 4em;
+    }
+    .d-flex {
+        display: block;
+    }
+
+    .flex-2:nth-of-type(1) {
+        margin-right: 0em;
+    }
+    
+    .flex-2:nth-of-type(2) {
+        margin-left: 0em;
+    }
+
+    .editar-perfil .button {
+        width: 100%;
+    }
+
+    .editar-perfil .cambiar-imagen-perfil i {
+        left: 42%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-text-cont h1 {
+        font-size: 42px;
+        margin-bottom: 0em;
+    }
+}

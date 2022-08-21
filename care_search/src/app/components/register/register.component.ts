@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
         password: this.passwordUser,
         privacy: this.privacyUser
       });
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/perfile']);
     }
     console.log(this.user);
   }

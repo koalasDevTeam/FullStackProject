@@ -1,0 +1,80 @@
+<section class="wrapper">
+    <form class="editar-perfil">
+        <div class="cambiar-imagen-perfil text-center">
+            <input type="file" name="imagen_perfil" id="imagen_perfil">
+            <i class="bx bxs-camera"></i>
+            <img src="./assets/img/illustrations/no_found_illustration_mb.svg">
+        </div>
+        <div class="d-flex">
+            <div class="flex-2">
+                <div>
+                    <label for="nombre">Nombre*</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre*" class="flex-2" required>
+                </div>
+                <div>
+                    <label for="primer_apellido">Primer apellido*</label>
+                    <input type="text" id="primer_apellido" name="primer_apellido" placeholder="Primer apellido*" class="flex-2" required>
+                </div>
+                <div>
+                    <label for="segundo_apellido">Segundo apellido*</label>
+                    <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Segundo apellido*" class="flex-2" required>
+                </div>
+                <div>
+                    <label for="dni">DNI*</label>
+                    <input type="text" id="dni" name="dni" placeholder="DNI*" class="flex-2" required>
+                </div>
+                <div>
+                    <label for="fecha_nacimiento">Fecha de nacimiento*</label>
+                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de nacimiento*" class="flex-2" required>
+                </div>
+                <div>
+                    <label for="genero">Género*</label>
+                    <select name="genero" id="genero" class="flex-2" required>
+                        <option disabled selected>Género*</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="correo_electronico">Correo electrónico*</label>
+                    <input type="email" id="correo_electronico" name="correo_electronico" placeholder="Correo electrónico*" class="flex-2" required>
+                </div>
+            </div>
+            <div class="flex-2">
+                <div>
+                    <label for="telefono">Teléfono*</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="Teléfono*" required>
+                </div>
+                <div>
+                    <label for="direccion">Direccion*</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Dirección*" required>
+                </div>
+                <div>
+                    <label for="ciudad">Ciudad*</label>
+                    <select name="ciudad" id="ciudad" required>
+                        <option disabled selected>Ciudad*</option>
+                        <option *ngFor="let location of optionsLocationArr">{{location.city}}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="precio_hora">Precio por hora*</label>
+                    <input type="number" id="precio_hora" name="precio_hora" placeholder="Precio por hora*" required>
+                </div>
+                <div>
+                    <label for="categoria">Categoria*</label>
+                    <select name="categoria" id="categoria" required>
+                        <option disabled selected>Categoria*</option>
+                        <option *ngFor="let work of optionsWorkArr">{{work.name}}</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="descripcion_personal">Descripción personal*</label>
+                    <textarea id="descripcion_personal" name="descripcion_personal" maxlength="140" required=""></textarea>			
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="button color-blue-one" id="boton_registrarse" name="boton_registrarse" value="Guardar">
+        </div>
+    </form>
+</section>
