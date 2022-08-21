@@ -1,5 +1,7 @@
  	<section class="register-cont">
 		<h1>Registro</h1>
+		<span class="mensaje-error">{{emptyForm}}</span>
+		<span class="mensaje-error">{{emptyPrivacy}}</span>
 		<form class="formulario-registro">
 			<input type="text" [(ngModel)]="emailUser" name="email" placeholder="Correo electrónico*" required>
 			<input type="text" [(ngModel)]="passwordUser" name="password" placeholder="Contraseña*" required>

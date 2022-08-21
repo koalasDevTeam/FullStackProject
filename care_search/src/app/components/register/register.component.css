@@ -16,8 +16,7 @@ h1 {
 
 .check-register {
     display: flex;
-    margin: 10px 0;
-    align-items: center;
+    margin: 10px 0 15px;
 }
 
 .check-register a {
@@ -26,11 +25,22 @@ h1 {
 
 .check-register p {
     font-size: 14px;
+    margin-top: 2px;
     font-weight: 300;
 }
 
 .check-register div {
     margin-right: 6px;
+}
+
+.check-register div input {
+    margin: 0px;
+}
+
+.mensaje-error {
+    color: red;
+    font-size: 15px;
+    font-weight: 300;
 }
 
 /* formulario */
