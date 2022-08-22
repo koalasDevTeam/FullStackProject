@@ -53,15 +53,10 @@ public helpers = [
   ]
 
 public getHelpersById(){
-  
-  console.log("hello")
-
-  console.log(this.idSelected)
-/*   id = id.toString() */
   const uniqueHelper = this.helpers.filter((helper)=>{ 
 
    return helper.id ===  this.idSelected
- /* console.log(typeof helper.id, `nuestro id: ${typeof id}`) */
+ 
 
   })
   console.log(uniqueHelper)
@@ -70,7 +65,6 @@ public getHelpersById(){
 }
 
 public selectHelper(id:any){
-  console.log("hola estoy aqui")
 this.idSelected = id
 this.getHelpersById()
 }
