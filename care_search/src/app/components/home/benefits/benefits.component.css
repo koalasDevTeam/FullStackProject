@@ -1,20 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-
 .page-cont {
     max-width: 1200px;
     margin: auto;
-  }
-  
-  .page-cont-big {
+}
+
+.page-cont-big {
     background-color: #f2f2f2;
     padding: 3em 0;
-  }
+}
 
 
 /* benefits */
@@ -24,52 +23,49 @@
     margin-top: 50px;
     margin-bottom: 60px;
     text-align: center;
-  }
-  
-  .benefits-cont-title {
+}
+
+.benefits-cont-title {
     text-align: center;
     margin-bottom: 60px;
-  }
-  
-  .benefits-cont-title p {
+}
+
+.benefits-cont-title p {
+    text-align: justify;
     font-size: 20px;
-  }
-  
-  .benefits-cont-bigbox {
+}
+
+.benefits-cont-bigbox {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  .benefits-cont-box img {
+}
+
+.benefits-cont-box img {
     display: block;
     margin: 1em auto;
     width: 100px;
-  }
-  
-  .benefits-cont-box-text {
+}
+
+.benefits-cont-box-text {
+    text-align: justify;
     width: 300px;
     margin: 0.5em auto 1em;
-  }
-  
-
-  
-/*responsive*/
-
-@media screen and (max-width: 900px) {
- 
-  .benefits-cont-title p{
-    width: 80%;
-    margin: auto;
-    font-size: 16px;
-  }
-
-  .benefits-cont-box-text {
-    width: 80%;
-    margin: 1em auto;
-  }
 }
 
 
+/*responsive*/
+
+@media screen and (max-width: 900px) {
+    .benefits-cont-title p {
+        width: 80%;
+        margin: auto;
+        font-size: 16px;
+    }
+    .benefits-cont-box-text {
+        width: 80%;
+        margin: 1em auto;
+    }
+}
