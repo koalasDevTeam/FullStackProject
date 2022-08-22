@@ -15,6 +15,12 @@
     justify-content: center;
     align-items: center;
     background-color: #00a5b5;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      ),
+      url('/assets/img/resources/2.jpg');
 }
 
 .login-cont form {
@@ -28,6 +34,8 @@
     box-shadow: 0px 0px 5px 0px rgba(72, 74, 94, 0.3);
     padding: 4em 2em;
     border-radius: 15px;
+    margin-left: 16em;
+margin-top: 15em;
 }
 
 .login-cont form input {
@@ -69,6 +77,7 @@
     font-weight: bold;
     cursor: pointer;
     margin-top: 2em;
+    border-radius: 8px;
 }
 
 .login-cont form input[type="submit"]:hover {
@@ -86,6 +95,12 @@ c .login-cont form button[type="button"]:hover {
 
 
 /*responsive*/
+
+@media screen and (max-width: 900px) {
+    .login-cont form {
+        margin: auto;
+    }
+}
 
 @media screen and (max-width: 600px) {
     .login-cont form {
