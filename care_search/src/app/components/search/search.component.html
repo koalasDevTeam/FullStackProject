@@ -1,44 +1,52 @@
 <!--*****************************************************************************************************************-->
 
-
 <div class="search-form">
   <h1 class="search-title">Encuentra la persona perfecta para tu cuidado</h1>
   <div class="form-inputs-cont">
-  <form action="" >
-    <select name="workOptions" id="" [(ngModel)]="printedOption">
-      <option value="" disabled selected style="display: none">
-        ¿Qué asistencia necesitas?
-      </option>
-      <option *ngFor="let work of optionsWorkArr">
-        {{ work.name }}
-      </option>
-    </select>
+    <form action="">
+      <select name="workOptions" id="" [(ngModel)]="printedOption">
+        <option value="" disabled selected style="display: none">
+          ¿Qué asistencia necesitas?
+        </option>
+        <option *ngFor="let work of optionsWorkArr">
+          {{ work.name }}
+        </option>
+      </select>
 
-    <select name="city" id="" [(ngModel)]="selectedOption">
-      <option value="" disabled selected style="display: none">
-        ¿En qué ciudad?
-      </option>
-      <option *ngFor="let location of optionsLocationArr">
-        {{ location.city }}
-      </option>
-    </select>
-    <div class="form-btn-cont">
-      <button (click)="result()" manage class="group-button-menu">Buscar</button>
-      <button type="cleanList" (click)="cleanList()" class="group-button-menu">
-        Mostrar todos
-      </button>
-      <button type="cleanList" (click)="cleanList()" class="group-button-menu">
-        Quitar filtros
-      </button>
-    </div>
-   
-    <!-- <div class="cost-range">
+      <select name="city" id="" [(ngModel)]="selectedOption">
+        <option value="" disabled selected style="display: none">
+          ¿En qué ciudad?
+        </option>
+        <option *ngFor="let location of optionsLocationArr">
+          {{ location.city }}
+        </option>
+      </select>
+      <div class="form-btn-cont">
+        <button (click)="result()" manage class="group-button-menu">
+          Buscar
+        </button>
+        <button
+          type="cleanList"
+          (click)="cleanList()"
+          class="group-button-menu"
+        >
+          Mostrar todos
+        </button>
+        <button
+          type="cleanList"
+          (click)="cleanList()"
+          class="group-button-menu"
+        >
+          Quitar filtros
+        </button>
+      </div>
+
+      <!-- <div class="cost-range">
     <label for="vol">Coste máximo por hora : 6€ - 50€</label>
     <input type="range" id="vol" name="vol" min="0" max="50" />
   </div> -->
-  </form>
-  
-</div>
+    </form>
+  </div>
 </div>
 <!--*****************************************************************************************************************-->
 
@@ -52,30 +60,33 @@
       <h6 class="score">{{ helper.score }}/5</h6>
       <h3><i class="bx bx-health"></i> {{ helper.name }}</h3>
       <h4>{{ helper.work }}</h4>
-
       <!-- para cuando el texto es muy largo -->
-      <p *ngIf=" helper.info.length>285" >
-        {{ helper.info.substring(0,285) }}<span class="more-info"  routerLink="/profile" (click)="sendingId(helper.id)">...</span>
+      <p *ngIf="helper.info.length > 285">
+        {{ helper.info.substring(0, 285)
+        }}<!-- <span
+          class="more-info"
+          routerLink="/profile"
+          (click)="sendingId(helper.id)"
+          >...</span -->
+        >
       </p>
-       <!-- para cuando el texto es corto -->
-      <p *ngIf=" helper.info.length<=285" >
+      <!-- para cuando el texto es corto -->
+      <p *ngIf="helper.info.length <= 285">
         {{ helper.info }}
       </p>
-
-      
       <div class="btn-cont">
-       
-        <button
-        (click)="setContactModal(helper)"
-         class="btn-contact">Contacto</button>
+        <button (click)="setContactModal(helper)" class="btn-contact">
+          Contacto
+        </button>
 
         <button
           routerLink="/profile"
           class="btn-perfil"
-          (click)="sendingId(helper.id)"
+          (click)="sendHelper(helper.id)"
         >
           Perfil
         </button>
+        <!-- (click)="sendingId(helper.id)" -->
       </div>
     </div>
   </div>
@@ -85,11 +96,12 @@
   </div>
 
   <!-- mostrar el modal de contacto -->
-<ng-container *ngIf="showModal">
-  <app-user-contact [helper] ="helperSelected"  (event)="closeContact()"></app-user-contact>
-</ng-container>
-
-
+  <ng-container *ngIf="showModal">
+    <app-user-contact
+      [helper]="helperSelected"
+      (event)="closeContact()"
+    ></app-user-contact>
+  </ng-container>
 
   <!-- <div class="search-result-item">
         <img src="./assets/img/helpers/2.jpg" alt="" />
