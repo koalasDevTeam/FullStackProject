@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
         password: this.passwordUser,
         
       });
-      this.router.navigate(['/profile']);
+      //this.router.navigate(['/profile']);
 
 
-      console.log(this.user);
+      //console.log(this.user);
     }
     
   
