@@ -27,6 +27,10 @@
   z-index: 3;
 }
 
+.search-form.no-fixed{
+  position: static;
+}
+
 .search-form form, .form-inputs-cont{
   display: flex;
   justify-content: center;
@@ -51,7 +55,8 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 150px;
-  margin-top: 50px;
+  position: relative;
+  top: -300px;
 }
 .message h3 {
   text-align: center;

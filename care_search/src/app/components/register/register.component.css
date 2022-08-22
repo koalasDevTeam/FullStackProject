@@ -50,10 +50,15 @@ h1 {
 }
 
 .register-cont {
-   padding: 10em 0 5em;
-    max-width: 400px;
-    margin: auto;
-}
+    /* padding: 10em 0 5em; */
+     max-width: 400px;
+     margin: auto;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
 
 .formulario-registro .foto-perfil label {
     font-size: 14px;

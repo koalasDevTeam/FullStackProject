@@ -1,7 +1,7 @@
 <!--*****************************************************************************************************************-->
 
 
-<div class="search-form">
+<div class="search-form {{resultsList.length === 0 ? 'no-fixed' : ''}}">
   <h1 class="search-title">Encuentra la persona perfecta para tu cuidado</h1>
   <div class="form-inputs-cont">
   <form action="" >
@@ -54,8 +54,11 @@
       <h4>{{ helper.work }}</h4>
 
       <!-- para cuando el texto es muy largo -->
-      <p *ngIf=" helper.info.length>285" >
+      <!-- <p *ngIf=" helper.info.length>285" >
         {{ helper.info.substring(0,285) }}<span class="more-info"  routerLink="/profile" (click)="sendingId(helper.id)">...</span>
+      </p> -->
+      <p *ngIf=" helper.info.length>285" >
+        {{ helper.info.substring(0,285) }}<span class="more-info">...</span>
       </p>
        <!-- para cuando el texto es corto -->
       <p *ngIf=" helper.info.length<=285" >
@@ -69,13 +72,13 @@
         (click)="setContactModal(helper)"
          class="btn-contact">Contacto</button>
 
-        <button
+        <!-- <button
           routerLink="/profile"
           class="btn-perfil"
           (click)="sendingId(helper.id)"
         >
           Perfil
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
