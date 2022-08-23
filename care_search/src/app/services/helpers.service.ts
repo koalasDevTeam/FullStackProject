@@ -1,49 +1,18 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { HelpersService } from 'src/app/services/helpers.service';
+import { Injectable } from '@angular/core';
 
-
-@Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-
-export class SearchComponent implements OnInit {
- selectedOption: string = "";
- printedOption: string = "";
- noMatches: string = "No hay coincidencias, ¡prueba otra vez!";
- noFoundIllustration: string = "./assets/img/illustrations/no_found_illustration.svg"
- noFoundIllustrationMb: string = "./assets/img/illustrations/no_found_illustration_mb.svg"
- showModal: boolean = false;
- helperSelected : any;
-
-
-
-  constructor(private helperService: HelpersService) { }
-
-  optionsWorkArr = [
-    {name:"Cuidador interna a domicilio", value:1},
-    {name:"Atencion personal", value:2},
-    {name:"Cuidado infantil", value:3},
-    {name:"Cuidado a domicilio por hora", value:4}
-  ]
-
-  optionsLocationArr = [
-  {city:"Las Palmas", value:1},
-  {city:"Mogan", value:2},
-  {city:"Galdar", value:3},
-  {city:"Arucas", value:4},
-  {city:"Tejeda", value:5}
-
-]
-  helpersArr = [
+export class HelpersService {
+  public idSelected= 0;
+public helpers = [
     {
       id: 1,
       name: "Susana Cabrera",
       work: "Cuidado infantil",
       img: "./assets/img/users/1.jpg",
       info: "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.",
-      full_info: "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
+       full_info: "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
       location: "Arucas",
       score: 4.3,
        price:"14€/Hora",
@@ -83,52 +52,25 @@ export class SearchComponent implements OnInit {
     }
   ]
 
-  resultsList=this.helpersArr
-  sendHelper(helperId:number){
-    this.helperService.selectHelper(helperId)
-  }
+public getHelpersById(){
+  const uniqueHelper = this.helpers.filter((helper)=>{ 
 
-  ngOnInit(): void {
-  }
+   return helper.id ===  this.idSelected
  
-  result(){
-  
 
-  let filterList= this.helpersArr.filter((helper)=> {
-    return helper.work === this.printedOption && helper.location === this.selectedOption
   })
+  console.log(uniqueHelper)
+  return uniqueHelper
 
-    this.resultsList = filterList  
-    console.log(this.resultsList)
- 
+}
+
+public selectHelper(id:any){
+this.idSelected = id
+this.getHelpersById()
+}
+
+
+ constructor() {
+
   }
-
-  cleanList(){
-    this.resultsList = this.helpersArr
-    this.selectedOption = "";
-    this.printedOption = "";
-
- 
-  }
-
-
- /*  sendingId(id:number){
-    id.toString()
-    window.location.href = window.location.origin + '/profile/#' + id;
-  } */
-
-  //to show contact modal
-
-  setContactModal(helper:any){
-    this.showModal = true;
-    this.helperSelected = helper;
-  }
-  hideContactModal(){
-    this.showModal = false;
-  }
-
-  closeContact(){
-    this.showModal = false;
-  }
-
 }
