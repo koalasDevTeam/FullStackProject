@@ -104,8 +104,17 @@ footer .contact-menu .fa {
 /*responsive*/
 
 @media screen and (max-width: 900px) {
-  .footer {
+  .footer, .copyright {
     display: block;
+  }
+  .copyright {
+    width: 100%;
+  }
+  .copyright p {
+    margin-bottom: 10px;
+  }
+  .text-legal {
+    margin: 0 0.5em;
   }
 }
 
