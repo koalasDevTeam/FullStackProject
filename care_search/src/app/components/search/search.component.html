@@ -1,11 +1,6 @@
 <!--*****************************************************************************************************************-->
 
-<<<<<<< HEAD
-
-<div class="search-form {{resultsList.length === 0 ? 'no-fixed' : ''}}">
-=======
-<div class="search-form">
->>>>>>> profilleTaskJson
+<div class="search-form {{ resultsList.length === 0 ? 'no-fixed' : '' }}">
   <h1 class="search-title">Encuentra la persona perfecta para tu cuidado</h1>
   <div class="form-inputs-cont">
     <form action="">
@@ -66,13 +61,7 @@
       <h3><i class="bx bx-health"></i> {{ helper.name }}</h3>
       <h4>{{ helper.work }}</h4>
       <!-- para cuando el texto es muy largo -->
-<<<<<<< HEAD
-      <!-- <p *ngIf=" helper.info.length>285" >
-        {{ helper.info.substring(0,285) }}<span class="more-info"  routerLink="/profile" (click)="sendingId(helper.id)">...</span>
-      </p> -->
-      <p *ngIf=" helper.info.length>285" >
-        {{ helper.info.substring(0,285) }}<span class="more-info">...</span>
-=======
+
       <p *ngIf="helper.info.length > 285">
         {{ helper.info.substring(0, 285)
         }}<!-- <span
@@ -81,7 +70,6 @@
           (click)="sendingId(helper.id)"
           >...</span -->
         >
->>>>>>> profilleTaskJson
       </p>
       <!-- para cuando el texto es corto -->
       <p *ngIf="helper.info.length <= 285">
@@ -92,18 +80,13 @@
           Contacto
         </button>
 
-        <!-- <button
+        <button
           routerLink="/profile"
           class="btn-perfil"
           (click)="sendHelper(helper.id)"
         >
           Perfil
-<<<<<<< HEAD
-        </button> -->
-=======
         </button>
-        <!-- (click)="sendingId(helper.id)" -->
->>>>>>> profilleTaskJson
       </div>
     </div>
   </div>
