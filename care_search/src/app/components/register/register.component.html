@@ -1,16 +1,22 @@
  	<section class="register-cont">
-		<h1>Registro</h1>
-		<span class="mensaje-error">{{emptyForm}}</span>
-		<span class="mensaje-error">{{emptyPrivacy}}</span>
-		<form class="formulario-registro">
-			<input type="text" [(ngModel)]="emailUser" name="email" placeholder="Correo electrónico*" required>
-			<input type="text" [(ngModel)]="passwordUser" name="password" placeholder="Contraseña*" required>
-			<div class="check-register">
-				<div>
-					<input type="checkbox" [(ngModel)]="privacyUser" name="privacy" value="S">
-				</div>
-				<p>He leído y acepto la <a href="/politica-de-privacidad">Política de Privacidad</a>.</p>
+		<div>
+		<div class="card-register">
+			<div>
+				<h1>Registro</h1>
+				<span class="mensaje-error">{{emptyForm}}</span>
+				<span class="mensaje-error">{{emptyPrivacy}}</span>
+				<form class="formulario-registro">
+					<input type="text" [(ngModel)]="emailUser" name="email" placeholder="Correo electrónico*" required>
+					<input type="text" [(ngModel)]="passwordUser" name="password" placeholder="Contraseña*" required>
+					<div class="check-register">
+						<div>
+							<input type="checkbox" [(ngModel)]="privacyUser" name="privacy" value="S">
+						</div>
+						<p>He leído y acepto la <a href="/politica-de-privacidad">Política de Privacidad</a>.</p>
+					</div>
+					<button type="button" class="button color-blue-one" (click)="save()">Confirmar</button>
+				</form>
 			</div>
-			<button type="button" class="button color-blue-one" (click)="save()">Confirmar</button>
- 		</form>
+		</div>
+	</div>
 	</section>
