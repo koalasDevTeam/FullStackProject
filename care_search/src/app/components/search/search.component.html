@@ -64,11 +64,11 @@
 
       <p *ngIf="helper.info.length > 285">
         {{ helper.info.substring(0, 285)
-        }}<!-- <span
+        }}<span
           class="more-info"
           routerLink="/profile"
-          (click)="sendingId(helper.id)"
-          >...</span -->
+          (click)="sendHelper(helper.id)"
+          >...</span
         >
       </p>
       <!-- para cuando el texto es corto -->
