@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { PerfileComponent } from './components/perfile/perfile.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserContactComponent } from './components/search/user-contact/user-contact.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: UserContactComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
   {
     path: '**',

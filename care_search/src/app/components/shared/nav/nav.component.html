@@ -1,52 +1,64 @@
-
-
- <!--nav-->
-    <section class="nav-cont">
-       
-        <nav>
-            <div class="logo-cont">
-                <img src="./assets/img/logo-caresearch-eng.svg"
-                 alt="CareSearch" title="CareSearch"
-                 routerLink=""
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }" />
-            </div>
-         <div class="menu-mv" (click)="getMv(true)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: #002d5d">
-          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+<!--nav-->
+<section class="nav-cont">
+  <nav>
+    <div class="logo-cont">
+      <img
+        src="./assets/img/logo-caresearch-eng.svg"
+        alt="CareSearch"
+        title="CareSearch"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      />
+    </div>
+    <div class="menu-mv" (click)="getMv(true)">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        style="fill: #002d5d"
+      >
+        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+      </svg>
+    </div>
+    <div class="menu-cont {{ mvView ? ' mv' : '' }}">
+      <img
+        src="./assets/img/logo-caresearch-eng.svg"
+        alt="CareSearch"
+        title="CareSearch"
+        routerLink=""
+        (click)="getMv(false)"
+      />
+      <div class="close-mv" (click)="getMv(false)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          style="fill: rgba(0, 45, 93, 1)"
+        >
+          <path
+            d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+          ></path>
         </svg>
-        </div>
-            <div class="menu-cont {{ mvView ? ' mv' : '' }}">
-                <img src="./assets/img/logo-caresearch-eng.svg"
-                 alt="CareSearch" title="CareSearch"
-                 routerLink=""
-                 (click)="getMv(false)" />
-                <div class="close-mv" (click)="getMv(false)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 45, 93, 1);"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
-                </div>
-                <a routerLink="/"
-                 fragment="services"
-                (click)="getMv(false)" >Servicios</a>
+      </div>
+      <a routerLink="/" fragment="services" (click)="getMv(false)">Servicios</a>
 
-                <a routerLink="/"
-                 fragment="benefits"
-                (click)="getMv(false)">Beneficios</a>
+      <a routerLink="/" fragment="benefits" (click)="getMv(false)"
+        >Beneficios</a
+      >
 
-                <!-- <a href="#contact" (click)="getMv(false)" >Contact</a> -->
+      <!-- <a href="#contact" (click)="getMv(false)" >Contact</a> -->
 
-                <a routerLink="search"
-                (click)="getMv(false)"
-                class="button color-blue-two">Buscador</a>
-        
-                <div class="login-cont">
-                    <a 
-                    routerLink="login"
-                    (click)="getMv(false)"
-                    >Login</a>
-                </div>
-            </div>
-        </nav>
-    </section>
+      <a
+        routerLink="search"
+        (click)="getMv(false)"
+        class="button color-blue-two"
+        >Buscador</a
+      >
 
-
- 
+      <div class="login-cont">
+        <a routerLink="login" (click)="getMv(false)">Login</a>
+      </div>
+    </div>
+  </nav>
+</section>

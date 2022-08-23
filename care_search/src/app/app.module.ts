@@ -19,6 +19,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UserContactComponent } from './components/search/user-contact/user-contact.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     FooterComponent,
     UserContactComponent,
-    PerfileComponent
+    PerfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
