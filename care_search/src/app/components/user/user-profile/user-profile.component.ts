@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../../services/users/users.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+
+  public users: any = [];
 
   public user: any = [];
   public photoUser: string = "";
@@ -26,9 +29,10 @@ export class UserProfileComponent implements OnInit {
 
   public optionSelected : string = 'personalData'
 
-  constructor() { }
+  constructor(private userService :UsersService) { }
 
   ngOnInit(): void {
+    this.getAllUsers();
   }
 
   showPersonal(){
@@ -40,6 +44,13 @@ export class UserProfileComponent implements OnInit {
   showAcount(){
     this.optionSelected = 'acountData'
   }
+
+
+  getAllUsers(){
+    this.userService.getAllUsers().then(response => this.users = response);
+  }
+
+ 
  
 
 }
