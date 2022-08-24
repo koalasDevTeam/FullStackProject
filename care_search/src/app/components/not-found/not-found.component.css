@@ -1,0 +1,42 @@
+.container-no_found_page {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  margin-top: 200px;
+}
+
+.cont-text-no_found_page {
+  text-align: center;
+}
+.cont-text-no_found_page p {
+  padding: 20px;
+}
+.container-no_found_page img {
+  max-width: 100%;
+  height: auto;
+}
+.link-go_back {
+  color: #049bb3;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.cont-text-no_found_page h3 {
+  font-family: "Lato", sans-serif;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 90px;
+  margin: auto;
+}
+@media screen and (max-width: 900px) {
+  .container-no_found_page {
+    height: 100%;
+    margin-top: 150px;
+  }
+  .cont-text-no_found_page {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  .link-go_back {
+    font-size: 15px;
+  }
+}
