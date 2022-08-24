@@ -6,7 +6,7 @@
         <div class="profile-edit-top">
 
           
-            <div class="personal data-form-cont">
+            <div class="personal data-form-cont" *ngIf="optionSelected == 'personalData'">
                 <h2>Edita tus datos personales</h2>
                 <div>
                     <label for="nombre">Nombre y Apellidos*</label>
@@ -32,7 +32,7 @@
 
             </div>
           
-            <div class="profesional data-form-cont">
+            <div class="profesional data-form-cont" *ngIf="optionSelected == 'profesionalData'">
                 <h2>Edita tus datos profesionales</h2>
                 <div>
                     <textarea  placeholder="Sobre tí..." name="about"></textarea>
@@ -46,7 +46,7 @@
 
             </div>
            
-            <div class="profesional data-form-cont">
+            <div class="account data-form-cont"  *ngIf="optionSelected == 'acountData'">
                 <h2>Edita los datos de tu cuenta</h2>
                 <div>
                     <label for="mail">Email</label>

@@ -23,9 +23,23 @@ export class UserProfileComponent implements OnInit {
   public categoryUser: string = "";
   public descriptionUser: string = "";
   public emptyForm: string = "";
+
+  public optionSelected : string = 'personalData'
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  showPersonal(){
+    this.optionSelected = 'personalData'
+  }
+  showProfesional(){
+    this.optionSelected = 'profesionalData'
+  }
+  showAcount(){
+    this.optionSelected = 'acountData'
+  }
+ 
 
 }
