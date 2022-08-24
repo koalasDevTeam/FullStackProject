@@ -84,7 +84,7 @@ margin-top: 15em;
     background-color: #0d96a5;
 }
 
-c .login-cont form button[type="button"]:hover {
+ .login-cont form button:hover {
     background-color: #0d96a5;
 }
 

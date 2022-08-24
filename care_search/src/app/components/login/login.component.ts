@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         password: this.passwordUser,
         
       });
-      //this.router.navigate(['/profile']);
+      this.router.navigate(['/user']);
 
 
       //console.log(this.user);

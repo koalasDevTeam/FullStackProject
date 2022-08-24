@@ -1,0 +1,93 @@
+<section class="user-profile-cont">
+
+    <div class="user-profile-edit">
+        
+        <form>
+        <div class="profile-edit-top">
+
+          
+            <div class="personal data-form-cont">
+                <h2>Edita tus datos personales</h2>
+                <div>
+                    <label for="nombre">Nombre y Apellidos*</label>
+                    <input type="text" [(ngModel)]="namelUser" name="nombre" placeholder="Nombre*" required>
+                </div>
+            
+                <div>
+                    <label for="dni">DNI*</label>
+                    <input type="text" [(ngModel)]="dniUser" name="dni" placeholder="DNI*" required>
+                </div>
+                <div>
+                    <label for="fecha_nacimiento">Fecha de nacimiento*</label>
+                    <input type="text" [(ngModel)]="dateUser" name="fecha_nacimiento" placeholder="Fecha de nacimiento*" required>
+                </div>
+                <div>
+                    <label for="ciudad">Ciudad*</label>
+                    <input type="text" [(ngModel)]="dateUser" name="city" placeholder="Ciudad*" required>
+                </div>
+                <div>
+                    <label for="ciudad">Calle</label>
+                    <input type="text" [(ngModel)]="dateUser" name="street" placeholder="Street" >
+                </div>
+
+            </div>
+          
+            <div class="profesional data-form-cont">
+                <h2>Edita tus datos profesionales</h2>
+                <div>
+                    <textarea  [(ngModel)]="dateUser" placeholder="Sobre tí..." name="about"></textarea>
+                </div>
+            
+                <div>
+                    <label for="dni">Categoría</label>
+                    <input type="text" [(ngModel)]="dateUser" name="category" placeholder="DNI*" required>
+                </div>
+             
+
+            </div>
+           
+            <div class="profesional data-form-cont">
+                <h2>Edita los datos de tu cuenta</h2>
+                <div>
+                    <label for="mail">Email</label>
+                    <input type="email" placeholder="Introduce tu email">
+                </div>
+                <div>
+                    <label for="mail">Contraseña</label>
+                    <input type="password" placeholder="*******">
+                </div>
+                <div>
+                    <label for="mail">Repite tu contraseña</label>
+                    <input type="password" placeholder="*************">
+                </div>
+            
+                <div>
+                    <label for="dni">Categoría</label>
+                    <input type="text" [(ngModel)]="dateUser" name="category" placeholder="DNI*" required>
+                </div>
+             
+
+            </div>
+           
+
+
+
+
+
+        </div>
+        <div class="profile-edit-bottom">
+
+            <div class="profile-edit-options">
+                <button>Datos Personales</button>
+                <button>Datos Profesionales</button>
+                <button>Editar Cuenta</button>
+            </div>
+
+            <button>Guardar</button>
+       
+        </div>
+    </form>
+
+    </div>
+
+</section>
