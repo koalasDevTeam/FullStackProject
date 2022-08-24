@@ -9,12 +9,13 @@
 }
 
 .login-cont {
-    width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    padding: 10em 0em;
     align-items: center;
-    background-color: #00a5b5;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
     background-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.5) 0%,
@@ -23,27 +24,30 @@
       url('/assets/img/resources/2.jpg');
 }
 
-.login-cont form {
+.login-cont > div {
+    width: 50%;
     display: flex;
-    flex-direction: column;
-    width: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-cont form {
     background-color: #fff;
-    margin: auto;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(72, 74, 94, 0.3);
     -moz-box-shadow: 0px 0px 5px 0px rgba(72, 74, 94, 0.3);
     box-shadow: 0px 0px 5px 0px rgba(72, 74, 94, 0.3);
-    padding: 4em 2em;
-    border-radius: 15px;
-    margin-left: 16em;
-margin-top: 15em;
+    padding: 2em;
+    border-radius: 10px;
+    margin-top: 100px;
 }
 
 .login-cont form input {
-    margin-bottom: 1em;
     width: 100%;
-    height: 50px;
-    padding-left: 1.2em;
-    border-radius: 15px;
+    margin: 0.5em 0;
+    color: #1b2126;
+    font-weight: 300;
+    padding: 0.7em 1em;
+    border-radius: 8px;
     border: 1px solid rgb(176, 176, 202);
 }
 
@@ -53,63 +57,75 @@ margin-top: 15em;
     outline: none;
 }
 
-.login-cont form input[type="submit"] {
+.login-cont form input[type="submit"], .login-cont form button[type="button"] {
     padding: 0;
     width: 100%;
     height: 50px;
     border: none;
     background-color: #00a5b5;
     color: #fff;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 300;
     cursor: pointer;
-    margin-top: 2em;
-}
-
-.login-cont form button[type="button"] {
-    padding: 0;
-    width: 100%;
-    height: 50px;
-    border: none;
-    background-color: #00a5b5;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 2em;
+    margin: 1em 0;
     border-radius: 8px;
 }
 
-.login-cont form input[type="submit"]:hover {
+.login-cont form input[type="submit"]:hover, .login-cont form button[type="button"]:hover {
     background-color: #0d96a5;
 }
 
-c .login-cont form button[type="button"]:hover {
-    background-color: #0d96a5;
+.login-cont form a {
+    color: #00a5b5;
+}
+
+.login-cont form p {
+    font-size: 14px;
+    margin-top: 2px;
+    font-weight: 300;
 }
 
 .login-cont form h1 {
-    color: #0a8391;
-    margin-bottom: 1em;
+    font-size: 42px;
+    color: #002D5D;
+    margin-bottom: 10px;
 }
-
 
 /*responsive*/
 
+@media screen and (max-width: 1024px) {
+
+    .login-cont {
+        height: auto;
+        padding: 8em 0em;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .login-cont form {
-        margin: auto;
+        margin: 100px auto 0;
+    }
+    .login-cont {
+        justify-content: center;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .login-cont form {
-        width: 350px;
+    .login-cont form h1 {
+        font-size: 40px;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .login-cont form {
-        width: 280px;
+    .login-cont {
+        padding: 4em 1em;
+    }
+
+    .login-cont, .login-cont > div {
+        width: 100%;
+    }
+
+    .card-register {
+        padding: 2em;
     }
 }

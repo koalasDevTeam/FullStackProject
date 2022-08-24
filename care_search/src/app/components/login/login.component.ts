@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   public user: any = [];
   public emailUser: string = "";
   public passwordUser: string = "";
-  
+  public emptyForm: string = "";
   
   constructor(private router: Router) { }
 
@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
   }
 
   save() {
-    
+    if((this.emailUser == "") || (this.passwordUser == "")){
+      this.emptyForm = "Error en las credenciales. Usuario no registrado.";
+    } else {
       this.user.push({
         name: this.emailUser,
         password: this.passwordUser,
@@ -29,6 +31,8 @@ export class LoginComponent implements OnInit {
 
       //console.log(this.user);
     }
+
+  }
     
   
 
