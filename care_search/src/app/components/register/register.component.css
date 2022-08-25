@@ -107,6 +107,11 @@ h1 {
     border-radius: 8px;
     border: 1px solid rgb(176, 176, 202);
 }
+.formulario-registro input:focus {
+    border: 1px solid #0fbece;
+    outline: none;
+}
+
 
 .formulario-registro .button {
     border: none;

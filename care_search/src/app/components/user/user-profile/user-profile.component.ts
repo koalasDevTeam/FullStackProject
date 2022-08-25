@@ -25,9 +25,27 @@ export class UserProfileComponent implements OnInit {
   public priceUser: string = "";
   public categoryUser: string = "";
   public descriptionUser: string = "";
-  public emptyForm: string = "";
+  public emptyForm: number = 0;
+  public sliderValue: number=10;
+
+  public salaryRange: string= "";
 
   public optionSelected : string = 'personalData'
+
+  optionsWorkArr = [
+    {name:"Cuidador interna a domicilio", value:1},
+    {name:"Atencion personal", value:2},
+    {name:"Cuidado infantil", value:3},
+    {name:"Cuidado a domicilio por hora", value:4}
+  ]
+
+  optionsSchedule = [
+    {name:"Parcial", value:1},
+    {name:"Completa", value:2},
+    {name:"Mañana", value:3},
+    {name:"Tarde", value:4}
+  ]
+
 
   constructor(private userService :UsersService) { }
 
@@ -50,7 +68,10 @@ export class UserProfileComponent implements OnInit {
     this.userService.getAllUsers().then(response => this.users = response);
   }
 
- 
- 
+  incrementSalary(){
 
+  }
+
+  valueChanged($event:any) {
+    this.sliderValue = $event.target.value; }
 }

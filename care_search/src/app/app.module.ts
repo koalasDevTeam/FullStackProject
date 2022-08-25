@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
+import { WorkingComponent } from './components/working/working/working.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UserProfileComponent } from './components/user/user-profile/user-profil
     PerfileComponent,
     NotFoundComponent,
     UserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    WorkingComponent
   ],
   imports: [
     BrowserModule,

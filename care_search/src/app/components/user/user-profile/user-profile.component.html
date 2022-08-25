@@ -9,28 +9,28 @@
                 {{item.id}}
             </div>
           
-            <div class="personal data-form-cont" *ngIf="optionSelected == 'personalData'">
+            <div class="personal data-form-cont " *ngIf="optionSelected == 'personalData'">
                 <h2>Edita tus datos personales</h2>
                 <div>
                     <label for="nombre">Nombre y Apellidos*</label>
-                    <input type="text" name="nombre" placeholder="Nombre*" required>
+                    <input type="text" name="nombre" placeholder="Introduce tu nombre" required>
                 </div>
             
                 <div>
                     <label for="dni">DNI*</label>
-                    <input type="text"  name="dni" placeholder="DNI*" required>
+                    <input type="text"  name="dni" placeholder="Introduce tu DNI" required>
                 </div>
                 <div>
                     <label for="fecha_nacimiento">Fecha de nacimiento*</label>
-                    <input type="text"  name="fecha_nacimiento" placeholder="Fecha de nacimiento*" required>
+                    <input type="text"  name="fecha_nacimiento" placeholder="Introduce tu fFecha de nacimiento*" required>
                 </div>
                 <div>
                     <label for="ciudad">Ciudad*</label>
-                    <input type="text" name="city" placeholder="Ciudad*" required>
+                    <input type="text" name="city" placeholder="Introduce tu ciudad*" required>
                 </div>
                 <div>
                     <label for="ciudad">Calle</label>
-                    <input type="text" name="street" placeholder="Street" >
+                    <input type="text" name="street" placeholder="Introduce tu calle" >
                 </div>
 
             </div>
@@ -38,15 +38,45 @@
             <div class="profesional data-form-cont" *ngIf="optionSelected == 'profesionalData'">
                 <h2>Edita tus datos profesionales</h2>
                 <div>
-                    <textarea  placeholder="Sobre tí..." name="about"></textarea>
+                    <textarea  placeholder="Háblanos sobre tí..." name="about"></textarea>
                 </div>
             
-                <div>
+                <!-- <div>
                     <label for="dni">Categoría</label>
                     <input type="text" name="category" placeholder="DNI*" required>
-                </div>
-             
+                </div> -->
 
+                <div class="profesional-cont">
+                <select name="city" id="">
+                    <option value="" disabled selected style="display: none">
+                      Selecciona una categoría profesional
+                    </option>
+                    <option *ngFor="let work of optionsWorkArr">
+                      {{ work.name }}
+                    </option>
+                </select>
+
+                <section class="salary-range-cont">
+                    <label for="formControlValue">
+                        <span>Escoge un precio:</span>
+                        {{sliderValue}}€/hora</label>
+                    <input type="range" min="4" max="100" step="1" class="fsalary-range-input" value="10" id="formControlRange" (input)="valueChanged($event)">
+
+                </section>
+                
+                </div>
+                <select name="schedule" id="" class="schedule-select">
+                    <option value="" disabled selected style="display: none">
+                      Selecciona tu disponibilidad horaria
+                    </option>
+                    <option *ngFor="let hour of optionsSchedule">
+                      {{ hour.name }}
+                    </option>
+                </select>
+
+                <input id="cv-file" name="cv-file" type="file" class="cv-input">
+                <label for="cv-file" class="cv-label">Adjunta CV</label>
+                
             </div>
            
             <div class="account data-form-cont"  *ngIf="optionSelected == 'acountData'">
@@ -63,12 +93,7 @@
                     <label for="mail">Repite tu contraseña</label>
                     <input type="password" placeholder="*************">
                 </div>
-            
-                <div>
-                    <label for="dni">Categoría</label>
-                    <input type="text" [(ngModel)]="dateUser" name="category" placeholder="DNI*" required>
-                </div>
-             
+        
 
             </div>
            
@@ -81,12 +106,21 @@
         <div class="profile-edit-bottom">
 
             <div class="profile-edit-options">
-                <button>Datos Personales</button>
-                <button>Datos Profesionales</button>
-                <button>Editar Cuenta</button>
+                <button [ngClass]="{ active: optionSelected == 'personalData'}"
+                (click)="showPersonal()">
+                    Datos Personales
+                </button>
+                <button [ngClass]="{ active: optionSelected == 'profesionalData'}"
+                (click)="showProfesional()">
+                    Datos Profesionales
+                </button>
+                <button [ngClass]="{ active: optionSelected == 'acountData'}"
+                (click)="showAcount()">
+                    Editar Cuenta
+                </button>
             </div>
 
-            <button>Guardar</button>
+            <button class="btn-save">Guardar</button>
        
         </div>
     </form>

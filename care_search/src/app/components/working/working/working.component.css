@@ -1,0 +1,25 @@
+.animate{
+animation: moveOnInit 3s forwards;
+}
+
+@keyframes moveOnInit {
+    0%{
+        transform: translateY(50%);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.animation-cont{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-cont svg{
+    width: 70%;
+}
