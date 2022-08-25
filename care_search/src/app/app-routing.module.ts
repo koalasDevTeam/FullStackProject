@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
-import { PerfileComponent } from './components/perfile/perfile.component';
+import { PerfileComponent } from './components/form-profile/perfile.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserContactComponent } from './components/search/user-contact/user-contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';

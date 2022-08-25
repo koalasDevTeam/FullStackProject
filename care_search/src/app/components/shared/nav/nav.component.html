@@ -47,7 +47,7 @@
         >Beneficios</a
       >
 
-      <!-- <a href="#contact" (click)="getMv(false)" >Contact</a> -->
+  
 
       <a
         routerLink="search"
@@ -55,6 +55,9 @@
         class="button color-blue-two"
         >Buscador</a
       >
+
+      <span (click) = "logOut()"
+       *ngIf="storage && storage.currentUser">{{storage?.currentUser.email}}</span>
 
       <div class="login-cont">
         <span>Acceso</span>
