@@ -75,6 +75,7 @@
     background-color: #0d96a5;
 }
 
+
 .login-cont form a {
     color: #00a5b5;
 }
@@ -83,6 +84,11 @@
     font-size: 14px;
     margin-top: 2px;
     font-weight: 300;
+}
+
+ .login-cont form button:hover {
+    background-color: #0d96a5;
+
 }
 
 .login-cont form h1 {
@@ -114,9 +120,7 @@
     .login-cont form h1 {
         font-size: 40px;
     }
-}
 
-@media screen and (max-width: 400px) {
     .login-cont {
         padding: 4em 1em;
     }

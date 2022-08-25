@@ -1,0 +1,51 @@
+<div class="user-page-cont">
+
+    <section class="user-page-left">
+        <div class="user-menu-top">
+            <div class="menu-user-header">
+                <img src="./assets/img/users/1.jpg" alt="">
+                <h4>Elena González</h4>
+            </div>
+            <div class="menu-user-options">
+                <button (click)="showProfile()">Editar Perfil</button>
+                <button (click)="showHistory()">Ver Historial</button>
+                <button (click)="showNotifications()">Solicitudes</button>
+            </div>
+        </div>
+        <div class="user-menu-bottom">
+            <button>Eliminar Cuenta</button>
+        </div>
+
+    </section>
+    <section class="user-page-right">
+
+        <div class="user-intro" *ngIf="pageSelected === 'intro'">
+            <h1>¡Hola Elena!</h1>
+            <img [src]="userIntroIllustration" alt="">
+            <h2>Edita tu perfil o explora el resto de opciones</h2>
+        </div>
+
+        <div class="user-profile" *ngIf="pageSelected === 'profile'">
+            <app-user-profile></app-user-profile>
+        </div>
+        <div class="workinprogress" *ngIf="pageSelected === 'history'">
+            <h1>Estamos trabajando para que puedas ver tu historial</h1>
+        </div>
+        <div class="workinprogress" *ngIf="pageSelected === 'notifications'">
+            <h1>Estamos trabajando para que puedas ver tus notificaciones</h1>
+        </div>
+
+        <!-- <div class="user-history" *ngIf="pageSelected === 'history'">
+            <h1>¡Hola Elena!</h1>
+            <img [src]="userIntroIllustration" alt="">
+            <h2>Edita tu perfil o explora el resto de opciones</h2>
+        </div>
+
+        <div class="user-notifications" *ngIf="pageSelected === 'notifications'">
+            <h1>¡Hola Elena!</h1>
+            <img [src]="userIntroIllustration" alt="">
+            <h2>Edita tu perfil o explora el resto de opciones</h2>
+        </div> -->
+
+    </section>
+</div>
