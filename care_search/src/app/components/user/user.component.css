@@ -129,3 +129,7 @@
 .user-menu-bottom button:hover{
     background-color: #0594a1;
 }
+
+.user-profile{
+    height: 100%;
+}
