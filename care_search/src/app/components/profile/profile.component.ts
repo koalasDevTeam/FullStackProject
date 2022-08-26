@@ -12,9 +12,9 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: HelpersService) { }
 
   showHelperData(){
-    let resultsHelper = this.userService.getHelpersById()
+    //let resultsHelper = this.userService.getHelpersById()
     
-    return this.helperObje =  resultsHelper
+    //return this.helperObje =  resultsHelper
   }
     ngOnInit(){
       this.showHelperData()

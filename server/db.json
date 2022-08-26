@@ -352,6 +352,18 @@
       "score": 0,
       "price": "",
       "id": 31
+    },
+    {
+      "email": "zeben",
+      "pass": "12344",
+      "name": "",
+      "work": "",
+      "img": "./assets/img/users/1.jpg",
+      "info": "",
+      "full_info": "",
+      "score": 0,
+      "price": "",
+      "id": 32
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from '../../../services/users/users.service';
 
 @Component({
@@ -7,7 +7,9 @@ import { UsersService } from '../../../services/users/users.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-
+  @Input() currentUser? : any;
+ 
+ 
   public users: any = [];
 
   public user: any = [];

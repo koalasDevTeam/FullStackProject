@@ -15,8 +15,13 @@
     <section class="user-page-left">
         <div class="user-menu-top">
             <div class="menu-user-header">
-                <img src="./assets/img/users/1.jpg" alt="">
-                <h4>Elena González</h4>
+                <div class="cambiar-imagen-perfil text-center">
+                    <input type="file" [(ngModel)]="photoUser" name="imagen_perfil">
+                    <i class="bx bxs-camera"></i>
+                    <img src="./assets/img/illustrations/no_found_illustration_mb.svg">
+                </div>
+                <!-- <img src="./assets/img/users/1.jpg" alt=""> -->
+                <h4>{{storage.currentUser.email}}</h4>
             </div>
             <div class="menu-user-options">
                 <button (click)="showProfile()">Editar Perfil</button>
@@ -32,13 +37,13 @@
     <section class="user-page-right">
 
         <div class="user-intro" *ngIf="pageSelected === 'intro'">
-            <h1>¡Hola Elena!</h1>
+            <h1>¡Hola {{storage.currentUser.email}}!</h1>
             <img [src]="userIntroIllustration" alt="">
             <h2>Edita tu perfil o explora el resto de opciones</h2>
         </div>
 
         <div class="user-profile" *ngIf="pageSelected === 'profile'">
-            <app-user-profile></app-user-profile>
+            <app-user-profile [currentUser] = "storage.currentUser"></app-user-profile>
         </div>
         <div class="workinprogress" *ngIf="pageSelected === 'history'">
             <h1>Estamos trabajando para que puedas ver tu historial</h1>

@@ -6,6 +6,34 @@
     scroll-behavior: smooth;
   }
   
+  /**/
+  
+.cambiar-imagen-perfil {
+    width: 100%;
+    margin-bottom: 2em;
+    position: relative;
+    display: inline-block;
+}
+
+
+.cambiar-imagen-perfil i {
+    left: 47%;
+    top: 35%;
+    bottom: 50%;
+    right: 50%;
+    color: #fff;
+    font-size: 48px;
+}
+
+.cambiar-imagen-perfil input {
+    margin: 0;
+    opacity: 0;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+}
+
+  /**/
 
 .user-page-cont{
     height: 100vh;

@@ -80,7 +80,9 @@
                 <h2>Edita los datos de tu cuenta</h2>
                 <div>
                     <label for="mail">Email</label>
-                    <input type="email" placeholder="Introduce tu email">
+                    <input type="email"
+                     placeholder="Introduce tu email"
+                     [value]="currentUser.email">
                 </div>
                 <div>
                     <label for="mail">Contraseña</label>
@@ -90,14 +92,9 @@
                     <label for="mail">Repite tu contraseña</label>
                     <input type="password" placeholder="*************">
                 </div>
-        
-
+    
             </div>
            
-
-
-
-
 
         </div>
         <div class="profile-edit-bottom">
