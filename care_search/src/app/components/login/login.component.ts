@@ -20,10 +20,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUsers()
+   
   }
 
   getAllUsers(){
     this.userService.getAllUsers().then(response => this.users = response);
+    
     }
 
  

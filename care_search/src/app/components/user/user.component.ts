@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.storage = this.UsersService.storage;
-    console.log('sabrina : ', this.storage)
+
   }
 
   showProfile(){

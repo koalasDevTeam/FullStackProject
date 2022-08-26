@@ -52,9 +52,7 @@
       " score": 4.6,
       " price": "20€/Hora"
     },
-    [],
-    [],
-    [],
+    
     {
       "email": "pepa",
       "pass": "bienvenida",
@@ -94,45 +92,7 @@
       "price": "14€/Hora",
       "id": 10
     },
-    {
-      "email": "sabrina",
-      "pass": "1234",
-      "name": "Susana Cabrera",
-      "work": "Cuidado infantil",
-      "img": "./assets/img/users/1.jpg",
-      "info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.",
-      "full_info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
-      "location": "Arucas",
-      "score": 4.3,
-      "price": "14€/Hora",
-      "id": 11
-    },
-    {
-      "email": "zamara",
-      "pass": "1234",
-      "name": "Susana Cabrera",
-      "work": "Cuidado infantil",
-      "img": "./assets/img/users/1.jpg",
-      "info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.",
-      "full_info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
-      "location": "Arucas",
-      "score": 4.3,
-      "price": "14€/Hora",
-      "id": 12
-    },
-    {
-      "email": "Zeben",
-      "pass": "12345",
-      "name": "Susana Cabrera",
-      "work": "Cuidado infantil",
-      "img": "./assets/img/users/1.jpg",
-      "info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.",
-      "full_info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
-      "location": "Arucas",
-      "score": 4.3,
-      "price": "14€/Hora",
-      "id": 13
-    },
+   
     {
       "email": "Abi",
       "pass": "12345",
@@ -171,19 +131,6 @@
       "score": 4.3,
       "price": "14€/Hora",
       "id": 16
-    },
-    {
-      "email": "sss",
-      "pass": "sss",
-      "name": "Susana Cabrera",
-      "work": "Cuidado infantil",
-      "img": "./assets/img/users/1.jpg",
-      "info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.",
-      "full_info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
-      "location": "Arucas",
-      "score": 4.3,
-      "price": "14€/Hora",
-      "id": 17
     },
     {
       "email": "aaa",

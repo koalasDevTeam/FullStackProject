@@ -62,8 +62,8 @@
       <h4>{{ helper.work }}</h4>
       <!-- para cuando el texto es muy largo -->
 
-      <p *ngIf="helper.info.length > 285">
-        {{ helper.info.substring(0, 285)
+      <p *ngIf="helper?.info?.length > 285">
+        {{ helper?.info?.substring(0, 285)
         }}<span
           class="more-info"
           routerLink="/profile"
@@ -72,7 +72,7 @@
         >
       </p>
       <!-- para cuando el texto es corto -->
-      <p *ngIf="helper.info.length <= 285">
+      <p *ngIf="helper?.info?.length <= 285">
         {{ helper.info }}
       </p>
       <div class="btn-cont">
@@ -92,7 +92,7 @@
   </div>
   <div [ngClass]="{ message: resultsList.length === 0 }">
     <img [src]="noFoundIllustration" alt="" />
-    <h3 *ngIf="resultsList.length === 0">{{ noMatches }}</h3>
+    <h3 *ngIf="users.length === 0">{{ noMatches }}</h3>
   </div>
 
   <!-- mostrar el modal de contacto -->
