@@ -1,5 +1,17 @@
-<div class="user-page-cont">
+<div class="user-page-cont" [ngClass]="{nouser: !this.storage.currentUser.hasOwnProperty('email') }">
 
+
+    <ng-container  *ngIf="!this.storage.currentUser.hasOwnProperty('email')">
+        <img [src]="noUserIllustration" alt="">
+
+        <section>
+            <p>Debes <a routerLink="/login">iniciar sesión</a> para ver este contenido</p>
+            <p>¿No tienes cuenta? <a routerLink="/register"> Regístrate aquí</a></p>
+        </section>
+       
+    </ng-container>
+
+    <ng-container  *ngIf="this.storage.currentUser.hasOwnProperty('email')">
     <section class="user-page-left">
         <div class="user-menu-top">
             <div class="menu-user-header">
@@ -39,17 +51,6 @@
           
         </div>
 
-        <!-- <div class="user-history" *ngIf="pageSelected === 'history'">
-            <h1>¡Hola Elena!</h1>
-            <img [src]="userIntroIllustration" alt="">
-            <h2>Edita tu perfil o explora el resto de opciones</h2>
-        </div>
-
-        <div class="user-notifications" *ngIf="pageSelected === 'notifications'">
-            <h1>¡Hola Elena!</h1>
-            <img [src]="userIntroIllustration" alt="">
-            <h2>Edita tu perfil o explora el resto de opciones</h2>
-        </div> -->
-
     </section>
+</ng-container>
 </div>

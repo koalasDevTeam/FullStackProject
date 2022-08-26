@@ -10,6 +10,9 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       />
+      <p *ngIf="this.storage.currentUser.hasOwnProperty('email')">
+        ¡Hola {{ this.storage?.currentUser.email }}!
+      </p>
     </div>
     <div class="menu-mv" (click)="getMv(true)">
       <svg
@@ -47,8 +50,6 @@
         >Beneficios</a
       >
 
-  
-
       <a
         routerLink="search"
         (click)="getMv(false)"
@@ -56,13 +57,15 @@
         >Buscador</a
       >
 
-      <span (click) = "logOut()"
-       *ngIf="storage && storage.currentUser">{{storage?.currentUser.email}}</span>
-
       <div class="login-cont">
-        <span>Acceso</span>
-        <a routerLink="login" (click)="getMv(false)">Login</a>
-        <a routerLink="register" (click)="getMv(false)">Registro</a>
+        <span (click)="logOut()" *ngIf="this.storage.currentUser.hasOwnProperty('email')">
+          Salir
+        </span>
+        <ng-container *ngIf="!this.storage.currentUser.hasOwnProperty('email')">
+          <a routerLink="login" (click)="getMv(false)">Login</a>
+          <a routerLink="register" (click)="getMv(false)">Registro</a>
+        </ng-container>
+       
       </div>
     </div>
   </nav>

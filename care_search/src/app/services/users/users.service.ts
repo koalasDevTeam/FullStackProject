@@ -22,24 +22,11 @@ export class UsersService {
    return axios.get(`${this.url}/helpers`).then(response => response.data)
   }
 
-  // createNewUser(newUSer:any){
-  // return axios.post(`${this.url}/helpers`, newUSer).then(response => response.data)
-  // }
-  // createNewUser(newUser:any){
-  //  axios.post(`${this.url}/helpers`, newUser)
 
-  //   .then( (user) => {
-  // 		console.log('Usuario añadido con id =' , user.data.id )
-	// }) 
-  //   .catch( (error) => {
-	//   	console.log('Algo salio mal =' , error )
-	// })
-  
-  // }
 
   setCurrentUser(user:any){
     this.storage.currentUser = user
-    console.log(this.storage.currentUser)
+   // console.log(this.storage.currentUser)
   }
 
   createNewUser(newUser:any){

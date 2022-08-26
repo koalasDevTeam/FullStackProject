@@ -1,18 +1,32 @@
 <section class="login-cont">
+  <div>
     <div>
-        <div>
-            <div>
-                <form action="">
-                    <h1>Iniciar sesión</h1>
-                    <span class="mensaje-error">{{emptyForm}}</span>
-                    <input type="text" [(ngModel)]="emailUser" name="email" placeholder="Correo electrónico" required>
-                    <input type="password" [(ngModel)]="passwordUser" name="password" placeholder="Contraseña" required>
-                    <!--<input type="submit" value="Log In">-->
-                    <button type="button" (click)="save()">Entrar</button>
-                    <p>¿Has olvidado la <a routerLink="/">contraseña</a>?</p>
-                    <p>¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>.</p>
-                </form>
-            </div>
-        </div>
+      <div>
+        <form action="">
+          <h1>Iniciar sesión</h1>
+          <span class="mensaje-error">{{ emptyForm }}</span>
+          <input
+            type="text"
+            [(ngModel)]="emailUser"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+          />
+          <input
+            type="password"
+            [(ngModel)]="passwordUser"
+            name="password"
+            placeholder="Contraseña"
+            required
+          />
+          <!--<input type="submit" value="Log In">-->
+          <button type="button" (click)="login()">Entrar</button>
+          <p>¿Has olvidado la <a routerLink="/">contraseña</a>?</p>
+          <p>
+            ¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>.
+          </p>
+        </form>
+      </div>
     </div>
+  </div>
 </section>

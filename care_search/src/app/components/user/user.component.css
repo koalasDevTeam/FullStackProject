@@ -12,6 +12,36 @@
     width: 100%;
     display: grid;
     grid-template-columns: 250px auto;
+    background-color: #f2f2f2;
+}
+
+.user-page-cont.nouser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-page-cont.nouser img{
+    height: 600px;
+}
+.user-page-cont.nouser section{
+    margin-top: -4em;
+    text-align: center;
+}
+
+.user-page-cont section p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.user-page-cont section p a{
+    color: #049bb3;
+    font-weight: 600;
+}
+.user-page-cont section p a:hover{
+    color: #0a8391;
+  
 }
 
 .user-page-left{
@@ -134,4 +164,28 @@
 
 .user-profile{
     height: 100%;
+}
+
+/*responsive*/
+@media screen and (max-width: 900px) {
+    .user-page-cont.nouser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .user-page-cont.nouser img{
+        height: auto;
+        width: 80%;
+    }
+    .user-page-cont section{
+        margin-top: 0.5em;
+        width: 80%;
+    }
+    
+    .user-page-cont section p{
+        font-size: 16px;
+    }
+    
 }

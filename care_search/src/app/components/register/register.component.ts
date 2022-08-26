@@ -30,15 +30,13 @@ export class RegisterComponent implements OnInit {
       this.newUser = {
         email: `${this.emailUser}`,
         pass: `${this.passwordUser}`,
-        name: 'Susana Cabrera',
-        work: 'Cuidado infantil',
+        name: '',
+        work: '',
         img: './assets/img/users/1.jpg',
-        info: 'Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.',
-        full_info:
-          'Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.',
-        location: 'Arucas',
-        score: 4.3,
-        price: '14€/Hora',
+        info: '',
+        full_info:'',
+        score: 0,
+        price: '',
       };
 
       this.userService.createNewUser(this.newUser).then((user) => {

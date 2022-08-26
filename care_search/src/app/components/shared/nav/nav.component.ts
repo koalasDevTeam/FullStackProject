@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from '../../../services/users/users.service';
 
 @Component({
@@ -9,21 +10,24 @@ import { UsersService } from '../../../services/users/users.service';
 export class NavComponent implements OnInit {
   public storage: any;
   public mvView: boolean = false;
+  // public userName: string = '';
 
   getMv(value: boolean) {
     this.mvView = value;
   }
 
-  constructor(private UserService : UsersService) {}
+  constructor(private Router: Router,private UserService : UsersService) {}
 
   ngOnInit(): void {
  
     this.storage = this.UserService.storage;
-   
   }
 
   logOut(){
     localStorage.removeItem('currentUser');
     this.UserService.setCurrentUser({})
+    this.Router.navigate(['']);
   }
+
+ 
 }

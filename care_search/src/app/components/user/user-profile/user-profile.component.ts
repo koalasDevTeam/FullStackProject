@@ -50,7 +50,7 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService :UsersService) { }
 
   ngOnInit(): void {
-    this.getAllUsers();
+    // this.getAllUsers();
   }
 
   showPersonal(){
@@ -64,9 +64,9 @@ export class UserProfileComponent implements OnInit {
   }
 
 
-  getAllUsers(){
-    this.userService.getAllUsers().then(response => this.users = response);
-  }
+   getAllUsers(){
+  this.userService.getAllUsers().then(response => this.users = response);
+   }
 
   incrementSalary(){
 

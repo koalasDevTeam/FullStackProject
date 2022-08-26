@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users/users.service';
 
 @Component({
   selector: 'app-user',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private UsersService:UsersService) { }
+  public storage: any;
   public pageSelected : string = 'intro'
   public userIntroIllustration: string = "./assets/img/illustrations/user_intro_illustration.svg"
+  public noUserIllustration: string = "./assets/img/illustrations/no_user_illustration.svg"
+
 
   ngOnInit(): void {
+    this.storage = this.UsersService.storage;
   }
 
   showProfile(){
