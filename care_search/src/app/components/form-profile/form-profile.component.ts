@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-perfile',
-  templateUrl: './perfile.component.html',
-  styleUrls: ['./perfile.component.css']
+  selector: 'app-form-profile',
+  templateUrl: './form-profile.component.html',
+  styleUrls: ['./form-profile.component.css']
 })
-export class PerfileComponent implements OnInit {
+export class FormProfileComponent implements OnInit {
 
   public user: any = [];
   public photoUser: string = "";
