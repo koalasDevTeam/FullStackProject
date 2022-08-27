@@ -289,13 +289,16 @@
   }
 }
 
+
+
 @media screen and (max-width: 600px) {
   .search-form .group-button-menu {
-    width: 130px;
+    width: 110px;
   }
   .search-form select,
-  .search-result-item {
-    width: 400px;
+  .search-result-item,
+  .search-result-cont {
+    width: 350px;
   }
 
   .item-text-cont {
@@ -318,11 +321,7 @@
   }
 }
 @media screen and (max-width: 450px) {
-  .search-form select,
-  .search-result-item,
-  .search-result-cont {
-    width: 350px;
-  }
+ 
   .btn-contact,
   .btn-perfil {
     width: 110px !important;
@@ -330,7 +329,5 @@
   .item-text-cont {
     width: 100%;
   }
-  .search-form .group-button-menu {
-    width: 110px;
-  }
+
 }

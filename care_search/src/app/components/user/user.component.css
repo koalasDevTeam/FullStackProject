@@ -8,29 +8,31 @@
   
   /**/
   
-.cambiar-imagen-perfil {
-    width: 100%;
+.change-profile-img {
     margin-bottom: 2em;
     position: relative;
     display: inline-block;
 }
 
 
-.cambiar-imagen-perfil i {
-    left: 47%;
-    top: 35%;
-    bottom: 50%;
-    right: 50%;
+.change-profile-img i {
     color: #fff;
+    position: absolute;
+    bottom: -0.5em;
+    left: -0.5em;
     font-size: 48px;
 }
 
-.cambiar-imagen-perfil input {
+.change-profile-img input {
     margin: 0;
-    opacity: 0;
-    width: 140px;
-    height: 140px;
-    position: absolute;
+    display: none;
+}
+
+.change-profile-img label{
+    cursor: pointer;
+}
+.change-profile-img label:hover + i{
+    color: #7be9fa;
 }
 
   /**/
@@ -113,7 +115,8 @@
 .menu-user-header img{
     width: 150px;
     border-radius: 50%;
-    
+    background: white;
+    height: 150px;
 }
 
 .menu-user-options{

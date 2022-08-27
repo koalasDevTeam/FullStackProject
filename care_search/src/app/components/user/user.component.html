@@ -15,12 +15,15 @@
     <section class="user-page-left">
         <div class="user-menu-top">
             <div class="menu-user-header">
-                <div class="cambiar-imagen-perfil text-center">
-                    <input type="file" [(ngModel)]="photoUser" name="imagen_perfil">
+                <div class="change-profile-img text-center">
+                    <input type="file"
+                     [(ngModel)]="photoUser"
+                     (change)="takeNewPicture($event)"
+                     id="file-img"
+                      name="imagen_perfil">
+                    <label for="file-img"><img [src] ="previewPhoto"></label>
                     <i class="bx bxs-camera"></i>
-                    <img src="./assets/img/illustrations/no_found_illustration_mb.svg">
                 </div>
-                <!-- <img src="./assets/img/users/1.jpg" alt=""> -->
                 <h4>{{storage.currentUser.email}}</h4>
             </div>
             <div class="menu-user-options">
