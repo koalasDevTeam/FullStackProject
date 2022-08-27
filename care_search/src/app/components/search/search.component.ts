@@ -1,6 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { HelpersService } from 'src/app/services/helpers.service';
-import { UsersService } from '../../services/users/users.service';
 
 
 @Component({
@@ -19,8 +18,7 @@ export class SearchComponent implements OnInit {
  helperSelected : any;
  public users : any = [];
  resultsList : any = [];
-
-
+ pressedSearchButton: boolean = false
 
   constructor(private helperService: HelpersService) { }
 
@@ -39,42 +37,46 @@ export class SearchComponent implements OnInit {
   {city:"Tejeda", value:5}
 
 ]
- 
- 
+
+
+   ngOnInit(): void { 
+    this.getAllUsers();
+
+        
+  }
+  
+
+// to find helper by Id
   sendHelper(helperId:number){
     this.helperService.selectHelper(helperId)
   }
 
-  ngOnInit(): void {
-    this.getAllUsers();
-    this.resultsList = this.users;
-   
-  }
 
+
+// to get all helpers - function from services
   getAllUsers(){
-    this.helperService.getAllUsers().then(response => this.users = response);
+    return this.helperService.getAllUsers().then(response => {this.users = response;this.resultsList = this.users}); 
     
   }
-
- 
-  result(){
-
+   
+  searchResult(){
+  this.pressedSearchButton = true
   let filterList= this.users.filter((helper:any)=> {
-    return helper.work === this.printedOption && helper.location === this.selectedOption
+  return helper.work === this.printedOption && helper.location === this.selectedOption
   })
 
-    this.resultsList = filterList 
-    console.log('result list: ',this.resultsList)
+  this.resultsList = filterList 
+  
  
   }
 
+
+//to clean the all list
   cleanList(){
     this.resultsList = this.users
     this.selectedOption = "";
     this.printedOption = "";
   }
-
-
 
   //to show contact modal
 

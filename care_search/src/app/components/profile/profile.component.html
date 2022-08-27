@@ -1,21 +1,21 @@
 <section class="profile-cont">
   <div class="profile-cont-box">
     <div class="profile-person">
-      <img src="{{ helperObje[0].img }}" alt="helper-photo" />
+      <img src="{{ helperObje.img }}" alt="helper-photo" />
       <h1 class="profile-title">
-        {{ helperObje[0].name }}
+        {{ helperObje.name }}
       </h1>
     </div>
     <div class="about-me">
       <h3>
-        <small>{{ helperObje[0].work }} en {{ helperObje[0].location }}</small>
+        <small>{{ helperObje.work }} en {{ helperObje.location }}</small>
       </h3>
-      <p>{{ helperObje[0].full_info }}</p>
+      <p>{{ helperObje.full_info }}</p>
     </div>
 
     <div class="contacts">
-      <h6>Valoración {{ helperObje[0].score }}/5</h6>
-      <h5>Precio: {{ helperObje[0].price }}</h5>
+      <h6>Valoración {{ helperObje.score }}/5</h6>
+      <h5>Precio: {{ helperObje.price }}</h5>
       <button class="btn-contact">contacto</button>
       <button routerLink="/search" routerLinkActive="active" class="btn-perfil">
         Volver

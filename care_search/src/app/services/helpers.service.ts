@@ -6,34 +6,39 @@ import axios  from 'axios';
 })
 export class HelpersService {
 
-  public url:any= 'http://localhost:3000';
+public url:any= 'http://localhost:3000';
   
-  public idSelected= 0;
+ public idSelected= 0;
+ public users = []
 
-
-// public getHelpersById(){
-//   const uniqueHelper = this.helpers.filter((helper)=>{ 
-
-//    return helper.id ===  this.idSelected
- 
-
-//   })
-//   console.log(uniqueHelper)
-//   return uniqueHelper
-
-// }
-
-public selectHelper(id:any){
-this.idSelected = id
-//this.getHelpersById()
-}
-
-getAllUsers(){
-  return axios.get(`${this.url}/helpers`).then(response => response.data)
- }
-
-
- constructor() {
+constructor() {
 
   }
+  // to get all users
+getAllUsers(){
+
+  return axios.get(`${this.url}/helpers`).then(response => this.users = response.data)
+ }
+
+public getHelpersById(){
+  const uniqueHelper = this.users.find((helper:any)=>{ 
+
+  return parseInt(helper.id) ===  this.idSelected
+ 
+
+ })
+ console.log(uniqueHelper)
+ return uniqueHelper
+
+ }
+
+ public selectHelper(id:number){
+this.idSelected = id
+this.getHelpersById()
+} 
+
+
+
+
+
 }

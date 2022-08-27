@@ -22,7 +22,7 @@
         </option>
       </select>
       <div class="form-btn-cont">
-        <button (click)="result()" manage class="group-button-menu">
+        <button (click)="searchResult()" manage class="group-button-menu">
           Buscar
         </button>
         <button
@@ -30,7 +30,7 @@
           (click)="cleanList()"
           class="group-button-menu"
         >
-          Mostrar todos
+          Todos
         </button>
         <button
           type="cleanList"
@@ -60,10 +60,10 @@
       <h6 class="score">{{ helper.score }}/5</h6>
       <h3><i class="bx bx-health"></i> {{ helper.name }}</h3>
       <h4>{{ helper.work }}</h4>
-      <!-- para cuando el texto es muy largo -->
+      <!-- when is a long text -->
 
-      <p *ngIf="helper?.info?.length > 285">
-        {{ helper?.info?.substring(0, 285)
+      <p *ngIf="helper?.full_info?.length > 150">
+        {{ helper?.full_info?.substring(0, 150)
         }}<span
           class="more-info"
           routerLink="/profile"
@@ -71,10 +71,11 @@
           >...</span
         >
       </p>
-      <!-- para cuando el texto es corto -->
-      <p *ngIf="helper?.info?.length <= 285">
-        {{ helper.info }}
+      <!-- when is a short text -->
+      <p *ngIf="helper?.full_info?.length <= 150">
+        {{ helper.full_info }}
       </p>
+
       <div class="btn-cont">
         <button (click)="setContactModal(helper)" class="btn-contact">
           Contacto
@@ -90,78 +91,23 @@
       </div>
     </div>
   </div>
-  <div [ngClass]="{ message: resultsList.length === 0 }">
-    <img [src]="noFoundIllustration" alt="" />
-    <h3 *ngIf="users.length === 0">{{ noMatches }}</h3>
+
+  <!-- show if users's array is empty -->
+  <div
+    [ngClass]="{ message: resultsList.length === 0 && pressedSearchButton }"
+    *ngIf="resultsList.length === 0 && pressedSearchButton"
+  >
+    <img [src]="noFoundIllustration" alt="No found ilustration" />
+    <h3>
+      {{ noMatches }}
+    </h3>
   </div>
 
-  <!-- mostrar el modal de contacto -->
+  <!-- show contact modal -->
   <ng-container *ngIf="showModal">
     <app-user-contact
       [helper]="helperSelected"
       (event)="closeContact()"
     ></app-user-contact>
   </ng-container>
-
-  <!-- <div class="search-result-item">
-        <img src="./assets/img/helpers/2.jpg" alt="" />
-        <div class="item-text-cont">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!
-            </p>
-            <div>
-                <h6>4.5/5</h6>
-                <button class="btn-contact" onclick="window.location.href='contactStuff.html'">
-          contact
-        </button>
-                <button class="btn-perfil"
-                routerLink="profile"
-                routerLinkActive="active">
-          perfil
-        </button>
-            </div>
-        </div>
-    </div>
-    <div class="search-result-item">
-        <img src="./assets/img/helpers/3.jpg" alt="" />
-        <div class="item-text-cont" onclick="window.location.href='profile.html'">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!
-            </p>
-            <div>
-                <h6>4.5/5</h6>
-                <button class="btn-contact" onclick="window.location.href='contactStuff.html'">
-          contact
-        </button>
-                
-        <button class="btn-perfil"
-                routerLink="profile"
-                routerLinkActive="active">
-          perfil
-        </button>
-            </div>
-        </div>
-    </div>
-    <div class="search-result-item">
-        <img src="./assets/img/helpers/4.jpg" alt="" />
-        <div class="item-text-cont">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic rem nemo, ad numquam enim, odio temporibus deserunt ratione quod est ab veritatis, distinctio maiores assumenda obcaecati velit facere dicta quasi placeat laudantium inventore pariatur!
-            </p>
-            <div>
-                <h6>4.5/5</h6>
-                <button class="btn-contact"
-                 routerLink="profile"
-                 routerLinkActive="active" >
-                contact
-                </button>
-                
-                <button class="btn-perfil"
-                routerLink="profile"
-                routerLinkActive="active">
-                perfil
-                </button>
-            </div>
-        </div>
-    </div> -->
 </section>
