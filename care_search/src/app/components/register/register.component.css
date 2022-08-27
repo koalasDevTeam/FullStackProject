@@ -43,6 +43,40 @@ h1 {
     font-weight: 300;
 }
 
+.botones-perfiles {
+    display: flex;
+}
+
+.boton-texto {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: #002D5D;
+    text-align: center;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    margin: 0.5em 0 0.3em;
+    border: 2px solid #002D5D;
+}
+
+.boton-texto:nth-of-type(1) {
+    margin-right: 12px;
+}
+  
+.boton-texto:hover{
+    color: #fff;
+    background-color: #002D5D;
+}
+  
+.boton-perfil {
+    display: none;
+}
+  
+.boton-perfil:checked + label{
+    color:#fff;
+    background-color: #002D5D;
+}
+
 /* formulario */
 
 .header-subtitle {
@@ -97,7 +131,6 @@ h1 {
     margin-top: 10px;
 }
 
-
 .formulario-registro input, .formulario-registro select {
     width: 100%;
     margin: 0.5em 0;
@@ -111,7 +144,6 @@ h1 {
     border: 1px solid #0fbece;
     outline: none;
 }
-
 
 .formulario-registro .button {
     border: none;

@@ -8,6 +8,7 @@ import { UsersService } from '../../services/users/users.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  public profileUser: string = '';
   public emailUser: string = '';
   public passwordUser: string = '';
   public privacyUser: string = '';
@@ -20,11 +21,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   save() {
-    if (this.emailUser == '' || this.passwordUser == '') {
+    this.emptyForm = '';
+    this.emptyPrivacy = '';
+    if ((this.emailUser == '') || (this.passwordUser == '') || (this.profileUser == '')) {
       this.emptyForm = 'Error en el registro, debe rellenar los campos vacíos.';
-      this.emptyPrivacy = '';
     } else if (this.privacyUser == '') {
-      this.emptyForm = '';
       this.emptyPrivacy = 'Debe aceptar la Política de Privacidad.';
     } else {
       this.newUser = {
@@ -37,6 +38,7 @@ export class RegisterComponent implements OnInit {
         full_info:'',
         score: 0,
         price: '',
+        profile: ''
       };
 
       this.userService.createNewUser(this.newUser).then((user) => {

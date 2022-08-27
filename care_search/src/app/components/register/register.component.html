@@ -6,6 +6,12 @@
         <span class="mensaje-error">{{ emptyForm }}</span>
         <span class="mensaje-error">{{ emptyPrivacy }}</span>
         <form class="formulario-registro">
+          <div class="botones-perfiles">
+            <input [(ngModel)]="profileUser" class="boton-perfil" type="radio" name="profile" id="profesional" value="1">
+            <label class="boton-texto" for="profesional">Profesional</label>
+            <input [(ngModel)]="profileUser" class="boton-perfil" type="radio" name="profile" id="solicitante" value="2">
+            <label class="boton-texto" for="solicitante">Solicitante</label>
+          </div>
           <input
             type="text"
             [(ngModel)]="emailUser"
