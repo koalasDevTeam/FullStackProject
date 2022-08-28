@@ -63,7 +63,7 @@ h1 {
 
 .card-register {
     padding: 40px;
-    max-width: 500px;
+    width: 450px;
     margin-top: 100px;
     border-radius: 10px;
     background-color: #fff;
@@ -71,6 +71,10 @@ h1 {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 20px rgb(0 0 0 / 50%);
+}
+
+.card-register > div {
+    width: 100%;
 }
 
 .register-cont > div {
@@ -103,6 +107,11 @@ h1 {
     border-radius: 8px;
     border: 1px solid rgb(176, 176, 202);
 }
+.formulario-registro input:focus {
+    border: 1px solid #0fbece;
+    outline: none;
+}
+
 
 .formulario-registro .button {
     border: none;
@@ -158,14 +167,13 @@ h1 {
 
 @media screen and (max-width: 600px) {
     .header-text-cont h1 {
-        font-size: 42px;
+        font-size: 40px;
         margin-bottom: 0em;
     }
-}
 
-@media screen and (max-width: 400px) {
     .register-cont {
         padding: 4em 1em;
+        background-position: bottom right;
     }
 
     .register-cont, .register-cont > div {
@@ -175,4 +183,5 @@ h1 {
     .card-register {
         padding: 2em;
     }
+
 }

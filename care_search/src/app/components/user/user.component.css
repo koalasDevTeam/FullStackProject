@@ -6,18 +6,78 @@
     scroll-behavior: smooth;
   }
   
+  /**/
+  
+.change-profile-img {
+    margin-bottom: 2em;
+    position: relative;
+    display: inline-block;
+}
+
+
+.change-profile-img i {
+    color: #fff;
+    position: absolute;
+    bottom: -0.5em;
+    left: -0.5em;
+    font-size: 48px;
+}
+
+.change-profile-img input {
+    margin: 0;
+    display: none;
+}
+
+.change-profile-img label{
+    cursor: pointer;
+}
+.change-profile-img label:hover + i{
+    color: #7be9fa;
+}
+
+  /**/
 
 .user-page-cont{
     height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns: 250px auto;
+    background-color: #f2f2f2;
+}
+
+.user-page-cont.nouser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-page-cont.nouser img{
+    height: 600px;
+}
+.user-page-cont.nouser section{
+    margin-top: -4em;
+    text-align: center;
+}
+
+.user-page-cont section p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.user-page-cont section p a{
+    color: #049bb3;
+    font-weight: 600;
+}
+.user-page-cont section p a:hover{
+    color: #0a8391;
+  
 }
 
 .user-page-left{
     height: 100%;
-    /* background-color: #1075a9; */
-    background-color: #00a5b5;
+    background-color: #1075a9;
+    /* background-color: #00a5b5; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,7 +85,7 @@
 }
 
 .user-menu-top{
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +103,7 @@
     align-items: center;
     padding-top: 150px;
     padding-bottom: 2em;
-    border-bottom:2px solid #17c6d6;
+    border-bottom:2px solid #2788B2;
     width: 100%;
     margin-bottom: 2em;
 }
@@ -55,7 +115,8 @@
 .menu-user-header img{
     width: 150px;
     border-radius: 50%;
-    
+    background: white;
+    height: 150px;
 }
 
 .menu-user-options{
@@ -77,7 +138,7 @@
 }
 
 .menu-user-options button:hover{
-    background-color: #17c6d6;
+    background-color: #2788B2;
  
 }
 
@@ -92,8 +153,10 @@
 
 .workinprogress h1{
     width: 80%;
-    margin: auto;
+    margin:4em auto;
     text-align: center;
+    margin-bottom: -2em;
+    color: #002D5D;
 }
 
 .user-intro h1{
@@ -116,7 +179,7 @@
 }
 .user-menu-bottom button{
     width: 100%;
-    background-color: #057d88;
+    background-color: #2788B2;
     border: none;
     cursor: pointer;
     color: #fff;
@@ -127,5 +190,33 @@
 }
 
 .user-menu-bottom button:hover{
-    background-color: #0594a1;
+    background-color: #2892c0;
+}
+
+.user-profile{
+    height: 100%;
+}
+
+/*responsive*/
+@media screen and (max-width: 900px) {
+    .user-page-cont.nouser{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .user-page-cont.nouser img{
+        height: auto;
+        width: 80%;
+    }
+    .user-page-cont section{
+        margin-top: 0.5em;
+        width: 80%;
+    }
+    
+    .user-page-cont section p{
+        font-size: 16px;
+    }
+    
 }

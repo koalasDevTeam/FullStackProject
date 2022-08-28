@@ -1,56 +1,92 @@
 <section (click)="closeContact()" class="close-modal-bg"></section>
 
-
 <div class="form-cont">
-    <!-- <div class="form-cont_title">
-    <h2>Get in touch!</h2>
+  <!-- <div class="form-cont_title">
   </div> -->
-    <div class="form-content">
-        <div class="form-logo">
-            <img [src]="helper.img" alt="" />
-            <h3>Contacta con {{helper.name}} </h3>
-            <button class="close-contact" (click)="closeContact()">&times;</button>
-        </div>
-        <form class="form-contact">
-            <div class="form-group-one">
-                <div class="input-group">
-                    <textarea id="story" name="story" [(ngModel)]="peticion" rows="5" cols="33" required placeholder="Me interesa contratar sus servicios..."></textarea>
-                </div>
-            </div>
-            <div class="form-group-two">
-                <!-- <label>Your email</label> -->
-                <div class="input-group">
-                    <input type="text" name="name" id="name" [(ngModel)]="nombrecompleto" placeholder="Introduce tu nombre y apellidos" />
-                </div>
-            </div>
-            <div class="form-group-three">
-                <div class="form-group_number">
-                    <!-- <label>Your phone number</label> -->
-                    <div class="input-group">
-                        <input type="email" name="email" id="email" [(ngModel)]="emailUser" placeholder="Introduce tu email" required />
-
-                    </div>
-                </div>
-                <div class="form-group_name">
-                    <!-- <label>Your name</label> -->
-                    <div class="input-group">
-                        <input type="text" name="phone" id="phone" [(ngModel)]="telefono" placeholder="Introduce tu teléfono" pattern="[+]?[0-9]{0,4}[\s]?[0-9]{4,20}" required/>
-
-                    </div>
-                </div>
-            </div>
-            <div class="form-group-four">
-                <div class="input-group">
-                    <div class="input-group_checkbox-one">
-
-                        <input type="checkbox" [(ngModel)]="privacyUser" name="privacy-policy" id="privacy-policy" />
-                        <label for="privacy-policy" class="privacy-checkbox">&check;</label>
-                        <label>Acepto la <a href="/" class="link-privacy-policy">política de privacidad</a></label>
-                    </div>
-                </div>
-            </div>
-            <!--<input class="contact-button" type="submit" value="Contactar">-->
-            <button class="contact-button" type="button" (click)="save()">Contactar</button>
-        </form>
+  <div class="form-content">
+    <div class="form-logo">
+      <img [src]="helper.img" alt="" />
+      <h3>Contacta con {{ helper.name }}</h3>
+      <button class="close-contact" (click)="closeContact()">&times;</button>
     </div>
+    <form class="form-contact">
+      <div class="form-group-one">
+        <div class="input-group">
+          <textarea
+            id="story"
+            name="story"
+            [(ngModel)]="peticion"
+            rows="5"
+            cols="33"
+            required
+            placeholder="Me interesa contratar sus servicios..."
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-group-two">
+        <!-- <label>Your email</label> -->
+        <div class="input-group">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            [(ngModel)]="nombrecompleto"
+            placeholder="Introduce tu nombre y apellidos"
+          />
+        </div>
+      </div>
+      <div class="form-group-three">
+        <div class="form-group_number">
+          <!-- <label>Your phone number</label> -->
+          <div class="input-group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              [(ngModel)]="emailUser"
+              placeholder="Introduce tu email"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group_name">
+          <!-- <label>Your name</label> -->
+          <div class="input-group">
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              [(ngModel)]="telefono"
+              placeholder="Introduce tu teléfono"
+              pattern="[+]?[0-9]{0,4}[\s]?[0-9]{4,20}"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group-four">
+        <div class="input-group">
+          <div class="input-group_checkbox-one">
+            <input
+              type="checkbox"
+              [(ngModel)]="privacyUser"
+              name="privacy-policy"
+              id="privacy-policy"
+            />
+            <label for="privacy-policy" class="privacy-checkbox">&check;</label>
+            <label
+              >Acepto la
+              <a routerLink="/privacy-policy" class="link-privacy-policy"
+                >política de privacidad</a
+              ></label
+            >
+          </div>
+        </div>
+      </div>
+      <!--<input class="contact-button" type="submit" value="Contactar">-->
+      <button class="contact-button" type="button" (click)="save()">
+        Contactar
+      </button>
+    </form>
+  </div>
 </div>

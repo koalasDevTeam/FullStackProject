@@ -122,10 +122,20 @@ footer .contact-menu .fa {
   .footer {
     padding-bottom: 0em;
   }
-}
 
-@media screen and (max-width: 400px) {
   footer {
     padding: 3em 2em 1em;
+  }
+
+  .text-legal {
+    display: block;
+  }
+
+  .text-legal p {
+    margin-bottom: 0px;
+  }
+
+  .text-legal a, .text-legal p {
+    display: inline-block;
   }
 }

@@ -12,7 +12,7 @@ import { ServicesComponent } from './components/home/services/services.component
 import { BenefitsComponent } from './components/home/benefits/benefits.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import { PerfileComponent } from './components/perfile/perfile.component';
+import { FormProfileComponent } from './components/form-profile/form-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserContactComponent } from './components/search/user-contact/user-contact.component';
@@ -21,6 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
+import { WorkingComponent } from './components/working/working/working.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -37,10 +39,12 @@ import { UserProfileComponent } from './components/user/user-profile/user-profil
     NavComponent,
     FooterComponent,
     UserContactComponent,
-    PerfileComponent,
+    FormProfileComponent,
     NotFoundComponent,
     UserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    WorkingComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

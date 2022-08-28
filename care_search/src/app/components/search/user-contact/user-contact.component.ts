@@ -42,7 +42,6 @@ export class UserContactComponent implements OnInit {
         telefono: this.telefono
       });
       this.router.navigate(['/search']);
-      console.log(this.user);
       this.closeContact();
     }
     

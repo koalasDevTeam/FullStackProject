@@ -1,41 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsersService } from '../../services/users/users.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  public emailUser: string = '';
+  public passwordUser: string = '';
+  public privacyUser: string = '';
+  public emptyForm: string = '';
+  public emptyPrivacy: string = '';
+  public newUser: any = {};
 
-  public user: any = [];
-  public emailUser: string = "";
-  public passwordUser: string = "";
-  public privacyUser: string = "";
-  public emptyForm: string = "";
-  public emptyPrivacy: string = "";
+  constructor(private router: Router, private userService: UsersService) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   save() {
-    if((this.emailUser == "") || (this.passwordUser == "")){
-      this.emptyForm = "Error en el registro, debe rellenar los campos vacíos.";
-      this.emptyPrivacy = "";
-    } else if(this.privacyUser == "") {
-      this.emptyForm = "";
-      this.emptyPrivacy = "Debe aceptar la Política de Privacidad.";
+    if (this.emailUser == '' || this.passwordUser == '') {
+      this.emptyForm = 'Error en el registro, debe rellenar los campos vacíos.';
+      this.emptyPrivacy = '';
+    } else if (this.privacyUser == '') {
+      this.emptyForm = '';
+      this.emptyPrivacy = 'Debe aceptar la Política de Privacidad.';
     } else {
-      this.user.push({
-        name: this.emailUser,
-        password: this.passwordUser,
-        privacy: this.privacyUser
-      });
-      this.router.navigate(['/perfile']);
-    }
-    console.log(this.user);
-  }
+      this.newUser = {
+        email: `${this.emailUser}`,
+        pass: `${this.passwordUser}`,
+        name: '',
+        work: '',
+        worker:true,
+        img: './assets/img/users/1.jpg',
+        full_info:'',
+        score: 0,
+        price: '',
+      };
 
+      this.userService.createNewUser(this.newUser).then((user) => {
+        localStorage.setItem('currentUser', JSON.stringify(user))
+        this.userService.setCurrentUser(user)
+        this.router.navigate(['/user']);
+      });
+    }
+  }
 }

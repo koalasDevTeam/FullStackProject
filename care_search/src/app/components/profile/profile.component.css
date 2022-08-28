@@ -93,7 +93,7 @@
 /*****************************************************/
 
 .profile-title {
-  margin: 2em auto;
+  margin: 1em auto;
   width: 50%;
   text-align: center;
 }
@@ -109,9 +109,10 @@
 
 .profile-cont-box {
   align-items: center;
-  padding: 2em;
+  padding: 1em;
   background-color: white;
   border-radius: 8px;
+  width: 30%;
 }
 
 .profile-person {
@@ -125,10 +126,9 @@
 }
 
 .about-me {
-  width: 600px;
+  width: 100%;
   margin-bottom: 2em;
   padding: 20px;
-  margin: 20px;
   display: block;
   text-align: justify;
 }
@@ -148,20 +148,20 @@
   text-align: center;
 }
 
-.contacts h6 {
+/* .contacts h6 {
   text-align: left;
   padding: 10px;
   margin: 10px;
-  font-size: 22px;
+  font-size: 20px;
   color: rgb(204, 69, 28);
   display: inline;
-}
+} */
 
 .contacts h5 {
   text-align: right;
   padding: 10px;
-  margin: 10px;
-  font-size: 22px;
+  margin: 20px;
+  font-size: 19px;
   color: rgb(204, 69, 28);
   display: inline;
 }
@@ -187,7 +187,7 @@
 }
 
 .btn-perfil {
-  width: 110px;
+  width: 115px;
   height: 50px;
   border: none;
   background-color: #0176aa;
@@ -201,4 +201,33 @@
 
 .btn-perfil:hover {
   background-color: #078bc4;
+}
+@media screen and (max-width: 1300px) {
+  .profile-cont-box {
+    width: 60%;
+  }
+  .profile-cont-box h1 {
+    font-size: 20px;
+  }
+  .profile-cont-box h5 {
+    font-size: 15px;
+  }
+  .btn-contact,
+  .btn-perfil {
+    width: 100%;
+    height: 44px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .profile-cont-box {
+    width: 95%;
+  }
+
+  .profile-cont-box h5 {
+    font-size: 15px;
+    margin: 0px;
+  }
+  .profile-person img {
+    width: 200px;
+  }
 }
