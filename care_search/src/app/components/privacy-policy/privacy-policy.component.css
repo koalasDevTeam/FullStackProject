@@ -1,9 +1,15 @@
+h1 {
+  color: #002D5D;
+}
+h1, h3, p {
+  font-family: "Poppins", sans-serif;
+}
 .container-privacy-policy {
   width: 60%;
   margin: auto;
 }
 .privacy-policy_cont {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   width: 100%;
 }
 

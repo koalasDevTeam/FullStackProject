@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
+  margin: 180px auto 50px;
 }
 .cont-no_found_page, .cont-text-no_found_page {
   display: flex;
@@ -12,7 +12,11 @@
   justify-content: center;
 }
 .cont-text-no_found_page p {
-  padding: 20px;
+  padding: 5px 20px;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 .container-no_found_page img {
   height: 500px;
@@ -24,22 +28,41 @@
   font-size: 20px;
   font-weight: bold;
 }
-.cont-text-no_found_page h3 {
+.cont-text-no_found_page h1 {
   font-family: "Lato", sans-serif;
   font-family: "Luckiest Guy", cursive;
   font-size: 90px;
   margin: auto;
+  color: #002d5d;
+  line-height: 0.7em;
+}
+.cont-text-no_found_page p:nth-of-type(1) {
+  color: #002d5d;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1200px) {
+  .container-no_found_page {
+    width: 1200px;
+  }
 }
 @media screen and (max-width: 900px) {
   .container-no_found_page {
     height: 100%;
-    margin-top: 150px;
+    margin: 100px auto 0px;
   }
   .cont-text-no_found_page {
     font-size: 13px;
     margin-bottom: 30px;
   }
-  .link-go_back {
-    font-size: 15px;
+}
+@media screen and (max-width: 500px) {
+  .container-no_found_page img {
+    width: 100%;
+    height: auto;
+  }
+  .cont-text-no_found_page p:nth-of-type(1) {
+    font-size: 24px;
   }
 }
