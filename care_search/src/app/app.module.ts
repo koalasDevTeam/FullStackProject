@@ -24,6 +24,8 @@ import { UserProfileComponent } from './components/user/user-profile/user-profil
 import { WorkingComponent } from './components/working/working/working.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { CookiesPolicyComponent } from './components/cookies-policy/cookies-policy.component';
+import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
     UserProfileComponent,
     WorkingComponent,
     PrivacyPolicyComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    CookiesPolicyComponent,
+    LegalNoticeComponent
   ],
   imports: [
     BrowserModule,

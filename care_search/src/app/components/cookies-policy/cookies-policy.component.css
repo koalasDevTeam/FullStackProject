@@ -1,0 +1,44 @@
+h1 {
+    color: #002D5D;
+}
+
+h1, h3, p {
+font-family: "Poppins", sans-serif;
+}
+
+.container-cookies-policy {
+    width: 60%;
+    margin: auto;
+}
+
+.cookies-policy_cont {
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.cookies-policy_cont h1 {
+    margin-top: 200px;
+}
+
+.cookies-policy_cont h3 {
+    margin: 20px 0px 26px 0px;
+}
+
+.cookies-policy_cont p {
+    text-align: justify;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 900px) {
+    .container-cookies-policy {
+        width: 90%;
+    }
+    .cookies-policy_cont h1,
+    h3 {
+        font-size: 20px;
+    }
+    .cookies-policy_cont h3 {
+        font-size: 15px;
+    }
+}
