@@ -16,10 +16,18 @@
     <div class="contacts">
       <h5>Valoración: {{ helperObje.score }}/5</h5>
       <h5>Precio: {{ helperObje.price }}</h5>
-      <button class="btn-contact">Contacto</button>
+      <button (click)="setContactModal(helperObje)" class="btn-contact">
+        Contacto
+      </button>
       <button routerLink="/search" routerLinkActive="active" class="btn-perfil">
         Volver
       </button>
     </div>
   </div>
+  <ng-container *ngIf="showModal">
+    <app-user-contact
+      [helper]="helperSelected"
+      (event)="closeContact()"
+    ></app-user-contact>
+  </ng-container>
 </section>

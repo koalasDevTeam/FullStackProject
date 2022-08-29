@@ -7,10 +7,26 @@
         <span class="message-error">{{ emptyPrivacy }}</span>
         <form class="form-register">
           <div class="btn-profiles">
-            <input [(ngModel)]="profileUser" class="btn-profile" type="radio" name="profile" id="profesional" value="1">
+            <input
+              [(ngModel)]="profileUser"
+              class="btn-profile"
+              type="radio"
+              name="profile"
+              id="profesional"
+              value="1"
+            />
             <label class="btn-text" for="profesional">Soy un profesional</label>
-            <input [(ngModel)]="profileUser" class="btn-profile" type="radio" name="profile" id="solicitante" value="2">
-            <label class="btn-text" for="solicitante">Busco un profesional</label>
+            <input
+              [(ngModel)]="profileUser"
+              class="btn-profile"
+              type="radio"
+              name="profile"
+              id="solicitante"
+              value="2"
+            />
+            <label class="btn-text" for="solicitante"
+              >Busco un profesional</label
+            >
           </div>
           <input
             type="text"
@@ -40,7 +56,11 @@
               <a routerLink="/privacy-policy">Política de Privacidad</a>.
             </p>
           </div>
-          <button type="button" class="button color-blue-one" (click)="save()">
+          <button
+            type="button"
+            class="button color-blue-one"
+            (click)="validateAndCreateUserWithCredentials()"
+          >
             Confirmar
           </button>
         </form>

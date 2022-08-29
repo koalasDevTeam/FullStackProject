@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HelpersService } from 'src/app/services/helpers.service';
 
 
@@ -83,6 +83,7 @@ export class SearchComponent implements OnInit {
   setContactModal(helper:any){
     this.showModal = true;
     this.helperSelected = helper;
+    
   }
   hideContactModal(){
     this.showModal = false;

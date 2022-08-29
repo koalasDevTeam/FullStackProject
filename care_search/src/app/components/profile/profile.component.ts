@@ -7,8 +7,10 @@ import { HelpersService } from 'src/app/services/helpers.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
- id: string=""
- helperObje: any =[]
+ id: string="" ;
+  helperObje: any =[];
+  showModal: boolean = false;
+  helperSelected : any;
   constructor(private userService: HelpersService) { }
 
   showHelperData(){
@@ -20,6 +22,25 @@ export class ProfileComponent implements OnInit {
       this.showHelperData()
     
     } 
+
+
+  //to show contact modal
+
+  setContactModal(helper:any){
+    this.showModal = true;
+    this.helperSelected = helper;
+    console.log(this.helperSelected)
+
+    
+    
+  }
+  hideContactModal(){
+    this.showModal = false;
+  }
+
+  closeContact(){
+    this.showModal = false;
+  }
 
 
 

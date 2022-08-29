@@ -10,10 +10,10 @@ export class UserContactComponent implements OnInit {
   @Input() helper? : any;
  
   public user: any = [];
-  public peticion: string = "";
-  public nombrecompleto: string = "";
+  public petition: string = "";
+  public fullName: string = "";
   public emailUser: string = "";
-  public telefono: string = "";
+  public phoneNumber: string = "";
   public privacyUser: string = "";
   public emptyForm: string = "";
   public emptyPrivacy: string = "";
@@ -36,10 +36,10 @@ export class UserContactComponent implements OnInit {
         this.emptyPrivacy = "Debe aceptar la Política de Privacidad.";
     } else {
       this.user.push({
-        peticion: this.peticion,
-        nombrecompleto: this.nombrecompleto,
+        petition: this.petition,
+        fullName: this.fullName,
         emailUser: this.emailUser,
-        telefono: this.telefono
+        phoneNumber: this.phoneNumber
       });
       this.router.navigate(['/search']);
       this.closeContact();

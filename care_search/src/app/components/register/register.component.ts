@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  save() {
+  validateAndCreateUserWithCredentials() {
     this.emptyForm = '';
     this.emptyPrivacy = '';
     if ((this.emailUser == '') || (this.passwordUser == '') || (this.profileUser == '')) {

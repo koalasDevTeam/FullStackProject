@@ -63,7 +63,7 @@ export class FormProfileComponent implements OnInit {
         description: this.descriptionUser
       });
     
-    console.log(this.user);
+   
   }
 
 }
