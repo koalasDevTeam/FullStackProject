@@ -10,6 +10,8 @@ import { UserContactComponent } from './components/search/user-contact/user-cont
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { CookiesPolicyComponent } from './components/cookies-policy/cookies-policy.component';
+import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path:'privacy-policy',
    component:PrivacyPolicyComponent
+  },
+  {
+    path:'cookies-policy',
+   component:CookiesPolicyComponent
+  },
+  {
+    path:'legal-notice',
+   component:LegalNoticeComponent
   },
   {
     path: 'form-profile',
