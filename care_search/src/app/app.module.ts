@@ -23,6 +23,8 @@ import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { WorkingComponent } from './components/working/working/working.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { CookiesPolicyComponent } from './components/cookies-policy/cookies-policy.component';
+import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
     UserComponent,
     UserProfileComponent,
     WorkingComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    CookiesPolicyComponent,
+    LegalNoticeComponent
   ],
   imports: [
     BrowserModule,
