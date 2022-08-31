@@ -54,13 +54,19 @@
         class="button color-blue-two"
         >Buscador</a
       >
+    
+      <ng-container *ngIf="this.storage.currentUser.hasOwnProperty('email')">
 
-      <p *ngIf="this.storage.currentUser.hasOwnProperty('email') && !this.storage.currentUser.hasOwnProperty('name')">
+      <p *ngIf=" this.storage.currentUser.name == ''">
         ¡Hola {{this.storage?.currentUser.email}}!
       </p>
-      <p *ngIf="this.storage.currentUser.hasOwnProperty('name')" class="user-name">
-        ¡Hola {{getUserName()}}!
+
+      <p *ngIf="this.storage.currentUser.name != ''" class="user-name">
+        ¡Hola {{this.storage?.currentUser.name}}!
       </p>
+    </ng-container>
+      
+      
 
       <div class="login-cont">
         <span (click)="logOut()" *ngIf="this.storage.currentUser.hasOwnProperty('email')">
