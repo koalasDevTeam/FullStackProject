@@ -12,25 +12,29 @@ export class UserProfileComponent implements OnInit {
  
   public users: any = [];
 
+  //form values****************************************/
   public user: any = [];
-  public photoUser: string = "";
   public namelUser: string = "";
-  public firstSurnameUser: string = "";
-  public secondSurnameUser: string = "";
+  // public firstSurnameUser: string = "";
+  // public secondSurnameUser: string = "";
   public dniUser: string = "";
   public dateUser: string = "";
-  public genreUser: string = "";
+  // public genreUser: string = "";
   public phoneUser: string = "";
   public emailUser: string = "";
+  public passwordUser: string = "";
+  public passwordUserVerify: string = "";
   public addressUser: string = "";
   public cityUser: string = "";
+  public streetUser: string = "";
   public priceUser: string = "";
   public categoryUser: string = "";
   public descriptionUser: string = "";
+  public schedule: string = "";
+  public cvFile: string = "";
   public emptyForm: number = 0;
-  public sliderValue: number=10;
-
-  public salaryRange: string= "";
+  public salaryRange: number=10;
+   //form values****************************************/
 
   public optionSelected : string = 'personalData'
 
@@ -53,6 +57,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getAllUsers();
+    this.initForm()
   }
 
   showPersonal(){
@@ -75,5 +80,12 @@ export class UserProfileComponent implements OnInit {
   }
 
   valueChanged($event:any) {
-    this.sliderValue = $event.target.value; }
+    this.salaryRange = $event.target.value;
+  }
+
+  /*init form values:****************************************************************************/
+  
+   initForm(){
+    this.namelUser = this.currentUser.name;
+   }
 }

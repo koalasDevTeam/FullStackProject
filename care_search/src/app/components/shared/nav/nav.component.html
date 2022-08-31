@@ -10,9 +10,7 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       />
-      <p *ngIf="this.storage.currentUser.hasOwnProperty('email')">
-        ¡Hola {{ this.storage?.currentUser.email }}!
-      </p>
+     
     </div>
     <div class="menu-mv" (click)="getMv(true)">
       <svg
@@ -56,6 +54,13 @@
         class="button color-blue-two"
         >Buscador</a
       >
+
+      <p *ngIf="this.storage.currentUser.hasOwnProperty('email') && !this.storage.currentUser.hasOwnProperty('name')">
+        ¡Hola {{this.storage?.currentUser.email}}!
+      </p>
+      <p *ngIf="this.storage.currentUser.hasOwnProperty('name')" class="user-name">
+        ¡Hola {{getUserName()}}!
+      </p>
 
       <div class="login-cont">
         <span (click)="logOut()" *ngIf="this.storage.currentUser.hasOwnProperty('email')">

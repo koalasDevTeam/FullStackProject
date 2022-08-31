@@ -1,64 +1,128 @@
-<div class="user-page-cont" [ngClass]="{nouser: !this.storage.currentUser.hasOwnProperty('email') }">
+<div
+  class="user-page-cont"
+  [ngClass]="{ nouser: !this.storage.currentUser.hasOwnProperty('email') }"
+>
+  <ng-container *ngIf="!this.storage.currentUser.hasOwnProperty('email')">
+    <img [src]="noUserIllustration" alt="" />
 
+    <section>
+      <p>
+        Debes <a routerLink="/login">iniciar sesión</a> para ver este contenido
+      </p>
+      <p>¿No tienes cuenta? <a routerLink="/register"> Regístrate aquí</a></p>
+    </section>
+  </ng-container>
 
-    <ng-container  *ngIf="!this.storage.currentUser.hasOwnProperty('email')">
-        <img [src]="noUserIllustration" alt="">
-
-        <section>
-            <p>Debes <a routerLink="/login">iniciar sesión</a> para ver este contenido</p>
-            <p>¿No tienes cuenta? <a routerLink="/register"> Regístrate aquí</a></p>
-        </section>
-       
-    </ng-container>
-
-    <ng-container  *ngIf="this.storage.currentUser.hasOwnProperty('email')">
-    <section class="user-page-left">
-        <div class="user-menu-top">
-            <div class="menu-user-header">
-                <div class="change-profile-img text-center">
-                    <input type="file"
-                     [(ngModel)]="photoUser"
-                     (change)="takeNewPicture($event)"
-                     id="file-img"
-                      name="imagen_perfil">
-                    <label for="file-img"><img [src] ="previewPhoto"></label>
-                    <i class="bx bxs-camera"></i>
-                </div>
-                <h4>{{storage.currentUser.email}}</h4>
-            </div>
-            <div class="menu-user-options">
-                <button (click)="showProfile()">Editar Perfil</button>
-                <button (click)="showHistory()">Ver Historial</button>
-                <button (click)="showNotifications()">Solicitudes</button>
-            </div>
+  <ng-container *ngIf="this.storage.currentUser.hasOwnProperty('email')">
+    <section class="user-page-left pc">
+      <div class="user-menu-top">
+        <div class="menu-user-header">
+          <div class="change-profile-img text-center">
+            <input
+              type="file"
+              [(ngModel)]="photoUser"
+              (change)="takeNewPicture($event)"
+              id="file-img"
+              name="imagen_perfil"
+            />
+            <label for="file-img"><img [src]="previewPhoto" /></label>
+            <!-- <i class="bx bxs-camera"></i> -->
+          </div>
+          <h4>{{ storage.currentUser.email }}</h4>
         </div>
-        <div class="user-menu-bottom">
-            <button>Eliminar Cuenta</button>
+        <div class="menu-user-options">
+          <button
+            [ngClass]="{ active: pageSelected === 'profile' }"
+            (click)="showProfile()"
+          >
+            Editar Perfil
+          </button>
+          <button
+            [ngClass]="{ active: pageSelected === 'history' }"
+            (click)="showHistory()"
+          >
+            Ver Historial
+          </button>
+          <button
+            [ngClass]="{ active: pageSelected === 'notifications' }"
+            (click)="showNotifications()"
+          >
+            Solicitudes
+          </button>
         </div>
+      </div>
+    </section>
 
+    <section class="user-page-left mv" *ngIf="showMenu">
+      <div class="user-menu-top">
+        <div class="menu-user-header">
+          <div class="change-profile-img text-center">
+            <input
+              type="file"
+              [(ngModel)]="photoUser"
+              (change)="takeNewPicture($event)"
+              id="file-img"
+              name="imagen_perfil"
+            />
+            <label for="file-img"><img [src]="previewPhoto" /></label>
+            <!-- <i class="bx bxs-camera"></i> -->
+          </div>
+          <h4>{{ storage.currentUser.email }}</h4>
+        </div>
+        <div class="menu-user-options">
+          <button
+            [ngClass]="{ active: pageSelected === 'profile' }"
+            (click)="showProfile(); setHideMenu()"
+          >
+            Editar Perfil
+          </button>
+          <button
+            [ngClass]="{ active: pageSelected === 'history' }"
+            (click)="showHistory(); setHideMenu()"
+          >
+            Ver Historial
+          </button>
+          <button
+            [ngClass]="{ active: pageSelected === 'notifications' }"
+            (click)="showNotifications(); setHideMenu()"
+          >
+            Solicitudes
+          </button>
+        </div>
+      </div>
     </section>
     <section class="user-page-right">
+      <button class="btn-menu mv" (click)="setShowMenu()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          style="fill: rgba(0, 0, 0, 0.336)"
+        >
+          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+        </svg>
+      </button>
 
-        <div class="user-intro" *ngIf="pageSelected === 'intro'">
-            <h1>¡Hola {{storage.currentUser.email}}!</h1>
-            <img [src]="userIntroIllustration" alt="">
-            <h2>Edita tu perfil o explora el resto de opciones</h2>
-        </div>
+      <div class="user-intro" *ngIf="pageSelected === 'intro'">
+        <!-- <h1>¡Hola {{storage.currentUser.email}}!</h1> -->
+        <h1>Este es tu perfil personal</h1>
+        <img [src]="userIntroIllustration" alt="" />
+        <h2>Edita tu perfil o explora el resto de opciones</h2>
+      </div>
 
-        <div class="user-profile" *ngIf="pageSelected === 'profile'">
-            <app-user-profile [currentUser] = "storage.currentUser"></app-user-profile>
-        </div>
-        <div class="workinprogress" *ngIf="pageSelected === 'history'">
-            <h1>Estamos trabajando para que puedas ver tu historial</h1>
-            <app-working></app-working>
-           
-        </div>
-        <div class="workinprogress" *ngIf="pageSelected === 'notifications'">
-            <h1>Estamos trabajando para que puedas ver tus notificaciones</h1>
-            <app-working></app-working>
-          
-        </div>
-
+      <div class="user-profile" *ngIf="pageSelected === 'profile'">
+        <app-user-profile
+          [currentUser]="storage.currentUser"
+        ></app-user-profile>
+      </div>
+      <div class="workinprogress" *ngIf="pageSelected === 'history'">
+        <h1>Estamos trabajando para que puedas ver tu historial</h1>
+        <app-working></app-working>
+      </div>
+      <div class="workinprogress" *ngIf="pageSelected === 'notifications'">
+        <h1>Estamos trabajando para que puedas ver tus notificaciones</h1>
+        <app-working></app-working>
+      </div>
     </section>
-</ng-container>
+  </ng-container>
 </div>

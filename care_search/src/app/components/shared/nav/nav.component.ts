@@ -29,5 +29,12 @@ export class NavComponent implements OnInit {
     this.Router.navigate(['']);
   }
 
+  
+  getUserName(){
+    let name:string;
+    name = this.storage?.currentUser.name.split(' ')[0]
+    return name;
+  }
+
  
 }

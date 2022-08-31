@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 
 .user-profile-edit{
@@ -226,3 +227,30 @@ input[type="range"]::-ms-fill-upper {
 background-color: #028bc5;
 }
 
+.label-form{
+  padding-left: 0.2em;
+}
+
+.danger-btn{
+  width: 180px;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+  height: 50px;
+  /* background-color: #a91024; */
+  background-color: #d3828c;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 2em;
+}
+
+.danger-btn:hover{
+  /* background-color: #c91e35; */
+  background-color: #c2717a;
+}
+
+/*responsive***************************************************************/
+@media screen and (max-width: 1000px) {
+
+}
