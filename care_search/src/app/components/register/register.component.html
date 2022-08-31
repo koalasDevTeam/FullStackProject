@@ -15,7 +15,9 @@
               id="profesional"
               value="1"
             />
-            <label class="btn-text" for="profesional">Soy un profesional</label>
+            <label class="btn-text" for="profesional" (click)="chekingIfUser()"
+              >Soy un profesional</label
+            >
             <input
               [(ngModel)]="profileUser"
               class="btn-profile"
@@ -24,7 +26,10 @@
               id="solicitante"
               value="2"
             />
-            <label class="btn-text" for="solicitante"
+            <label
+              class="btn-text"
+              for="solicitante"
+              (click)="checkingIfProfessional()"
               >Busco un profesional</label
             >
           </div>
