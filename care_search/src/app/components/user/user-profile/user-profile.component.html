@@ -183,7 +183,7 @@
             Datos Personales
           </button>
           <button
-            *ngIf="currentUser.worker"
+            *ngIf="currentUser.worker=='true'"
             [ngClass]="{ active: optionSelected == 'profesionalData' }"
             (click)="showProfesional()"
           >
