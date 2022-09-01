@@ -39,11 +39,7 @@ export class LoginComponent implements OnInit {
  
 
   login() {
-    if((this.emailUser == "") || (this.passwordUser == "")){
-      this.emptyForm = "Error en las credenciales. Usuario no registrado.";
-    } else {
-    
-     let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
+    let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
     //console.log('check: ', correctUSer)
     if(correctUSer){
       localStorage.setItem('currentUser', JSON.stringify(correctUSer))
@@ -53,8 +49,6 @@ export class LoginComponent implements OnInit {
     else{
       this.emptyForm = "Error en las credenciales. Usuario no registrado.";
     }
- 
-    }
 
     this.submitted = true;
       if (this.registerForm.invalid) {
@@ -63,7 +57,5 @@ export class LoginComponent implements OnInit {
       console.log(JSON.stringify(this.registerForm.value, null, 2));
 
   }
-    
-  
 
 }

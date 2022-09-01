@@ -72,7 +72,7 @@ h1 {
   display: none; /* is this really necessary??? */
 }
 
-.btn-profile:checked + label {
+.btn-profile:checked + label, .btn-profile.active + label {
   color: #fff;
   background-color: #002d5d;
 }
