@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit {
   searchResult(){
   this.pressedSearchButton = true
   let filterList= this.users.filter((helper:any)=> {
-  return helper.work === this.printedOption && helper.location === this.selectedOption
+  return helper.job === this.printedOption && helper.location === this.selectedOption
   })
 
   this.resultsList = filterList 
