@@ -12,8 +12,6 @@ export class RegisterComponent implements OnInit {
   registerForm: any = [];
   submitted = false;
   public profileUser: boolean =true;
-  public professional: string = '';
-  public noprofessional: string = '';
   public emailUser: string = '';
   public passwordUser: string = '';
   public privacyUser: string = '';
@@ -55,11 +53,11 @@ export class RegisterComponent implements OnInit {
     return this.userService.getAllUsers().then((response:any) => console.log(this.users = response)); 
     
   }
-
-
-  changeCheckbox(event: Event) {
-    console.log(event.target);
+  
+  get message() {
+    return this.registerForm.controls;
   }
+
   validateAndCreateUserWithCredentials() {
     //check if exist already an equal email and password in the json 
     const result = this.users.filter((user:any)=> user.email === this.emailUser && user.pass === this.passwordUser)
