@@ -9,9 +9,13 @@
       "worker": true,
       "img": "./assets/img/users/1.jpg",
       "full_info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
-      "location": "Arucas",
+      "city": "Arucas",
       "score": 4.3,
-      "price": "14€/Hora"
+      "price": "14€/Hora",
+      "dni": "",
+      "datebirth": "",
+      "direction": "",
+      "schedule": ""
     },
     {
       "id": 2,
@@ -19,12 +23,16 @@
       "pass": "1234",
       "name": "Mariana Perez",
       "job": "Cuidador interna a domicilio",
-      "worker": true,
+      "worker": "true",
       "img": "./assets/img/users/2.jpg",
       "full_info": "Cuidadora experimentada con mas de 8 años de experiencia en este sector. Ofrezco los mejores cuidados y atenciones como interna. Preparaba la cena, los llevaba de paseo y ayudaba a prepararse para la hora de dormir. Apoyé a los ancianos en labores básicas de aseo y movilidad.",
-      "location": "Las Palmas",
+      "city": "Las Palmas",
       "score": 4.8,
-      "price": "1200€/Mes"
+      "price": "1200€/Mes",
+      "dni": "88888888",
+      "datebirth": "11/08/1978",
+      "direction": "C/San Pepito, 16",
+      "schedule": "Completa"
     },
     {
       "id": 3,
@@ -35,9 +43,13 @@
       "worker": true,
       "img": "./assets/img/users/3.jpg",
       "full_info": "Cuidadora de ancianos con 6 años de experiencia. En mis empleos he demostrado eficiencia al momento de dar cuidados médicos y postoperatorios a personas de tercera edad. Tengo la capacidad de administrar medicamentos tanto vía oral como intravenosa. Las personas que he atendido me describen como una cuidadora profesional, amable y empática. Realicé atención y monitoreo continuo a 6 pacientes distintos del área psiquiátrica. Colaboré con enfermeras y médicos para brindar administrar los medicamentos correctos a cada paciente.",
-      "location": "Galdar",
+      "city": "Galdar",
       "score": 4.7,
-      "price": "18€/Hora"
+      "price": "18€/Hora",
+      "dni": "",
+      "datebirth": "",
+      "direction": "",
+      "schedule": ""
     },
     {
       "email": "nueva",
