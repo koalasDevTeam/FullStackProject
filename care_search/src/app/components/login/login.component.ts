@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users/users.service';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
- 
+  registerForm: any = [];
+  submitted = false;
   public emailUser: string = "";
   public passwordUser: string = "";
   public emptyForm: string = "";
@@ -16,11 +18,14 @@ export class LoginComponent implements OnInit {
   public users : any =[];
 
   constructor(private router: Router,
-   private userService:UsersService) { }
+   private userService:UsersService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getAllUsers()
-   
+    this.registerForm = this.formBuilder.group({
+      emailUser: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      passwordUser: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
   getAllUsers(){
@@ -28,6 +33,9 @@ export class LoginComponent implements OnInit {
     
     }
 
+    get message() {
+      return this.registerForm.controls;
+    }
  
 
   login() {
@@ -47,6 +55,12 @@ export class LoginComponent implements OnInit {
     }
  
     }
+
+    this.submitted = true;
+      if (this.registerForm.invalid) {
+        return;
+      }
+      console.log(JSON.stringify(this.registerForm.value, null, 2));
 
   }
     

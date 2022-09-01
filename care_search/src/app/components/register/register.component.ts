@@ -42,6 +42,11 @@ export class RegisterComponent implements OnInit {
     return this.userService.getAllUsers().then((response:any) => console.log(this.users = response)); 
     
   }
+
+
+  changeCheckbox(event: Event) {
+    console.log(event.target);
+  }
   validateAndCreateUserWithCredentials() {
     //check if exist already an equal email and password in the json 
     const result = this.users.filter((user:any)=> user.email === this.emailUser && user.pass === this.passwordUser)

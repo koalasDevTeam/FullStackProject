@@ -2,23 +2,29 @@
   <div>
     <div>
       <div>
-        <form action="">
+        <form action="" [formGroup]="registerForm">
           <h1>Iniciar sesión</h1>
           <span class="message-error">{{ emptyForm }}</span>
           <input
             type="text"
+            formControlName="emailUser"
             [(ngModel)]="emailUser"
-            name="email"
             placeholder="Correo electrónico"
-            required
           />
+          <div *ngIf="submitted && message.emailUser.errors" class="message-error">
+            <div *ngIf="message.emailUser.errors.required">El correo electrónico es obligatorio</div>
+            <div *ngIf="message.emailUser.errors.email">El correo electrónico debe ser válido</div>
+          </div>
           <input
             type="password"
+            formControlName="passwordUser"
             [(ngModel)]="passwordUser"
-            name="password"
             placeholder="Contraseña"
-            required
           />
+          <div *ngIf="submitted && message.passwordUser.errors" class="message-error">
+            <div *ngIf="message.passwordUser.errors.required">La contraseña es obligatorio</div>
+            <div *ngIf="message.passwordUser.errors.minlength">La contraseña debería tener como mínimo 6 caracteres</div>
+          </div>
           <!--<input type="submit" value="Log In">-->
           <button type="button" (click)="login()">Entrar</button>
           <p>¿Has olvidado la <a routerLink="/forget-password">contraseña</a>?</p>

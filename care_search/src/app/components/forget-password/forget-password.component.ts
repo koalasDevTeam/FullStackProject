@@ -20,13 +20,21 @@ export class ForgetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.forgetForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      emailUser: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      passwordUser: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   get message() {
     return this.forgetForm.controls;
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.forgetForm.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.forgetForm.value, null, 2));
   }
 
   save() {
@@ -55,11 +63,11 @@ export class ForgetPasswordComponent implements OnInit {
     }
 
     this.submitted = true;
-
-    if (this.forgetForm.invalid) {
-      return;
-    }
-
+      if (this.forgetForm.invalid) {
+        return;
+      }
+      console.log(JSON.stringify(this.forgetForm.value, null, 2));
+      
   }
 
 }
