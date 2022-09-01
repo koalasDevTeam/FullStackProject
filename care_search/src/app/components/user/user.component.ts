@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   public userIntroIllustration: string = "./assets/img/illustrations/user_intro_illustration.svg"
   public noUserIllustration: string = "./assets/img/illustrations/no_user_illustration.svg"
   public photoUser: string = "";
-  public previewPhoto: string='./assets/img/illustrations/no_found_illustration_mb.svg';
+  public previewPhoto: string='./assets/img/users/user-default.png';
 
   constructor(
     private UsersService:UsersService,

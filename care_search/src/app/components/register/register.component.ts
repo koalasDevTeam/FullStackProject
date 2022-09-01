@@ -61,13 +61,18 @@ export class RegisterComponent implements OnInit {
         email: `${this.emailUser}`,
         pass: `${this.passwordUser}`,
         name: '',
-        work: '',
+        dni:'',
+        datebirth:'',
+        city:'',
+        direction:'',
+        job: '',
         worker:`${this.iAmAProfessional}`,
-        img: './assets/img/users/1.jpg',
+        img: './assets/img/users/user-default.png',
         full_info:'',
         score: 0,
         price: '',
-        profile: ''
+        profile: '',
+        schedule:''
       };
 
 
