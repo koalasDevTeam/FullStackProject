@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users/users.service';
-import { FormControl, FormArray, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -37,19 +37,29 @@ export class RegisterComponent implements OnInit {
 
     }
 
-  ngOnInit(): void {this.getAllUsers()}
+  ngOnInit(): void {
+    this.getAllUsers()
+    this.registerForm = this.formBuilder.group({
+      profileUser: ['', [Validators.required]],
+      emailUser: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      passwordUser: ['', [Validators.required, Validators.minLength(6)]],
+      privacyUser: ['', [Validators.required]]
+    });
+  }
 
   checkingIfProfessional(){
-  this.iAmAProfessional=false
-  this.profileUser = this.iAmAProfessional;
-  console.log(`i'm a professional = ${this.iAmAProfessional}`)
+    this.iAmAProfessional=false
+    this.profileUser = this.iAmAProfessional;
+    console.log(`i'm a professional = ${this.iAmAProfessional}`)
   }
+
   chekingIfUser(){
     this.iAmAProfessional=true
     this.profileUser = this.iAmAProfessional;
     console.log(`i'm a professional = ${this.iAmAProfessional}`)
   }
- getAllUsers(){
+
+  getAllUsers(){
     return this.userService.getAllUsers().then((response:any) => console.log(this.users = response)); 
     
   }
@@ -61,16 +71,12 @@ export class RegisterComponent implements OnInit {
   validateAndCreateUserWithCredentials() {
     //check if exist already an equal email and password in the json 
     const result = this.users.filter((user:any)=> user.email === this.emailUser && user.pass === this.passwordUser)
-    if(result.length > 0){
-      console.log(`you're aready registed`)
-      return 
-    }
     this.emptyForm = '';
     this.emptyPrivacy = '';
     console.log(`i'm profileUser: ${this.iAmAProfessional}`)
     this.profileUser = this.iAmAProfessional;
-    if ((this.emailUser == '') || (this.passwordUser == '')) {
-      this.emptyForm = 'Error en el registro, debe rellenar los campos vacíos.';
+    if (result.length > 0) {
+      this.emptyForm = 'Usted ya se encuentra registrado en nuestra base de datos.';
     } else if (this.privacyUser == '') {
       this.emptyPrivacy = 'Debe aceptar la Política de Privacidad.';
     } else {

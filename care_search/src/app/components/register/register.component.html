@@ -9,7 +9,7 @@
           <div class="btn-profiles">
             <input formControlName="profileUser" class="btn-profile" type="radio" id="profesional" value="1" (click)="chekingIfUser()" [ngClass]="{'active': profileUser === true}">
             <label class="btn-text" for="profesional">Soy profesional</label>
-            <input formControlName="profileUser"  [ngClass]="{'active': profileUser === false}" class="btn-profile" type="radio" id="solicitante" value="2" (click)="checkingIfProfessional()">
+            <input formControlName="profileUser" class="btn-profile" type="radio" id="solicitante" value="2" (click)="checkingIfProfessional()" [ngClass]="{'active': profileUser === false}">
             <label class="btn-text" for="solicitante">Busco profesional</label>
           </div>
           <div *ngIf="submitted && message.profileUser.errors" class="message-error">
