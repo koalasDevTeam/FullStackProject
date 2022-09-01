@@ -54,8 +54,11 @@
     </section>
 
     <section class="user-page-left mv" *ngIf="showMenu">
+     
+
       <div class="user-menu-top">
         <div class="menu-user-header">
+          <button class="close-menu" (click)="setHideMenu()">&times;</button>
           <div class="change-profile-img text-center">
             <input
               type="file"
@@ -92,18 +95,19 @@
       </div>
     </section>
     <section class="user-page-right">
-      <button class="btn-menu mv" (click)="setShowMenu()">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          style="fill: rgba(0, 0, 0, 0.336)"
-        >
-          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-        </svg>
-      </button>
+     
 
       <div class="user-intro" *ngIf="pageSelected === 'intro'">
+        <button class="btn-menu mv" (click)="setShowMenu()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            style="fill: #002d5d"
+          >
+            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+          </svg>
+        </button>
         <!-- <h1>¡Hola {{storage.currentUser.email}}!</h1> -->
         <h1>Este es tu perfil personal</h1>
         <img [src]="userIntroIllustration" alt="" />
