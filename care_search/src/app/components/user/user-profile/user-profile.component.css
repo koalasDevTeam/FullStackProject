@@ -57,7 +57,7 @@
 
 .data-form-cont div textarea{
 resize: none;
-height: 120px;
+height: 180px;
 }
 
 .data-form-cont  h2{
@@ -252,5 +252,37 @@ background-color: #028bc5;
 
 /*responsive***************************************************************/
 @media screen and (max-width: 1000px) {
+  .profesional-cont .salary-range-cont{
+    width: 150px;
+    position: relative;
+  }
+  .profesional-cont .salary-range-cont label span{
+    position: absolute;
+    top: 2.5em;
+    left:2em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .data-form-cont{
+    width: 400px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .profesional-cont .salary-range-cont{
+    width: 100px; 
+  }
 
+  .profesional-cont .salary-range-cont label span{
+    font-size: 12px;
+    left: -20px;
+    top: 40px;
+  }
+
+  .data-form-cont{
+    width: 300px;
+  }
+
+  .profile-edit-options button{
+    font-size: 12px;
+  }
 }

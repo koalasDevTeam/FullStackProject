@@ -1,25 +1,40 @@
-.animate{
-animation: moveOnInit 3s forwards;
+.animate {
+  animation: moveOnInit 3s forwards;
 }
 
 @keyframes moveOnInit {
-    0%{
-        transform: translateY(50%);
-    }
+  0% {
+    transform: translateY(50%);
+  }
 
-    100%{
-        transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.animation-cont{
-    height: 100%;
+.animation-cont {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation-cont svg {
+  width: 70%;
+}
+
+/*responsive***************************************************************/
+@media screen and (max-width: 1000px) {
+  .animation-cont {
+    margin-top: -5em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .animation-cont {
+    margin-top: -8em;
+  }
+  .animation-cont svg{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.animation-cont svg{
-    width: 70%;
+  }
 }

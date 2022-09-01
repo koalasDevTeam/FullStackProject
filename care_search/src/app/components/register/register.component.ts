@@ -39,19 +39,7 @@ export class RegisterComponent implements OnInit {
 
     }
 
-  ngOnInit(): void {
-    this.getAllUsers()
-    this.registerForm = this.formBuilder.group({
-      profileUser: ['', [Validators.required]],
-      emailUser: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      passwordUser: ['', [Validators.required, Validators.minLength(6)]],
-      privacyUser: ['', [Validators.required]]
-    });
-  }
-
-  get message() {
-    return this.registerForm.controls;
-  }
+  ngOnInit(): void {this.getAllUsers()}
 
   checkingIfProfessional(){
   this.iAmAProfessional=false
@@ -92,12 +80,18 @@ export class RegisterComponent implements OnInit {
         email: `${this.emailUser}`,
         pass: `${this.passwordUser}`,
         name: '',
-        work: '',
-        worker:`${this.profileUser}`,
-        img: './assets/img/users/1.jpg',
+        dni:'',
+        datebirth:'',
+        city:'',
+        direction:'',
+        job: '',
+        worker:`${this.iAmAProfessional}`,
+        img: './assets/img/users/user-default.png',
         full_info:'',
         score: 0,
-        price: ''
+        price: '',
+        profile: '',
+        schedule:''
       };
 
 

@@ -204,13 +204,35 @@
 @media screen and (max-width: 1000px) {
   .btn-menu {
     border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.336);
+    border: 2px solid #002d5d;
     background-color: transparent;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .close-menu {
+    position: absolute;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    background-color: #049bb3;
+    z-index: 3;
+    font-size: 25px;
+    border-radius: 50%;
+    border: none;
+    right: 20px;
+    top: 60px;
+  }
+
+  .close-menu:active,
+  .close-menu:focus {
+    outline: none;
   }
   .user-intro h1 {
     display: none;
@@ -222,6 +244,7 @@
 
   .user-intro {
     flex-direction: column-reverse;
+    position: relative;
   }
   .user-page-cont.nouser {
     display: flex;
@@ -261,6 +284,10 @@
   .pc {
     display: none;
   }
+
+  .animation-cont {
+    margin-top: -2em;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -269,7 +296,7 @@
   }
 
   .user-intro img {
-    width: 400px;
+    width: 90%;
     margin: 1em 0;
   }
 }

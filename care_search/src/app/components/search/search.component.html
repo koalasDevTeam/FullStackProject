@@ -51,15 +51,15 @@
 <!--*****************************************************************************************************************-->
 
 <section class="search-result-cont">
-  <div
-    *ngFor="let helper of resultsList; index as i"
-    class="search-result-item"
-  >
+
+  <ng-container  *ngFor="let helper of resultsList; index as i" > 
+    
+  <div *ngIf="helper.name !==''" class="search-result-item">
     <img [src]="helper.img" alt="" />
     <div class="item-text-cont">
       <h6 class="score">{{ helper.score }}/5</h6>
       <h3><i class="bx bx-health"></i> {{ helper.name }}</h3>
-      <h4>{{ helper.work }}</h4>
+      <h4>{{ helper.job }}</h4>
       <!-- when is a long text -->
 
       <p *ngIf="helper?.full_info?.length > 150">
@@ -91,7 +91,7 @@
       </div>
     </div>
   </div>
-
+</ng-container>
   <!-- show if users's array is empty -->
   <div
     [ngClass]="{ message: resultsList.length === 0 && pressedSearchButton }"

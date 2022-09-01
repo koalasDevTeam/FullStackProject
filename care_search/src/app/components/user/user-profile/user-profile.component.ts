@@ -87,5 +87,15 @@ export class UserProfileComponent implements OnInit {
   
    initForm(){
     this.namelUser = this.currentUser.name;
+    this.dniUser = this.currentUser.dni;
+    this.dateUser = this.currentUser.datebirth;
+    this.cityUser = this.currentUser.city;
+    this.streetUser = this.currentUser.direction;
+    this.descriptionUser = this.currentUser.full_info;
+    this.priceUser = this.currentUser.price;
+    this.categoryUser = this.currentUser.job;
+    this.schedule = this.currentUser.schedule;
+    this.emailUser = this.currentUser.email;
+    //this.passwordUser = this.currentUser.pass;
    }
 }
