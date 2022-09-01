@@ -6,22 +6,10 @@
         <span class="message-error">{{ emptyForm }}</span>
         <span class="message-error">{{ emptyPrivacy }}</span>
         <form class="form-register" [formGroup]="registerForm">
-          <!--<div *ngFor="let profile of profiles; let i = index" class="btn-profiles">
-            <input
-              formControlName="profileUser"
-              class="btn-profile"
-              type="radio"
-              id="{{ profile.id }}"
-              [value]="profile.value" checked='{{ profile.isChecked }}'
-            />
-            <label class="btn-text" for="{{ profile.id }}" (click)="chekingIfUser()"
-              >{{ profile.name }}</label
-            >
-          </div>-->
           <div class="btn-profiles">
             <input formControlName="profileUser" class="btn-profile" type="radio" id="profesional" value="1" (click)="chekingIfUser()" [ngClass]="{'active': profileUser === true}">
             <label class="btn-text" for="profesional">Soy profesional</label>
-            <input formControlName="profileUser" class="btn-profile" type="radio" id="solicitante" value="2" (click)="checkingIfProfessional()">
+            <input formControlName="profileUser" class="btn-profile" type="radio" id="solicitante" value="2" (click)="checkingIfProfessional()" [ngClass]="{'active': profileUser === false}">
             <label class="btn-text" for="solicitante">Busco profesional</label>
           </div>
           <div *ngIf="submitted && message.profileUser.errors" class="message-error">

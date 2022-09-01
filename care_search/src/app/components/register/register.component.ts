@@ -12,8 +12,6 @@ export class RegisterComponent implements OnInit {
   registerForm: any = [];
   submitted = false;
   public profileUser: boolean =true;
-  public professional: string = '';
-  public noprofessional: string = '';
   public emailUser: string = '';
   public passwordUser: string = '';
   public privacyUser: string = '';
@@ -68,23 +66,15 @@ export class RegisterComponent implements OnInit {
     
   }
 
-
-  changeCheckbox(event: Event) {
-    console.log(event.target);
-  }
   validateAndCreateUserWithCredentials() {
     //check if exist already an equal email and password in the json 
     const result = this.users.filter((user:any)=> user.email === this.emailUser && user.pass === this.passwordUser)
-    if(result.length > 0){
-      console.log(`you're aready registed`)
-      return 
-    }
     this.emptyForm = '';
     this.emptyPrivacy = '';
     console.log(`i'm profileUser: ${this.iAmAProfessional}`)
     this.profileUser = this.iAmAProfessional;
-    if ((this.emailUser == '') || (this.passwordUser == '')) {
-      this.emptyForm = 'Error en el registro, debe rellenar los campos vacíos.';
+    if (result.length > 0) {
+      this.emptyForm = 'Usted ya se encuentra registrado en nuestra base de datos.';
     } else if (this.privacyUser == '') {
       this.emptyPrivacy = 'Debe aceptar la Política de Privacidad.';
     } else {
