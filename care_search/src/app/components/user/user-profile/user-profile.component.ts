@@ -35,7 +35,7 @@ export class UserProfileComponent implements OnInit {
   public emptyForm: number = 0;
   public salaryRange: number=10;
    //form values****************************************/
-
+  
   public optionSelected : string = 'personalData'
 
   optionsWorkArr = [
@@ -57,8 +57,10 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getAllUsers();
-    this.initForm()
-  }
+    this.initForm() 
+    console.log(this.currentUser)
+  
+    }
 
   showPersonal(){
     this.optionSelected = 'personalData'
@@ -70,10 +72,10 @@ export class UserProfileComponent implements OnInit {
     this.optionSelected = 'acountData'
   }
 
-
+/* 
    getAllUsers(){
   this.userService.getAllUsers().then(response => this.users = response);
-   }
+   } */
 
   incrementSalary(){
 
@@ -83,6 +85,32 @@ export class UserProfileComponent implements OnInit {
     this.salaryRange = $event.target.value;
   }
 
+  // current user
+
+// updating user
+
+onEditClick(newUser:any){
+  console.log(`I'm here in update`)
+  newUser = {
+   name:this.namelUser,
+   dni: this.dniUser,
+   datebirth:this.dateUser,
+   city: this.cityUser,
+   direction:this.streetUser,
+   full_info: this.descriptionUser,
+    price:this.priceUser,
+    job:this.categoryUser,
+    schedule:this.schedule,
+    email:"hello@gmail.com"
+
+  }
+  this.initForm()
+
+  this.userService.updateAnUser(newUser)
+ // return this.currentUser = newUser
+ 
+  
+}
   /*init form values:****************************************************************************/
   
    initForm(){

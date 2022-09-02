@@ -14,9 +14,10 @@
               name="nombre"
               placeholder="Introduce tu nombre"
               required
-              value={{namelUser}}
+              value="{{ namelUser }}"
               [(ngModel)]="namelUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
+              personalData
             />
           </div>
 
@@ -29,7 +30,7 @@
               required
               [value]="currentUser.dni"
               [(ngModel)]="dniUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div>
@@ -39,10 +40,10 @@
             <input
               type="text"
               name="fecha_nacimiento"
-              placeholder="Introduce tu fFecha de nacimiento*"
+              placeholder="Introduce tu fecha de nacimiento*"
               required
               [(ngModel)]="dateUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div>
@@ -53,7 +54,7 @@
               placeholder="Introduce tu ciudad*"
               required
               [(ngModel)]="cityUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div>
@@ -63,7 +64,7 @@
               name="street"
               placeholder="Introduce tu calle"
               [(ngModel)]="streetUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
         </div>
@@ -76,15 +77,25 @@
           <div>
             <textarea
               [(ngModel)]="descriptionUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
               placeholder="Háblanos sobre tí..."
               name="about"
             ></textarea>
           </div>
 
           <div class="profesional-cont">
-            <select name="city" id="" [(ngModel)]="categoryUser"  [ngModelOptions]="{standalone: true}">
-              <option  [value]="currentUser.work"disabled selected style="display: none">
+            <select
+              name="city"
+              id=""
+              [(ngModel)]="categoryUser"
+              [ngModelOptions]="{ standalone: true }"
+            >
+              <option
+                [value]="currentUser.work"
+                disabled
+                selected
+                style="display: none"
+              >
                 Selecciona una categoría profesional
               </option>
               <option *ngFor="let work of optionsWorkArr">
@@ -105,7 +116,7 @@
                 class="fsalary-range-input"
                 value="10"
                 id="formControlRange"
-                [ngModel] = "priceUser"
+                [ngModel]="priceUser"
                 (input)="valueChanged($event)"
               />
             </section>
@@ -115,7 +126,7 @@
             id=""
             class="schedule-select"
             [(ngModel)]="schedule"
-            [ngModelOptions]="{standalone: true}"
+            [ngModelOptions]="{ standalone: true }"
           >
             <option value="" disabled selected style="display: none">
               Selecciona tu disponibilidad horaria
@@ -131,7 +142,7 @@
             type="file"
             class="cv-input"
             [(ngModel)]="cvFile"
-            [ngModelOptions]="{standalone: true}"
+            [ngModelOptions]="{ standalone: true }"
           />
           <label for="cv-file" class="cv-label">Adjunta CV</label>
         </div>
@@ -148,17 +159,19 @@
               placeholder="Introduce tu email"
               [value]="currentUser.email"
               [(ngModel)]="emailUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div>
-            <label class="label-form" for="mail">Introduce nueva contraseña</label>
+            <label class="label-form" for="mail"
+              >Introduce nueva contraseña</label
+            >
             <input
               type="password"
               placeholder="*******"
               [value]="currentUser.pass"
               [(ngModel)]="passwordUser"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div>
@@ -168,7 +181,7 @@
               placeholder="*************"
               [value]="currentUser.pass"
               [(ngModel)]="passwordUserVerify"
-              [ngModelOptions]="{standalone: true}"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
 
@@ -184,7 +197,7 @@
             Datos Personales
           </button>
           <button
-            *ngIf="currentUser.worker=='true'"
+            *ngIf="currentUser.worker == 'true'"
             [ngClass]="{ active: optionSelected == 'profesionalData' }"
             (click)="showProfesional()"
           >
@@ -198,13 +211,25 @@
           </button>
         </div>
 
-        <button *ngIf="optionSelected == 'personalData'" class="btn-save">
+        <button
+          *ngIf="optionSelected == 'personalData'"
+          class="btn-save"
+          (click)="onEditClick(currentUser.id)"
+        >
           Guardar Datos Personales
         </button>
-        <button *ngIf="optionSelected == 'profesionalData'" class="btn-save">
+        <button
+          *ngIf="optionSelected == 'profesionalData'"
+          class="btn-save"
+          (click)="onEditClick(currentUser.id)"
+        >
           Guardar Datos Profesionales
         </button>
-        <button *ngIf="optionSelected == 'acountData'" class="btn-save">
+        <button
+          *ngIf="optionSelected == 'acountData'"
+          class="btn-save"
+          (click)="onEditClick(currentUser.id)"
+        >
           Guardar Datos Cuenta
         </button>
       </div>

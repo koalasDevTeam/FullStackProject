@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getAllUsers(){
-    return this.userService.getAllUsers().then((response:any) => console.log(this.users = response)); 
+    return this.userService.getAllUsers().then((response:any) => this.users = response); 
     
   }
   
