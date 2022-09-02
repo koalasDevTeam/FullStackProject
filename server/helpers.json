@@ -233,6 +233,23 @@
       "schedule": "",
       "email": "hello@gmail.com",
       "id": 14
+    },
+    {
+      "email": "abigail@gmail.com",
+      "pass": "1234",
+      "name": "abigail",
+      "dni": "1234567891011",
+      "datebirth": "123456",
+      "direction": "calle bonita 16",
+      "job": "Cuidado infantil",
+      "worker": "true",
+      "img": "./assets/img/users/user-default.png",
+      "full_info": "soy guachi piruli",
+      "score": 0,
+      "city": "las palmas",
+      "price": "47",
+      "schedule": "Completa",
+      "id": 15
     }
   ]
 }

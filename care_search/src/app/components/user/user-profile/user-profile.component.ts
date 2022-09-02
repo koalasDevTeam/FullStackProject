@@ -42,7 +42,7 @@ export class UserProfileComponent implements OnInit {
   public salaryRange: number = 10;
   //form values****************************************/
 
-  public optionSelected: string = 'acountData';
+  public optionSelected: string = 'personalData';
 
   optionsWorkArr = [
     { name: 'Cuidador interna a domicilio', value: 1 },
@@ -111,6 +111,7 @@ export class UserProfileComponent implements OnInit {
     };
 
     this.userService.updateAnUser(user);
+    localStorage.setItem('currentUser', JSON.stringify(user))
     // return this.currentUser = newUser
 
     switch(informationType){

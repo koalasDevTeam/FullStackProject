@@ -57,13 +57,14 @@
     
       <ng-container *ngIf="this.storage.currentUser.hasOwnProperty('email')">
 
-      <p *ngIf=" this.storage.currentUser.name == ''">
+      <p routerLink="/user" *ngIf=" this.storage.currentUser.name == ''" class="user">
         ¡Hola {{this.storage?.currentUser.email}}!
       </p>
 
-      <p *ngIf="this.storage.currentUser.name != ''" class="user-name">
-        ¡Hola {{this.storage?.currentUser.name}}!
+      <p routerLink="/user" *ngIf="this.storage.currentUser.name != ''" class="user-name user">
+        ¡Hola {{this.storage?.currentUser.name.split(' ')[0]}}!
       </p>
+
     </ng-container>
       
       
