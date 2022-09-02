@@ -10,7 +10,7 @@
     width: 100vw;
     height: 100vh;
     left: 0;
-    top: 116px;
+    top: 108px;
     z-index: 4;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -216,8 +216,18 @@ textarea:focus {
 /*responsive*/
 
 @media screen and (max-width: 600px) {
+    .close-modal-bg {
+        top: 0;
+        z-index: 8;
+    }
     .form-content {
         width: 400px;
+       
+    }
+
+    .form-cont{
+        z-index: 9;
+        top: 120px;
     }
     .form-logo h3 {
         font-size: 18px;

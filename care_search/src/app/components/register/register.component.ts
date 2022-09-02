@@ -93,7 +93,7 @@ export class RegisterComponent implements OnInit {
         img: './assets/img/users/user-default.png',
         full_info:'',
         score: 0,
-        price: '',
+        price: '10',
         profile: '',
         schedule:''
       };

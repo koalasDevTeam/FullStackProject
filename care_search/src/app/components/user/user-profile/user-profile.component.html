@@ -85,17 +85,12 @@
 
           <div class="profesional-cont">
             <select
-              name="city"
+              name="categoryUser"
               id=""
               [(ngModel)]="categoryUser"
               [ngModelOptions]="{ standalone: true }"
             >
-              <option
-                [value]="currentUser.work"
-                disabled
-                selected
-                style="display: none"
-              >
+              <option disabled selected value="" style="display: none">
                 Selecciona una categoría profesional
               </option>
               <option *ngFor="let work of optionsWorkArr">
@@ -106,17 +101,17 @@
             <section class="salary-range-cont">
               <label for="formControlValue">
                 <span>Escoge un precio</span>
-                {{ salaryRange }}€/hora</label
+                {{ priceUser }}€/hora</label
               >
               <input
                 type="range"
-                min="4"
+                min="0"
                 max="100"
                 step="1"
                 class="fsalary-range-input"
-                value="10"
                 id="formControlRange"
                 [ngModel]="priceUser"
+                [ngModelOptions]="{ standalone: true }"
                 (input)="valueChanged($event)"
               />
             </section>
@@ -136,7 +131,7 @@
             </option>
           </select>
 
-          <input
+          <!-- <input
             id="cv-file"
             name="cv-file"
             type="file"
@@ -144,7 +139,7 @@
             [(ngModel)]="cvFile"
             [ngModelOptions]="{ standalone: true }"
           />
-          <label for="cv-file" class="cv-label">Adjunta CV</label>
+          <label for="cv-file" class="cv-label">Adjunta CV</label> -->
         </div>
 
         <div
@@ -185,27 +180,98 @@
             />
           </div>
 
-          <button class="danger-btn">Eliminar Cuenta</button>
+          <section *ngIf="deleteMessage" class="danger-message-cont">
+          <div class="danger-message">
+            <p>¿De verdad quieres eliminar tu cuenta?</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314.33 314.33">
+              <defs>
+                <style>
+                  .cls-1,
+                  .cls-2 {
+                    fill: none;
+                    stroke: #f45f72;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+                  .cls-1 {
+                    stroke-width: 25.85px;
+                  }
+                  .cls-2 {
+                    stroke-width: 20px;
+                  }
+                </style>
+              </defs>
+              <title>sad_face_illustration</title>
+              <g id="Capa_2" data-name="Capa 2">
+                <g id="Capa_2-2" data-name="Capa 2">
+                  <circle class="cls-1" cx="157.17" cy="157.17" r="144.24" />
+                  <path
+                    class="cls-2"
+                    d="M121.06,119.15v17.78m71.14-17.78v17.78m26.54,80.34s-23.31-22.39-62.18-22.39-62.17,22.35-62.17,22.35"
+                  />
+                </g>
+              </g>
+            </svg>
+            <button>Quiero eliminarla</button>
+            <button class="danger-cancel-btn" (click)="hideDeleteMessage()">Cancelar</button>
+          </div>
+        </section>
+          <button class="danger-btn" (click)="showDeleteMessage()">
+            Eliminar Cuenta
+          </button>
         </div>
+        
       </div>
       <div class="profile-edit-bottom">
-        <div class="profile-edit-options">
+        <div *ngIf="showSuccessMessage" class="success-message">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            style="fill: rgba(255, 250, 250, 1)"
+          >
+            <path
+              d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
+            ></path>
+            <path
+              d="M9.999 13.587 7.7 11.292l-1.412 1.416 3.713 3.705 6.706-6.706-1.414-1.414z"
+            ></path>
+          </svg>
+          <p>{{ successMessage }}</p>
+          <button class="close-message" (click)="closeMessage()">
+            &times;
+          </button>
+        </div>
+        <div
+          class="profile-edit-options {{
+            showSuccessMessage ? 'disabled' : ''
+          }}"
+        >
           <button
-            [ngClass]="{ active: optionSelected == 'personalData' }"
+            [ngClass]="{
+              active: optionSelected == 'personalData' && !showSuccessMessage
+            }"
             (click)="showPersonal()"
+            [disabled]="showSuccessMessage"
           >
             Datos Personales
           </button>
           <button
             *ngIf="currentUser.worker == 'true'"
-            [ngClass]="{ active: optionSelected == 'profesionalData' }"
+            [ngClass]="{
+              active: optionSelected == 'profesionalData' && !showSuccessMessage
+            }"
             (click)="showProfesional()"
+            [disabled]="showSuccessMessage"
           >
             Datos Profesionales
           </button>
           <button
-            [ngClass]="{ active: optionSelected == 'acountData' }"
+            [ngClass]="{
+              active: optionSelected == 'acountData' && !showSuccessMessage
+            }"
             (click)="showAcount()"
+            [disabled]="showSuccessMessage"
           >
             Editar Cuenta
           </button>
@@ -214,21 +280,21 @@
         <button
           *ngIf="optionSelected == 'personalData'"
           class="btn-save"
-          (click)="onEditClick(currentUser.id)"
+          (click)="onEditClick(currentUser.id, 'personalData')"
         >
           Guardar Datos Personales
         </button>
         <button
           *ngIf="optionSelected == 'profesionalData'"
           class="btn-save"
-          (click)="onEditClick(currentUser.id)"
+          (click)="onEditClick(currentUser.id, 'profesionalData')"
         >
           Guardar Datos Profesionales
         </button>
         <button
           *ngIf="optionSelected == 'acountData'"
           class="btn-save"
-          (click)="onEditClick(currentUser.id)"
+          (click)="onEditClick(currentUser.id, 'acountData')"
         >
           Guardar Datos Cuenta
         </button>
