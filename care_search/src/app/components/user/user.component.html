@@ -28,7 +28,8 @@
             <label for="file-img"><img [src]="previewPhoto" /></label>
             <!-- <i class="bx bxs-camera"></i> -->
           </div>
-          <h4>{{ storage.currentUser.email }}</h4>
+          <h4 *ngIf="storage.currentUser.name.length==''">{{ storage.currentUser.email }}</h4>
+          <h4 *ngIf="storage.currentUser.name!=''" class="uppercase">{{ storage.currentUser.name.split(' ')[0] }}</h4>
         </div>
         <div class="menu-user-options">
           <button

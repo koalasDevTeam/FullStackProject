@@ -8,6 +8,11 @@
 
 /**/
 
+.uppercase{
+  text-transform: capitalize;
+}
+
+
 .change-profile-img {
   margin-bottom: 0.5em;
   position: relative;
