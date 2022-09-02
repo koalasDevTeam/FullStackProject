@@ -17,6 +17,17 @@
           </div>
           <input
             type="text"
+            formControlName="nameUser"
+            [(ngModel)]="nameUser"
+            name="nombre"
+            placeholder="Nombre*"
+          />
+          <div *ngIf="submitted && message.nameUser.errors" class="message-error">
+            <div *ngIf="message.nameUser.errors.required">El nombre es obligatorio</div>
+            <div *ngIf="message.nameUser.errors.email">El nombre debe ser válido</div>
+          </div>
+          <input
+            type="text"
             formControlName="emailUser"
             [(ngModel)]="emailUser"
             name="email"
@@ -63,6 +74,7 @@
           >
             Confirmar
           </button>
+          <p>¿Tienes cuenta? Puedes iniciar sesión <a routerLink="/login">aquí</a></p>
         </form>
       </div>
     </div>
