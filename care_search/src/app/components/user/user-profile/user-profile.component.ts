@@ -63,7 +63,7 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     // this.getAllUsers();
     this.initForm();
-    console.log(this.currentUser);
+    //console.log(this.currentUser);
   }
 
   showPersonal() {
@@ -92,7 +92,7 @@ export class UserProfileComponent implements OnInit {
   // updating user
 
   onEditClick(user: any, informationType:string) {
-    console.log(`I'm here in update`);
+   // console.log(`I'm here in update`);
     user = {
       email: this.emailUser,
       pass : this.currentUser.pass,

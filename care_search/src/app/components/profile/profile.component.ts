@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
   setContactModal(helper:any){
     this.showModal = true;
     this.helperSelected = helper;
-    console.log(this.helperSelected)
+    //console.log(this.helperSelected)
 
     
     

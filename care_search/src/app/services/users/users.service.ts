@@ -25,7 +25,7 @@ export class UsersService {
 
   setCurrentUser(user: any) {
     this.storage.currentUser = user;
-    console.log(this.storage.currentUser);
+    //console.log(this.storage.currentUser);
   }
 
   createNewUser(newUser: any) {
@@ -36,8 +36,8 @@ export class UsersService {
 
   updateAnUser(user: any) {
     const id = this.storage.currentUser.id;
-    console.log(user);
-    console.log(id);
+    //console.log(user);
+    //console.log(id);
     return axios
       .put(`${this.url}/helpers/${id}`, user)
       .then((response) => response.data)

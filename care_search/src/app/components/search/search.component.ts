@@ -19,8 +19,10 @@ export class SearchComponent implements OnInit {
  public users : any = [];
  resultsList : any = [];
  pressedSearchButton: boolean = false
+ 
 
-  constructor(private helperService: HelpersService) { }
+  constructor(private helperService: HelpersService) { 
+   }
 
   optionsWorkArr = [
     {name:"Cuidador interna a domicilio", value:1},
@@ -55,9 +57,32 @@ export class SearchComponent implements OnInit {
 
 // to get all helpers - function from services
   getAllUsers(){
-    return this.helperService.getAllUsers().then(response => {this.users = response;this.resultsList = this.users}); 
+    type Person = {
+      city:string,
+      datebirth:string,
+      direction:string,
+      dni:string,
+      email:string,
+      full_info:string,
+      id:string,
+      img:string,
+      job:string,
+      name:string,
+      pass:string,
+      price:string,
+      schedule:string,
+      score:number,
+      worker:boolean
+    }
+    return this.helperService.getAllUsers().then(response => {
+      //console.log(response)
+      const filerUsersWithFullInfo = response.filter((user:Person) => user.full_info)
+      this.users = filerUsersWithFullInfo;this.resultsList = this.users
+    }
+    ); 
     
   }
+
    
   searchResult(){
   this.pressedSearchButton = true
