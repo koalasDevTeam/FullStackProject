@@ -251,6 +251,23 @@
       "price": "47",
       "schedule": "Completa",
       "id": 15
+    },
+    {
+      "email": "pepita@gmail.com",
+      "pass": "1234567",
+      "name": "peipta",
+      "dni": "bfx",
+      "datebirth": " cv ",
+      "direction": "bv ",
+      "job": "",
+      "worker": "true",
+      "img": "./assets/img/users/user-default.png",
+      "full_info": "cñkf`v0 pgwra`jg `bajgàw`g i'aw`rngpawg40 àyuhpghpwahtgnta",
+      "score": 0,
+      "city": "n ",
+      "price": "10",
+      "schedule": "",
+      "id": 16
     }
   ]
 }

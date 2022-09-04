@@ -10,13 +10,19 @@ export class HomeComponent implements OnInit {
 
   public userDisabled: boolean = false;
   public currentUser:any;
+  public checkUser:any;
 
-  constructor(public UsersService: UsersService, private router: Router) { }
+  constructor(public UsersService: UsersService, private router: Router,) { }
 
   ngOnInit(): void {
     //console.log('here',this.UsersService.storage.disabledUser)
+     if (localStorage.getItem('currentUser')) {
+      this.checkUser = JSON.parse(
+        localStorage.getItem('currentUser') as string
+      );
+    }
 
-    if(this.UsersService.storage.currentUser.disable){
+    if(this.checkUser.disable){
       this.userDisabled = true;
     }
 
