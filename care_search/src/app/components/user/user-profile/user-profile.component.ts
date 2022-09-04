@@ -148,15 +148,32 @@ export class UserProfileComponent implements OnInit {
               this.showErrorMessage = true;
               this.errorMessage = 'Su nueva contraseña debe coincidir';
             } else {
-              this.successMessage = 'Su contraseña ha sido actualizada';
-              this.showSuccessMessage = true;
+              user = {
+                email: this.emailUser,
+                pass: this.newPassword,
+                name: this.namelUser,
+                dni: this.dniUser,
+                datebirth: this.dateUser,
+                direction: this.streetUser,
+                job: this.categoryUser,
+                worker: this.currentUser.worker,
+                img: this.currentUser.img,
+                full_info: this.descriptionUser,
+                score: this.currentUser.score,
+                city: this.cityUser,
+                price: this.priceUser,
+                schedule: this.schedule,
+              };
+              
               this.userService.updateAnUser(user);
               localStorage.setItem('currentUser', JSON.stringify(user))
+              this.successMessage = 'Su contraseña ha sido actualizada';
+              this.showSuccessMessage = true;
               console.log('guardado pass')
             }
           }
         }
-      }else if(this.emailUser!=''){
+      }else if(this.emailUser!='' && this.emailUser!== this.currentUser.email){
         this.successMessage = 'Su correo electrónico ha sido actualizado';
         this.showSuccessMessage = true;
         this.userService.updateAnUser(user);
