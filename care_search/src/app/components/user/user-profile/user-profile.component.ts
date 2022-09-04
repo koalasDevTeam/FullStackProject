@@ -14,9 +14,11 @@ export class UserProfileComponent implements OnInit {
   //delete account message******/
   public deleteMessage: boolean = false;
 
-  //success message*************/
+  //success and error message*************/
   public successMessage: string = '';
   public showSuccessMessage: boolean = false;
+  public errorMessage: string = '';
+  public showErrorMessage: boolean = false;
 
   //form values****************************************/
   public user: any = [];
@@ -28,8 +30,9 @@ export class UserProfileComponent implements OnInit {
   // public genreUser: string = "";
   public phoneUser: string = '';
   public emailUser: string = '';
-  public passwordUser: string = '';
-  public passwordUserVerify: string = '';
+  public checkPasswordUser: string = '';
+  public newPassword: string = '';
+  public checkNewPassword: string = '';
   public addressUser: string = '';
   public cityUser: string = '';
   public streetUser: string = '';
@@ -42,7 +45,7 @@ export class UserProfileComponent implements OnInit {
   public salaryRange: number = 10;
   //form values****************************************/
 
-  public optionSelected: string = 'personalData';
+  public optionSelected: string = 'acountData';
 
   optionsWorkArr = [
     { name: 'Cuidador interna a domicilio', value: 1 },
@@ -91,44 +94,85 @@ export class UserProfileComponent implements OnInit {
 
   // updating user
 
-  onEditClick(user: any, informationType:string) {
-   // console.log(`I'm here in update`);
+  onEditClick(user: any, informationType: string) {
+    // console.log(`I'm here in update`);
     user = {
       email: this.emailUser,
-      pass : this.currentUser.pass,
+      pass: this.currentUser.pass,
       name: this.namelUser,
       dni: this.dniUser,
       datebirth: this.dateUser,
       direction: this.streetUser,
       job: this.categoryUser,
-      worker:this.currentUser.worker,
-      img:this.currentUser.img,
+      worker: this.currentUser.worker,
+      img: this.currentUser.img,
       full_info: this.descriptionUser,
-      score:this.currentUser.score,
+      score: this.currentUser.score,
       city: this.cityUser,
       price: this.priceUser,
-      schedule: this.schedule, 
+      schedule: this.schedule,
     };
 
-    this.userService.updateAnUser(user);
-    localStorage.setItem('currentUser', JSON.stringify(user))
     // return this.currentUser = newUser
 
-    switch(informationType){
+    switch (informationType) {
       case 'personalData':
-        this.successMessage = 'Sus datos personales han sido actualizados'
+        this.successMessage = 'Sus datos personales han sido actualizados';
         break;
       case 'profesionalData':
-        this.successMessage = 'Su perfil profesional ha sido actualizado'
-        break;
-      case 'acountData':
-        this.successMessage = 'Los datos de su cuenta han sido actualizados'
+        this.successMessage = 'Su perfil profesional ha sido actualizado';
         break;
       default:
-        this.successMessage = 'Sus datos han sido actualizados'
+        this.successMessage = 'Sus datos han sido actualizados';
     }
-
-    this.showSuccessMessage = true;
+    //to change password:
+    if (this.optionSelected == 'acountData') {
+      if (
+        this.checkPasswordUser != '' ||
+        this.newPassword != '' ||
+        this.checkNewPassword != ''
+      ) {
+        if (
+          this.checkPasswordUser == '' ||
+          this.newPassword == '' ||
+          this.checkNewPassword == ''
+        ) {
+          this.showErrorMessage = true;
+          this.errorMessage = 'Para cambiar la contraseña debe introducir todos los campos';
+        } else {
+          if (this.checkPasswordUser != this.currentUser.pass) {
+            this.showErrorMessage = true;
+            this.errorMessage = 'Su antigua contraseña no es correcta';
+          } else {
+            if (this.newPassword != this.checkNewPassword) {
+              this.showErrorMessage = true;
+              this.errorMessage = 'Su nueva contraseña debe coincidir';
+            } else {
+              this.successMessage = 'Su contraseña ha sido actualizada';
+              this.showSuccessMessage = true;
+              this.userService.updateAnUser(user);
+              localStorage.setItem('currentUser', JSON.stringify(user))
+              console.log('guardado pass')
+            }
+          }
+        }
+      }else if(this.emailUser!=''){
+        this.successMessage = 'Su correo electrónico ha sido actualizado';
+        this.showSuccessMessage = true;
+        this.userService.updateAnUser(user);
+        localStorage.setItem('currentUser', JSON.stringify(user))
+        console.log('guardado email')
+      }else{
+        this.showErrorMessage = true;
+        this.errorMessage = 'Debe introducir un correo para actualizarlo';
+      }
+     
+    } else {
+      this.showSuccessMessage = true;
+      this.userService.updateAnUser(user);
+      localStorage.setItem('currentUser', JSON.stringify(user))
+      console.log('guardado general')
+    }
   }
   /*init form values:****************************************************************************/
 
@@ -146,15 +190,16 @@ export class UserProfileComponent implements OnInit {
     //this.passwordUser = this.currentUser.pass;
   }
 
-  closeMessage(){
+  closeMessage() {
     this.showSuccessMessage = false;
   }
-
-  showDeleteMessage(){
+  closeErrorMessage() {
+    this.showErrorMessage = false;
+  }
+  showDeleteMessage() {
     this.deleteMessage = true;
   }
-  hideDeleteMessage(){
+  hideDeleteMessage() {
     this.deleteMessage = false;
   }
-  
 }

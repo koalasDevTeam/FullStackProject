@@ -89,6 +89,9 @@
   bottom: 0;
   z-index: 3;
 }
+.success-message.error {
+  background-color: #f45f72;
+}
 
 .close-message {
   position: absolute;
