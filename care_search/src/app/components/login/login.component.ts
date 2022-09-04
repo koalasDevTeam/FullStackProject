@@ -9,7 +9,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  registerForm: any = [];
+  loginForm: any = [];
   submitted = false;
   public emailUser: string = "";
   public passwordUser: string = "";
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUsers()
-    this.registerForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       emailUser: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       passwordUser: ['', [Validators.required, Validators.minLength(6)]]
     });
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     }
 
     get message() {
-      return this.registerForm.controls;
+      return this.loginForm.controls;
     }
  
 
@@ -59,10 +59,10 @@ export class LoginComponent implements OnInit {
       }
   
       this.submitted = true;
-        if (this.registerForm.invalid) {
+        if (this.loginForm.invalid) {
           return;
         }
-        console.log(JSON.stringify(this.registerForm.value, null, 2));
+        console.log(JSON.stringify(this.loginForm.value, null, 2));
   
     }
     

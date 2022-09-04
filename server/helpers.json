@@ -3,18 +3,18 @@
     {
       "id": 1,
       "email": "susanacabrera@gmail.com",
-      "pass": "1234",
+      "pass": "12345678",
       "name": "Susana Cabrera",
+      "dni": "",
+      "datebirth": "",
+      "direction": "",
       "job": "Cuidado infantil",
       "worker": true,
       "img": "./assets/img/users/1.jpg",
       "full_info": "Cuidadora de niños experimentada y fiable con más de diez años de experiencia en el cuidado de niños y sus familias. Ofrezco cuidados óptimos a niños de incluso tan solo 8 semanas de edad. Capaz de asumir tareas domésticas y dialogar con las familias para satisfacer mejor sus necesidades individuales.Trabajé de niñera a tiempo completo para una familia con cuatro niños de entre 1 y 8 años. Llevaba y recogía a los niños del colegio, Lleva a los niños a las actividades extraescolares, Me encargaba de las tareas básicas del hogar.",
-      "city": "Arucas",
       "score": 4.3,
+      "city": "Arucas",
       "price": "14",
-      "dni": "",
-      "datebirth": "",
-      "direction": "",
       "schedule": ""
     },
     {

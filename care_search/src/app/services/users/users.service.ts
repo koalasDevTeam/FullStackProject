@@ -46,4 +46,16 @@ export class UsersService {
         console.log(error);
       });
   }
+
+  updatePassword(user: any) {
+    const id = user.id;
+    //console.log(user);
+    //console.log(id);
+    return axios
+      .put(`${this.url}/helpers/${id}`, user)
+      .then((response) => response.data)
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 }
