@@ -178,20 +178,20 @@
       "id": 10
     },
     {
+      "disable": "disabled",
       "email": "sadsds",
       "pass": "4545455",
       "name": "",
       "dni": "",
       "datebirth": "",
-      "city": "",
       "direction": "",
       "job": "",
       "worker": "true",
       "img": "./assets/img/users/user-default.png",
       "full_info": "",
       "score": 0,
+      "city": "",
       "price": "",
-      "profile": "",
       "schedule": "",
       "id": 11
     },
@@ -235,8 +235,9 @@
       "id": 14
     },
     {
+      "disable": "disabled",
       "email": "abi@gmail.com",
-      "pass": "12345678",
+      "pass": "123456",
       "name": "abigail",
       "dni": "aaaaa",
       "datebirth": "1234",

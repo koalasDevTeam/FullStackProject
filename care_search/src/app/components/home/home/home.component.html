@@ -1,6 +1,15 @@
 <!--header-->
 <header class="header-cont">
    
+    <section *ngIf="userDisabled" class="user-disabled-cont">
+        <div class="user-disabled-content">
+            <p>Esta cuenta ha sido deshabilitada</p>
+            <h4>¿Deseas recuperarla?</h4>
+            <button class="repair" (click)="repairAccount(currentUser.id)">Quiero recuperar mi cuenta</button>
+            <button class="close" (click)="closeAdvice()">Salir</button>
+        </div>
+       
+    </section>
 
     <section class="header-text-cont">
         <h1 class="header-title">

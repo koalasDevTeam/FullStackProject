@@ -41,21 +41,31 @@ export class LoginComponent implements OnInit {
   login() {
     let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
     //console.log('check: ', correctUSer)
-    if(correctUSer){
-      localStorage.setItem('currentUser', JSON.stringify(correctUSer))
-      this.userService.setCurrentUser(correctUSer)
-      this.router.navigate(['/user'])
-    }
-    else{
-      this.emptyForm = "Error en las credenciales. Usuario no registrado.";
-    }
+  
+      if(correctUSer){
+        localStorage.setItem('currentUser', JSON.stringify(correctUSer))
+        this.userService.setCurrentUser(correctUSer)
 
-    this.submitted = true;
-      if (this.registerForm.invalid) {
-        return;
+        if(!this.userService.storage.currentUser.disable){
+          this.router.navigate(['/user'])
+        }else{
+          this.router.navigate(['/'])
+        }
+
+        
       }
-      console.log(JSON.stringify(this.registerForm.value, null, 2));
-
-  }
+      else{
+        this.emptyForm = "Error en las credenciales. Usuario no registrado.";
+      }
+  
+      this.submitted = true;
+        if (this.registerForm.invalid) {
+          return;
+        }
+        console.log(JSON.stringify(this.registerForm.value, null, 2));
+  
+    }
+    
+   
 
 }

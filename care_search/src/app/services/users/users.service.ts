@@ -9,6 +9,7 @@ export class UsersService {
 
   public storage: any = {
     currentUser: {},
+    disabledUser: false,
   };
 
   constructor() {

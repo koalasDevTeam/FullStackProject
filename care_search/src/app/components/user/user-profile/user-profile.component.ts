@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from '../../../services/users/users.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -45,7 +45,7 @@ export class UserProfileComponent implements OnInit {
   public salaryRange: number = 10;
   //form values****************************************/
 
-  public optionSelected: string = 'acountData';
+  public optionSelected: string = 'personalData';
 
   optionsWorkArr = [
     { name: 'Cuidador interna a domicilio', value: 1 },
@@ -61,7 +61,7 @@ export class UserProfileComponent implements OnInit {
     { name: 'Tarde', value: 4 },
   ];
 
-  constructor(private userService: UsersService) {}
+  constructor(private userService: UsersService, private router: Router,) {}
 
   ngOnInit(): void {
     // this.getAllUsers();
@@ -169,7 +169,7 @@ export class UserProfileComponent implements OnInit {
               localStorage.setItem('currentUser', JSON.stringify(user))
               this.successMessage = 'Su contraseña ha sido actualizada';
               this.showSuccessMessage = true;
-              console.log('guardado pass')
+             // console.log('guardado pass')
             }
           }
         }
@@ -178,7 +178,7 @@ export class UserProfileComponent implements OnInit {
         this.showSuccessMessage = true;
         this.userService.updateAnUser(user);
         localStorage.setItem('currentUser', JSON.stringify(user))
-        console.log('guardado email')
+       // console.log('guardado email')
       }else{
         this.showErrorMessage = true;
         this.errorMessage = 'Debe introducir un correo para actualizarlo';
@@ -188,7 +188,7 @@ export class UserProfileComponent implements OnInit {
       this.showSuccessMessage = true;
       this.userService.updateAnUser(user);
       localStorage.setItem('currentUser', JSON.stringify(user))
-      console.log('guardado general')
+     // console.log('guardado general')
     }
   }
   /*init form values:****************************************************************************/
@@ -218,5 +218,30 @@ export class UserProfileComponent implements OnInit {
   }
   hideDeleteMessage() {
     this.deleteMessage = false;
+  }
+
+  //to disable account***********************************************************************/
+  disableAccount(user:any){
+    user = {
+      disable:'disabled',
+      email: this.emailUser,
+      pass: this.currentUser.pass,
+      name: this.namelUser,
+      dni: this.dniUser,
+      datebirth: this.dateUser,
+      direction: this.streetUser,
+      job: this.categoryUser,
+      worker: this.currentUser.worker,
+      img: this.currentUser.img,
+      full_info: this.descriptionUser,
+      score: this.currentUser.score,
+      city: this.cityUser,
+      price: this.priceUser,
+      schedule: this.schedule,
+    };
+    
+    this.userService.updateAnUser(user);
+    localStorage.setItem('currentUser', JSON.stringify(user))
+    this.router.navigate(['/'])
   }
 }

@@ -217,7 +217,7 @@
                 </g>
               </g>
             </svg>
-            <button>Quiero eliminarla</button>
+            <button (click)="disableAccount(currentUser.id)">Quiero eliminarla</button>
             <button class="danger-cancel-btn" (click)="hideDeleteMessage()">Cancelar</button>
           </div>
         </section>

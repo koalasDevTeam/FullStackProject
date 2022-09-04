@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
 
   public showMenu:boolean = false;
   public storage: any;
-  public pageSelected : string = 'profile'
+  public pageSelected : string = 'intro'
   public userIntroIllustration: string = "./assets/img/illustrations/user_intro_illustration.svg"
   public noUserIllustration: string = "./assets/img/illustrations/no_user_illustration.svg"
   public photoUser: string = "";
