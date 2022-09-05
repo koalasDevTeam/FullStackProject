@@ -97,6 +97,7 @@ export class UserProfileComponent implements OnInit {
   onEditClick(user: any, informationType: string) {
     // console.log(`I'm here in update`);
     user = {
+   user_Status:false,
       email: this.emailUser,
       pass: this.currentUser.pass,
       name: this.namelUser,
@@ -149,6 +150,7 @@ export class UserProfileComponent implements OnInit {
               this.errorMessage = 'Su nueva contraseña debe coincidir';
             } else {
               user = {
+               user_Status:false,
                 email: this.emailUser,
                 pass: this.newPassword,
                 name: this.namelUser,
@@ -222,12 +224,13 @@ export class UserProfileComponent implements OnInit {
 
   //to disable account***********************************************************************/
   disableAccount(user:any){
+    console.log(`desabled:${user}`)
     user = {
-      disable:'disabled',
+      user_Status:true,
       email: this.emailUser,
       pass: this.currentUser.pass,
       name: this.namelUser,
-      dni: this.dniUser,
+       dni: this.dniUser,
       datebirth: this.dateUser,
       direction: this.streetUser,
       job: this.categoryUser,
@@ -237,8 +240,9 @@ export class UserProfileComponent implements OnInit {
       score: this.currentUser.score,
       city: this.cityUser,
       price: this.priceUser,
-      schedule: this.schedule,
+      schedule: this.schedule, 
     };
+    console.log(`desabled:${user}`)
     
     this.userService.updateAnUser(user);
     localStorage.setItem('currentUser', JSON.stringify(user))

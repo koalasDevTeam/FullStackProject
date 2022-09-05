@@ -82,6 +82,7 @@ export class RegisterComponent implements OnInit {
       return;
     } else if ((this.emailUser != '') && (this.passwordUser != '') && (this.nameUser != '') && (this.profileUser) && (this.privacyUser != '')) {
       this.newUser = {
+        user_Status:false,
         email: `${this.emailUser}`,
         pass: `${this.passwordUser}`,
         name: `${this.nameUser}`,

@@ -21,7 +21,7 @@ export class UsersService {
   }
 
   getAllUsers() {
-    return axios.get(`${this.url}/helpers`).then((response) => response.data);
+    return axios.get(`${this.url}/api/users/`).then((response) => response.data);
   }
 
   setCurrentUser(user: any) {
@@ -31,16 +31,16 @@ export class UsersService {
 
   createNewUser(newUser: any) {
     return axios
-      .post(`${this.url}/helpers`, newUser)
+      .post(`${this.url}/api/users/`, newUser)
       .then((response) => response.data);
   }
 
   updateAnUser(user: any) {
-    const id = this.storage.currentUser.id;
+    const id = this.storage.currentUser._id;
     //console.log(user);
-    //console.log(id);
+    console.log(id);
     return axios
-      .put(`${this.url}/helpers/${id}`, user)
+      .put(`${this.url}/api/users/${id}`, user)
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);
