@@ -17,13 +17,13 @@ constructor() {
   // to get all users
 getAllUsers(){
 
-  return axios.get(`${this.url}/helpers`).then(response => this.users = response.data)
+  return axios.get(`${this.url}/api/users/`).then(response => this.users = response.data)
  }
 
 public getHelpersById(){
   const uniqueHelper = this.users.find((helper:any)=>{ 
 
-  return parseInt(helper.id) ===  this.idSelected
+  return parseInt(helper._id) ===  this.idSelected
  
 
  })

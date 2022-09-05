@@ -169,7 +169,9 @@
             />
           </div>
           <div>
-            <label class="label-form" for="mail">Introduce nueva contraseña</label>
+            <label class="label-form" for="mail"
+              >Introduce nueva contraseña</label
+            >
             <input
               type="password"
               placeholder="*************"
@@ -186,46 +188,52 @@
           </div>
 
           <section *ngIf="deleteMessage" class="danger-message-cont">
-          <div class="danger-message">
-            <p>¿De verdad quieres eliminar tu cuenta?</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314.33 314.33">
-              <defs>
-                <style>
-                  .cls-1,
-                  .cls-2 {
-                    fill: none;
-                    stroke: #f45f72;
-                    stroke-linecap: round;
-                    stroke-linejoin: round;
-                  }
-                  .cls-1 {
-                    stroke-width: 25.85px;
-                  }
-                  .cls-2 {
-                    stroke-width: 20px;
-                  }
-                </style>
-              </defs>
-              <title>sad_face_illustration</title>
-              <g id="Capa_2" data-name="Capa 2">
-                <g id="Capa_2-2" data-name="Capa 2">
-                  <circle class="cls-1" cx="157.17" cy="157.17" r="144.24" />
-                  <path
-                    class="cls-2"
-                    d="M121.06,119.15v17.78m71.14-17.78v17.78m26.54,80.34s-23.31-22.39-62.18-22.39-62.17,22.35-62.17,22.35"
-                  />
+            <div class="danger-message">
+              <p>¿De verdad quieres eliminar tu cuenta?</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 314.33 314.33"
+              >
+                <defs>
+                  <style>
+                    .cls-1,
+                    .cls-2 {
+                      fill: none;
+                      stroke: #f45f72;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                    }
+                    .cls-1 {
+                      stroke-width: 25.85px;
+                    }
+                    .cls-2 {
+                      stroke-width: 20px;
+                    }
+                  </style>
+                </defs>
+                <title>sad_face_illustration</title>
+                <g id="Capa_2" data-name="Capa 2">
+                  <g id="Capa_2-2" data-name="Capa 2">
+                    <circle class="cls-1" cx="157.17" cy="157.17" r="144.24" />
+                    <path
+                      class="cls-2"
+                      d="M121.06,119.15v17.78m71.14-17.78v17.78m26.54,80.34s-23.31-22.39-62.18-22.39-62.17,22.35-62.17,22.35"
+                    />
+                  </g>
                 </g>
-              </g>
-            </svg>
-            <button (click)="disableAccount(currentUser.id)">Quiero eliminarla</button>
-            <button class="danger-cancel-btn" (click)="hideDeleteMessage()">Cancelar</button>
-          </div>
-        </section>
+              </svg>
+              <button (click)="disableAccount(currentUser.id)">
+                Quiero eliminarla
+              </button>
+              <button class="danger-cancel-btn" (click)="hideDeleteMessage()">
+                Cancelar
+              </button>
+            </div>
+          </section>
           <button class="danger-btn" (click)="showDeleteMessage()">
             Eliminar Cuenta
           </button>
         </div>
-        
       </div>
       <div class="profile-edit-bottom">
         <!--success message-->
@@ -283,7 +291,7 @@
             Datos Personales
           </button>
           <button
-            *ngIf="currentUser.worker == 'true'"
+            *ngIf="currentUser.worker == true"
             [ngClass]="{
               active: optionSelected == 'profesionalData' && !showSuccessMessage
             }"

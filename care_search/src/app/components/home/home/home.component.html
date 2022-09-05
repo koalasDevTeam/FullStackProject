@@ -1,32 +1,27 @@
 <!--header-->
 <header class="header-cont">
-   
-    <section *ngIf="userDisabled" class="user-disabled-cont">
-        <div class="user-disabled-content">
-            <p>Esta cuenta ha sido deshabilitada</p>
-            <h4>¿Deseas recuperarla?</h4>
-            <button class="repair" (click)="repairAccount(currentUser.id)">Quiero recuperar mi cuenta</button>
-            <button class="close" (click)="closeAdvice()">Salir</button>
-        </div>
-       
-    </section>
+  <section *ngIf="user_status" class="user-disabled-cont">
+    <div class="user-disabled-content">
+      <p>Esta cuenta ha sido deshabilitada</p>
+      <h4>¿Deseas recuperarla?</h4>
+      <button class="repair" (click)="repairAccount(currentUser.id)">
+        Quiero recuperar mi cuenta
+      </button>
+      <button class="close" (click)="closeAdvice()">Salir</button>
+    </div>
+  </section>
 
-    <section class="header-text-cont">
-        <h1 class="header-title">
-            Acercamos profesionales del cuidado a quienes lo necesitan
-        </h1>
+  <section class="header-text-cont">
+    <h1 class="header-title">
+      Acercamos profesionales del cuidado a quienes lo necesitan
+    </h1>
 
-        <p class="header-subtitle">
-            Forma parte de nuestra red de profesionales 
-        </p>
+    <p class="header-subtitle">Forma parte de nuestra red de profesionales</p>
 
-        <a routerLink="register">Regístrate aquí</a>
-    </section>
+    <a routerLink="register">Regístrate aquí</a>
+  </section>
 </header>
 <!--header-->
 <app-intro></app-intro>
 <app-services></app-services>
 <app-benefits></app-benefits>
-
-
-

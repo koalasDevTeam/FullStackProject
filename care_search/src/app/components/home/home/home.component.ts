@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  public userDisabled: boolean = false;
+  public user_status: boolean = false;
   public currentUser:any;
   public checkUser:any;
 
@@ -22,19 +22,20 @@ export class HomeComponent implements OnInit {
       );
     }
 
-    if(this.checkUser.disable){
-      this.userDisabled = true;
+    if(this.checkUser.user_Status){
+      this.user_status = true;
     }
 
     this.currentUser = this.UsersService.storage.currentUser;
 
-    console.log(this.userDisabled)
+    console.log(this.user_status)
   }
 
 
   repairAccount(user:any){
 
     user = {
+      user_Status:false,
       email: this.currentUser.email,
       pass: this.currentUser.pass,
       name: this.currentUser.name,
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit {
   }
 
   closeAdvice(){
-    this.userDisabled=false;
+    this.user_status=false;
     this.UsersService.setCurrentUser({})
     localStorage.removeItem('currentUser');
   }

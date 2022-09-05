@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currentUser', JSON.stringify(correctUSer))
         this.userService.setCurrentUser(correctUSer)
 
-        if(!this.userService.storage.currentUser.disable){
+        if(!this.userService.storage.currentUser.user_Status){
           this.router.navigate(['/user'])
         }else{
           this.router.navigate(['/'])
