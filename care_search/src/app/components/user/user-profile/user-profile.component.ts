@@ -61,7 +61,7 @@ export class UserProfileComponent implements OnInit {
     { name: 'Tarde', value: 4 },
   ];
 
-  constructor(private userService: UsersService, private router: Router,) {}
+  constructor(private userService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
     // this.getAllUsers();
@@ -97,7 +97,7 @@ export class UserProfileComponent implements OnInit {
   onEditClick(user: any, informationType: string) {
     // console.log(`I'm here in update`);
     user = {
-   user_Status:false,
+      user_Status: false,
       email: this.emailUser,
       pass: this.currentUser.pass,
       name: this.namelUser,
@@ -127,6 +127,31 @@ export class UserProfileComponent implements OnInit {
         this.successMessage = 'Sus datos han sido actualizados';
     }
     //to change password:
+    //***************************************************VALIDATIONS ON PROFESIONAL DATA********************************/
+    if (this.optionSelected == 'profesionalData') {
+      this.showSuccessMessage = true;
+      this.userService.updateAnUser(user);
+      localStorage.setItem('currentUser', JSON.stringify(user));
+    }
+   
+
+    //***************************************************VALIDATIONS ON PERSONAL DATA********************************/
+    if (this.optionSelected == 'personalData') {
+      if (
+        this.namelUser == '' ||
+        this.dniUser == '' ||
+        this.dniUser == '' ||
+        this.dateUser == ''
+      ) {
+        this.showErrorMessage = true;
+        this.errorMessage = 'Debes rellenar los datos requeridos';
+      } else {
+        this.showSuccessMessage = true;
+        this.userService.updateAnUser(user);
+        localStorage.setItem('currentUser', JSON.stringify(user));
+      }
+    }
+    //***************************************************VALIDATIONS ON ACCOUNT DATA********************************/
     if (this.optionSelected == 'acountData') {
       if (
         this.checkPasswordUser != '' ||
@@ -139,7 +164,8 @@ export class UserProfileComponent implements OnInit {
           this.checkNewPassword == ''
         ) {
           this.showErrorMessage = true;
-          this.errorMessage = 'Para cambiar la contraseña debe introducir todos los campos';
+          this.errorMessage =
+            'Para cambiar la contraseña debe introducir todos los campos';
         } else {
           if (this.checkPasswordUser != this.currentUser.pass) {
             this.showErrorMessage = true;
@@ -150,7 +176,7 @@ export class UserProfileComponent implements OnInit {
               this.errorMessage = 'Su nueva contraseña debe coincidir';
             } else {
               user = {
-               user_Status:false,
+                user_Status: false,
                 email: this.emailUser,
                 pass: this.newPassword,
                 name: this.namelUser,
@@ -166,32 +192,44 @@ export class UserProfileComponent implements OnInit {
                 price: this.priceUser,
                 schedule: this.schedule,
               };
-              
-              this.userService.updateAnUser(user);
-              localStorage.setItem('currentUser', JSON.stringify(user))
-              this.successMessage = 'Su contraseña ha sido actualizada';
-              this.showSuccessMessage = true;
-             // console.log('guardado pass')
+
+              if(this.newPassword.length<6){
+                this.showErrorMessage = true;
+                this.errorMessage = 'La contraseña debería tener como mínimo 6 caracteres';
+              }else{
+
+                this.userService.updateAnUser(user);
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                this.successMessage = 'Su contraseña ha sido actualizada';
+                this.showSuccessMessage = true;
+              }
+
+              // console.log('guardado pass')
             }
           }
         }
-      }else if(this.emailUser!='' && this.emailUser!== this.currentUser.email){
-        this.successMessage = 'Su correo electrónico ha sido actualizado';
-        this.showSuccessMessage = true;
-        this.userService.updateAnUser(user);
-        localStorage.setItem('currentUser', JSON.stringify(user))
-       // console.log('guardado email')
-      }else{
+      } else if (
+        this.emailUser != '' &&
+        this.emailUser !== this.currentUser.email
+      ) {
+       
+        if(this.emailUser.match('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')){
+          this.successMessage = 'Su correo electrónico ha sido actualizado';
+          this.showSuccessMessage = true;
+          this.userService.updateAnUser(user);
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          // console.log('guardado email')
+        }else{
+          this.showErrorMessage = true;
+          this.errorMessage = 'El correo electrónico debe ser válido';
+        }
+       
+      } else {
         this.showErrorMessage = true;
-        this.errorMessage = 'Debe introducir un correo para actualizarlo';
+        this.errorMessage = 'El correo electrónico es obligatorio';
       }
-     
-    } else {
-      this.showSuccessMessage = true;
-      this.userService.updateAnUser(user);
-      localStorage.setItem('currentUser', JSON.stringify(user))
-     // console.log('guardado general')
     }
+
   }
   /*init form values:****************************************************************************/
 
@@ -223,14 +261,14 @@ export class UserProfileComponent implements OnInit {
   }
 
   //to disable account***********************************************************************/
-  disableAccount(user:any){
-    console.log(`desabled:${user}`)
+  disableAccount(user: any) {
+    console.log(`desabled:${user}`);
     user = {
-      user_Status:true,
+      user_Status: true,
       email: this.emailUser,
       pass: this.currentUser.pass,
       name: this.namelUser,
-       dni: this.dniUser,
+      dni: this.dniUser,
       datebirth: this.dateUser,
       direction: this.streetUser,
       job: this.categoryUser,
@@ -240,12 +278,12 @@ export class UserProfileComponent implements OnInit {
       score: this.currentUser.score,
       city: this.cityUser,
       price: this.priceUser,
-      schedule: this.schedule, 
+      schedule: this.schedule,
     };
-    console.log(`desabled:${user}`)
-    
+    console.log(`desabled:${user}`);
+
     this.userService.updateAnUser(user);
-    localStorage.setItem('currentUser', JSON.stringify(user))
-    this.router.navigate(['/'])
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    this.router.navigate(['/']);
   }
 }
