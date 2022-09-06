@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       );
     }
 
-    if(this.checkUser.user_Status){
+    if(this.checkUser?.user_Status){
       this.user_status = true;
     }
 
