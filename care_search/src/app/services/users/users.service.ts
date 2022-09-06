@@ -6,8 +6,8 @@ import axios from 'axios';
 })
 export class UsersService {
   public url: any = 'http://localhost:3000';
-   public idSelected= 0;
- public users = []
+  public idSelected= 0;
+  public users = []
 
   public storage: any = {
     currentUser: {},
@@ -28,23 +28,20 @@ export class UsersService {
 
   setCurrentUser(user: any) {
     this.storage.currentUser = user;
-    //console.log(this.storage.currentUser);
+   
   }
   public getHelpersById(){
   const uniqueHelper = this.users.find((helper:any)=>{ 
-//console.log(helper)
+
   return helper._id === this.idSelected 
-  
 
  })
-//console.log(uniqueHelper)
+
  return uniqueHelper
 
  }
   public selectHelper(id:any){
 this.idSelected = id
-//console.log(typeof this.idSelected)
-//this.getHelpersById()
 } 
 
 
