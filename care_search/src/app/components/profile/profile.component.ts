@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { HelpersService } from 'src/app/services/helpers.service';
+import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,11 +11,12 @@ export class ProfileComponent implements OnInit {
   helperObje: any =[];
   showModal: boolean = false;
   helperSelected : any;
-  constructor(private userService: HelpersService) { }
+  constructor(private userService: UsersService) { }
 
   showHelperData(){
     let resultsHelper = this.userService.getHelpersById()
     this.helperObje =  resultsHelper
+    console.log(this.helperObje)
     return this.helperObje =  resultsHelper
   }
     ngOnInit(){
@@ -29,7 +30,7 @@ export class ProfileComponent implements OnInit {
   setContactModal(helper:any){
     this.showModal = true;
     this.helperSelected = helper;
-    //console.log(this.helperSelected)
+   
 
     
     

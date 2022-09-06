@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users/users.service';
-import { HelpersService } from 'src/app/services/helpers.service';
+
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -28,7 +28,7 @@ export class ForgetPasswordComponent implements OnInit {
     passwordUserVerify: new FormControl(''),
   });
   
-  constructor(private router: Router, private userService: UsersService, private formBuilder: FormBuilder, private helperService: HelpersService) {}
+  constructor(private router: Router, private userService: UsersService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -57,7 +57,7 @@ export class ForgetPasswordComponent implements OnInit {
       score: number,
       worker: boolean
     }
-    this.helperService.getAllUsers().then(response => {
+    this.userService.getAllUsers().then(response => {
       this.users = response;
     });
   }

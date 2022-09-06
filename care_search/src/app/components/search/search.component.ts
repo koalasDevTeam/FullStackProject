@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HelpersService } from 'src/app/services/helpers.service';
+import { UsersService } from 'src/app/services/users/users.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
  pressedSearchButton: boolean = false
  
 
-  constructor(private helperService: HelpersService) { 
+  constructor(private  UsersService:UsersService) { 
    }
 
   optionsWorkArr = [
@@ -50,7 +50,8 @@ export class SearchComponent implements OnInit {
 
 // to find helper by Id
   sendHelper(helperId:number){
-    this.helperService.selectHelper(helperId)
+    console.log(helperId)
+    this.UsersService.selectHelper(helperId)
   }
 
 
@@ -74,7 +75,7 @@ export class SearchComponent implements OnInit {
       score:number,
       worker:boolean
     }
-    return this.helperService.getAllUsers().then(response => {
+    return this.UsersService.getAllUsers().then(response => {
       //console.log(response)
       const filerUsersWithFullInfo = response.filter((user:Person) => user.full_info)
       this.users = filerUsersWithFullInfo;this.resultsList = this.users
