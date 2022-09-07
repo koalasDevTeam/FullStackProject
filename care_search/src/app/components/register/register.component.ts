@@ -77,12 +77,18 @@ export class RegisterComponent implements OnInit {
     this.emptyForm = '';
     console.log(`i'm profileUser: ${this.iAmAProfessional}`)
     this.profileUser = this.iAmAProfessional;
+
     if (result.length > 0) {
       this.emptyForm = 'El usuario ya se encuentra registrado en nuestra base de datos.';
       return;
-    } else if ((this.emailUser != '') && (this.passwordUser != '') && (this.nameUser != '') && (this.profileUser) && (this.privacyUser != '')) {
+    } 
+
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    } else {
       this.newUser = {
-        user_Status:false,
+        user_Status: false,
         email: `${this.emailUser}`,
         pass: `${this.passwordUser}`,
         name: `${this.nameUser}`,
@@ -100,19 +106,13 @@ export class RegisterComponent implements OnInit {
         schedule:''
       };
 
-
       this.userService.createNewUser(this.newUser).then((user) => {
         localStorage.setItem('currentUser', JSON.stringify(user))
         this.userService.setCurrentUser(user)
         this.router.navigate(['/user']);
       });
     }
+    console.log(JSON.stringify(this.registerForm.value, null, 2));
 
-    this.submitted = true;
-
-      if (this.registerForm.invalid) {
-        return;
-      }
-    
   }
 }
