@@ -8,7 +8,7 @@ export class UsersService {
   public url: any = 'http://localhost:3000';
   public idSelected= 0;
   public users = []
-
+public setErrorMessage:string=""
   public storage: any = {
     currentUser: {},
     disabledUser: false,
@@ -42,6 +42,7 @@ export class UsersService {
  }
   public selectHelper(id:any){
 this.idSelected = id
+console.log(this.idSelected)
 } 
 
 
@@ -52,23 +53,26 @@ this.idSelected = id
   }
 
   updateAnUser(user: any) {
-    const id = this.storage.currentUser._id;
-    //console.log(user);
-    console.log(id);
+    const _id = this.storage.currentUser._id;
+    console.log(user);
+    console.log(_id);
     return axios
-      .put(`${this.url}/api/users/${id}`, user)
+      .put(`${this.url}/api/users/${_id}`, user)
       .then((response) => response.data)
       .catch((error) => {
+        if (error.response) {
+        console.log(error.response.data.message)
+        }
         console.log(error);
       });
   }
 
   updatePassword(user: any) {
-    const id = user.id;
-    //console.log(user);
-    //console.log(id);
+    const id = user._id;
+    console.log(user);
+    console.log(id);
     return axios
-      .put(`${this.url}/helpers/${id}`, user)
+      .put(`${this.url}/api/users/${id}`, user)
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);

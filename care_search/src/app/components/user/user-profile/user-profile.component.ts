@@ -43,6 +43,7 @@ export class UserProfileComponent implements OnInit {
   public cvFile: string = '';
   public emptyForm: number = 0;
   public salaryRange: number = 10;
+   
   //form values****************************************/
 
   public optionSelected: string = 'personalData';
@@ -67,6 +68,9 @@ export class UserProfileComponent implements OnInit {
     // this.getAllUsers();
     this.initForm();
     //console.log(this.currentUser);
+   
+    
+   
   }
 
   showPersonal() {
@@ -90,13 +94,16 @@ export class UserProfileComponent implements OnInit {
     this.priceUser = $event.target.value;
   }
 
-  // current user
+  
 
   // updating user
 
   onEditClick(user: any, informationType: string) {
-    // console.log(`I'm here in update`);
+     //console.log(`I'm here in update`);
+     //console.log(this.user)
+  
     user = {
+      _id:this.currentUser._id,
       user_Status: false,
       email: this.emailUser,
       pass: this.currentUser.pass,
@@ -176,6 +183,7 @@ export class UserProfileComponent implements OnInit {
               this.errorMessage = 'Su nueva contraseña debe coincidir';
             } else {
               user = {
+                _id:this.currentUser._id,
                 user_Status: false,
                 email: this.emailUser,
                 pass: this.newPassword,
@@ -264,6 +272,7 @@ export class UserProfileComponent implements OnInit {
   disableAccount(user: any) {
     console.log(`desabled:${user}`);
     user = {
+      _id:this.currentUser._id,
       user_Status: true,
       email: this.emailUser,
       pass: this.currentUser.pass,

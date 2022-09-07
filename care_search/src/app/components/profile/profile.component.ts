@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
   helperObje: any =[];
   showModal: boolean = false;
   helperSelected : any;
+
   constructor(private userService: UsersService) { }
 
   showHelperData(){
@@ -21,6 +22,7 @@ export class ProfileComponent implements OnInit {
   }
     ngOnInit(){
       this.showHelperData()
+      
     
     } 
 
