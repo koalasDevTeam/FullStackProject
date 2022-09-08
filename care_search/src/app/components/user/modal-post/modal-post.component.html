@@ -1,0 +1,32 @@
+<div class="modal">
+    <div class="wrapper">
+      <div class="message">
+        <div class="card-image">
+          <img src="./assets/img/users/3.jpg">
+            <div>
+              <p class="title-published">Maria Candela</p>
+              <p class="date-published">10/05/22</p>
+            </div>
+          </div>
+        <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <form>
+          <div>
+            <label for="title">¿Qué título deseas poner en el anuncio?</label>
+            <input type="text" name="title" [(ngModel)]="titlePost" placeholder="Título del anuncio" value="" required/>
+          </div>
+          <div>
+            <label for="city">¿Dónde deseas ofrecer sus servicios?</label>
+            <select name="city" [(ngModel)]="selectedOption">
+              <option value="" disabled selected style="display: none">
+                ¿En qué ciudad?
+              </option>
+              <option *ngFor="let location of optionsLocationArr">
+                {{ location.city }}
+              </option>
+            </select>
+          </div>
+          <button class="btn-answer bg-blue-one">Publicar</button>
+        </form>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+button {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    color: #002d5d;
+    text-align: center;
+    margin: 0 auto 1em;
+}
+
+p {
+    margin: 0;
+}
+
+.btn-view {
+    border: 0;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.7em 2.3em;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.color-blue-one {
+    background-color: #00a5b5;
+}
+  
+.color-blue-one:hover {
+    background-color: #0a8391;
+}
+  
+.color-blue-two {
+    background-color: #0176aa;
+}
+  
+.color-blue-two:hover {
+    background-color: #028bc5;
+}
+
+.content-requests {
+    gap: 16px;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+}
+
+.page-requests {
+    padding: 0 50px;
+}
+
+.card-image {
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.card-footer {
+    margin-top: 10px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.card-image, .card-footer {
+    display: flex;
+}
+
+.card-request {
+    width: 32%;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.card-request img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+
+.date-published {
+    font-weight: 500;
+    color: #00a5b5;
+    margin-right: 5px;
+}
+
+.title-published {
+    font-size: 18px;
+    color: #002d5d;
+    font-weight: 700;
+}
+
+.date-published, .title-published {
+    display: inline-block;
+}
+
+.text-published {
+    font-size: 14px;
+    color: #6C727A;
+}
+
+/*responsive*/
+@media screen and (max-width: 1025px) {
+    .card-request {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .page-requests {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content-requests {
+        flex-direction: column;
+    }
+    .card-request {
+        width: 100%;
+    }
+}

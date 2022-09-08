@@ -1,0 +1,55 @@
+<div class="page-requests">
+    <h1>Solicitudes pendientes</h1>
+    <div class="content-requests">
+        <div class="card-request">
+            <div class="card-image">
+                <img src="./assets/img/users/3.jpg">
+                <p class="title-published">Maria Candela</p>
+            </div>
+            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="card-footer">
+                <p class="date-published">10/05/22</p>
+                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
+            </div>
+        </div>
+        <div class="card-request">
+            <div class="card-image">
+                <img src="./assets/img/users/3.jpg">
+                <p class="title-published">Maria Candela</p>
+            </div>
+            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="card-footer">
+                <p class="date-published">10/05/22</p>
+                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
+            </div>
+        </div>
+        <div class="card-request">
+            <div class="card-image">
+                <img src="./assets/img/users/3.jpg">
+                <p class="title-published">Maria Candela</p>
+            </div>
+            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="card-footer">
+                <p class="date-published">10/05/22</p>
+                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
+            </div>
+        </div>
+        <div class="card-request">
+            <div class="card-image">
+                <img src="./assets/img/users/3.jpg">
+                <p class="title-published">Maria Candela</p>
+            </div>
+            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="card-footer">
+                <p class="date-published">10/05/22</p>
+                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- show message modal -->
+<ng-container *ngIf="showModal">
+    <app-modal-message
+      (event)="closeModal()"
+    ></app-modal-message>
+</ng-container>

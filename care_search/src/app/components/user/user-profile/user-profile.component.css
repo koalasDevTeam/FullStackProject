@@ -64,12 +64,13 @@
   font-size: 14px;
 }
 
-.data-form-cont h2 {
+.data-form-cont h1 {
+  color: #002d5d;
   margin-bottom: 1em;
   width: 90%;
   margin: 1em auto;
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .profile-edit-bottom {

@@ -1,0 +1,87 @@
+<div class="page-ad">
+    <h1>Revisa tu actividad</h1>
+    <div class="content-ad">
+        <div class="card-published">
+            <h2>Anuncios publicados</h2>
+            <div class="card-ad">
+                <div class="btn-delete">
+                    <img src="./assets/img/close.svg"/>
+                </div>
+                <div>
+                    <p class="date-published">10/05/22</p><h3 class="title-published">Niñera en Las Palmas</h3>
+                </div>
+                <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+            <div class="card-ad">
+                <div class="btn-delete">
+                    <img src="./assets/img/close.svg"/>
+                </div>
+                <div>
+                    <p class="date-published">10/05/22</p><h3 class="title-published">Niñera en Las Palmas</h3>
+                </div>
+                <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+            <div class="card-ad">
+                <div class="btn-delete">
+                    <img src="./assets/img/close.svg"/>
+                </div>
+                <div>
+                    <p class="date-published">10/05/22</p><h3 class="title-published">Niñera en Las Palmas</h3>
+                </div>
+                <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+            <button class="btn-add color-blue-one" (click)="setModalPost()">Publicar anuncio</button>
+        </div>
+        <div class="card-published">
+            <h2>Servicios realizados</h2>
+            <div class="card-ad">
+                <div class="btn-delete">
+                    <img src="./assets/img/close.svg"/>
+                </div>
+                <div>
+                    <p class="date-published">10/05/22</p><h3 class="title-published">Niñera en Las Palmas</h3>
+                </div>
+                <div>
+                    <p class="text-published"><b>Cristina Marrero</b> <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry..."</i></p>
+                    <button class="btn-feedback color-blue-two" (click)="setModalFeedback()">Ver feedback</button>
+                </div>
+            </div>
+            <div class="card-ad">
+                <div class="btn-delete">
+                    <img src="./assets/img/close.svg"/>
+                </div>
+                <div>
+                    <p class="date-published">10/05/22</p><h3 class="title-published">Niñera en Las Palmas</h3>
+                </div>
+                <div>
+                    <p class="text-published"><b>Cristina Marrero</b> <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry..."</i></p>
+                    <button class="btn-feedback color-blue-two" (click)="setModalFeedback()">Ver feedback</button>
+                </div>
+            </div>
+            <div class="card-ad">
+                <div class="btn-delete">
+                    <img src="./assets/img/close.svg"/>
+                </div>
+                <div>
+                    <p class="date-published">10/05/22</p><h3 class="title-published">Niñera en Las Palmas</h3>
+                </div>
+                <div>
+                    <p class="text-published"><b>Cristina Marrero</b> <i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry..."</i></p>
+                    <button class="btn-feedback color-blue-two" (click)="setModalFeedback()">Ver feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- show post modal -->
+<ng-container *ngIf="showModalPost">
+    <app-modal-post
+      (event)="closeModalPost()"
+    ></app-modal-post>
+</ng-container>
+<!-- show feedback modal -->
+<ng-container *ngIf="showModalFeedback">
+    <app-modal-feedback
+      (event)="closeModalFeedback()"
+    ></app-modal-feedback>
+</ng-container>

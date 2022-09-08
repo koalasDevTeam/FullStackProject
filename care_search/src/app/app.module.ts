@@ -26,6 +26,11 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { CookiesPolicyComponent } from './components/cookies-policy/cookies-policy.component';
 import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
+import { HistoryComponent } from './components/user/history/history.component';
+import { ModalPostComponent } from './components/user/modal-post/modal-post.component';
+import { RequestsComponent } from './components/user/requests/requests.component';
+import { ModalMessageComponent } from './components/user/modal-message/modal-message.component';
+import { ModalFeedbackComponent } from './components/user/modal-feedback/modal-feedback.component';
 
 
 @NgModule({
@@ -50,7 +55,12 @@ import { LegalNoticeComponent } from './components/legal-notice/legal-notice.com
     PrivacyPolicyComponent,
     ForgetPasswordComponent,
     CookiesPolicyComponent,
-    LegalNoticeComponent
+    LegalNoticeComponent,
+    HistoryComponent,
+    ModalPostComponent,
+    RequestsComponent,
+    ModalMessageComponent,
+    ModalFeedbackComponent
   ],
   imports: [
     BrowserModule,

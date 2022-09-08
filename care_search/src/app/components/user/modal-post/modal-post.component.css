@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+label {
+    font-size: 16px;
+    color: #002d5d;
+    font-weight: 700;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    margin: 1em 0;
+    color: #6C727A;
+    font-weight: 300;
+    padding: 0.7em 1em;
+    border-radius: 8px;
+    border: 1px solid #ebebeb;
+    background-color: #fff;
+}
+
+.date-published {
+    font-weight: 500;
+    color: #00a5b5;
+    margin-right: 5px;
+}
+
+.title-published {
+    font-size: 18px;
+    color: #002d5d;
+    font-weight: 700;
+}
+
+.text-published {
+    font-size: 14px;
+    color: #6C727A;
+}
+
+.card-image {
+    margin-bottom: 20px;
+    align-items: center;
+}
+  
+.card-image img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+  
+.card-footer {
+    gap: 15px;
+    margin-top: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+  
+.card-image, .card-footer {
+    display: flex;
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100vh;
+    transition: background 0.2s ease-in-out;
+}
+  
+.wrapper {
+    padding: 0 8px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+}
+  
+.message {
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 11px 44px rgba(0,0,0,0.4);
+    max-width: 500px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.btn-answer, .btn-delete {
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0.7em 2.3em;
+    border-radius: 8px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+}
+
+.bg-blue-one {
+    background-color: #00a5b5;
+}
+
+.bg-blue-one:hover {
+    background-color: #0a8391;
+}
+
+.bg-red {
+    background-color: #f45f72;
+}
+
+.bg-red:hover {
+    background-color: #d12438;
+}
