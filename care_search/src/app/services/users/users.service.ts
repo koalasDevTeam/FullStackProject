@@ -20,7 +20,7 @@ public setErrorMessage:string=""
         localStorage.getItem('currentUser') as string
       );
     }
-    console.log(this.storage)
+    
   }
 
   getAllUsers() {
@@ -43,7 +43,7 @@ public setErrorMessage:string=""
  }
   public selectHelper(id:any){
 this.idSelected = id
-console.log(this.idSelected)
+//console.log(this.idSelected)
 } 
 
 
@@ -55,8 +55,8 @@ console.log(this.idSelected)
 
   updateAnUser(user: any) {
     const _id = this.storage.currentUser._id;
-    console.log(user);
-    console.log(_id);
+    //console.log(user);
+    //console.log(_id);
     return axios
       .put(`${this.url}/api/users/${_id}`, user)
       .then((response) => response.data)
@@ -70,8 +70,8 @@ console.log(this.idSelected)
 
   updatePassword(user: any) {
     const id = user._id;
-    console.log(user);
-    console.log(id);
+    //console.log(user);
+    //console.log(id);
     return axios
       .put(`${this.url}/api/users/${id}`, user)
       .then((response) => response.data)

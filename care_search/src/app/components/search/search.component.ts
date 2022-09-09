@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
    ngOnInit(): void { 
     this.getAllUsers();
     this.ifLogged = this.UsersService.storage
-   console.log(this.UsersService.storage)
+   
 
         
   }
@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
 
 // to find helper by Id
   sendHelper(helperId:number){
-    console.log(helperId)
+   
     this.UsersService.selectHelper(helperId)
   }
 
