@@ -53,13 +53,13 @@ export class RegisterComponent implements OnInit {
   checkingIfProfessional(){
     this.iAmAProfessional=false
     this.profileUser = this.iAmAProfessional;
-    console.log(`i'm a professional = ${this.iAmAProfessional}`)
+    //console.log(`i'm a professional = ${this.iAmAProfessional}`)
   }
 
   chekingIfUser(){
     this.iAmAProfessional=true
     this.profileUser = this.iAmAProfessional;
-    console.log(`i'm a professional = ${this.iAmAProfessional}`)
+    //console.log(`i'm a professional = ${this.iAmAProfessional}`)
   }
 
   getAllUsers(){
@@ -75,7 +75,7 @@ export class RegisterComponent implements OnInit {
     //check if exist already an equal email and password in the json 
     const result = this.users.filter((user:any)=> user.email === this.emailUser)
     this.emptyForm = '';
-    console.log(`i'm profileUser: ${this.iAmAProfessional}`)
+    //console.log(`i'm profileUser: ${this.iAmAProfessional}`)
     this.profileUser = this.iAmAProfessional;
 
     if (result.length > 0) {
@@ -112,7 +112,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/user']);
       });
     }
-    console.log(JSON.stringify(this.registerForm.value, null, 2));
+    JSON.stringify(this.registerForm.value, null, 2);
 
   }
 }
