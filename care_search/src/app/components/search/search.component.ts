@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
  public users : any = [];
  resultsList : any = [];
  pressedSearchButton: boolean = false
-
+  ifLogged:any
  
 
   constructor(private  UsersService:UsersService) { 
@@ -44,7 +44,8 @@ export class SearchComponent implements OnInit {
 
    ngOnInit(): void { 
     this.getAllUsers();
-   
+    this.ifLogged = this.UsersService.storage
+   console.log(this.UsersService.storage)
 
         
   }

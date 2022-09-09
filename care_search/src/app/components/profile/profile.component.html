@@ -14,8 +14,10 @@
     </div>
 
     <div class="contacts">
-      <h5>Valoración: {{ helperObje.score }}/5</h5>
-      <h5>Precio: {{ helperObje.price }}€/hora</h5>
+      <div class="contact-cont">
+        <h5>Valoración: {{ helperObje.score }}/5</h5>
+        <h5>Precio: {{ helperObje.price }}€/hora</h5>
+      </div>
       <button (click)="setContactModal(helperObje)" class="btn-contact">
         Contacto
       </button>
@@ -24,10 +26,13 @@
       </button>
     </div>
   </div>
-  <ng-container *ngIf="showModal">
+  <ng-container *ngIf="showModal && ifLogged.currentUser._id">
     <app-user-contact
       [helper]="helperSelected"
       (event)="closeContact()"
     ></app-user-contact>
+  </ng-container>
+  <ng-container *ngIf="showModal && !ifLogged.currentUser._id">
+    <app-no-user-message (event)="closeContact()"></app-no-user-message>
   </ng-container>
 </section>

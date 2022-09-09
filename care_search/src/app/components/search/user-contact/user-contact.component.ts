@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class UserContactComponent implements OnInit {
   @Output() event = new EventEmitter();
   @Input() helper? : any;
+   
  
   public user: any = [];
   public petition: string = "";

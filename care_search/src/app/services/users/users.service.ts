@@ -20,6 +20,7 @@ public setErrorMessage:string=""
         localStorage.getItem('currentUser') as string
       );
     }
+    console.log(this.storage)
   }
 
   getAllUsers() {

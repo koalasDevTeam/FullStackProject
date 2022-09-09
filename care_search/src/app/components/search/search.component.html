@@ -83,6 +83,7 @@
             routerLink="/profile"
             class="btn-perfil"
             (click)="sendHelper(helper._id)"
+            ifLoging="ifLogin"
           >
             Perfil
           </button>
@@ -101,10 +102,13 @@
     </h3>
   </div>
   <!-- show contact modal -->
-  <ng-container *ngIf="showModal">
+  <ng-container *ngIf="showModal && ifLogged.currentUser._id">
     <app-user-contact
       [helper]="helperSelected"
       (event)="closeContact()"
     ></app-user-contact>
+  </ng-container>
+  <ng-container *ngIf="showModal && !ifLogged.currentUser._id">
+    <app-no-user-message (event)="closeContact()"></app-no-user-message>
   </ng-container>
 </section>

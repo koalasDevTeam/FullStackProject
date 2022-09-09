@@ -31,6 +31,7 @@ import { ModalPostComponent } from './components/user/modal-post/modal-post.comp
 import { RequestsComponent } from './components/user/requests/requests.component';
 import { ModalMessageComponent } from './components/user/modal-message/modal-message.component';
 import { ModalFeedbackComponent } from './components/user/modal-feedback/modal-feedback.component';
+import { NoUserMessageComponent } from './components/search/no-user-message/no-user-message.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { ModalFeedbackComponent } from './components/user/modal-feedback/modal-f
     ModalPostComponent,
     RequestsComponent,
     ModalMessageComponent,
-    ModalFeedbackComponent
+    ModalFeedbackComponent,
+    NoUserMessageComponent
   ],
   imports: [
     BrowserModule,
