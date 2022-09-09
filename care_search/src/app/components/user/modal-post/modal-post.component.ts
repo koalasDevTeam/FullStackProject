@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal-post',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalPostComponent implements OnInit {
 
+  @Output() event = new EventEmitter();
   public titlePost: string = "";
   public selectedOption: string = "";
 
@@ -21,6 +22,10 @@ export class ModalPostComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+  }
+
+  closeModal(){
+    this.event.emit();
   }
 
 }

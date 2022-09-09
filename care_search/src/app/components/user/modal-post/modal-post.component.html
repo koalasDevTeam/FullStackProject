@@ -1,24 +1,23 @@
-<div class="modal">
-    <div class="wrapper">
-      <div class="message">
-        <form>
-          <div>
-            <label for="title">¿Qué título deseas poner en el anuncio?</label>
-            <input type="text" name="title" [(ngModel)]="titlePost" placeholder="Título del anuncio" value="" required/>
-          </div>
-          <div>
-            <label for="city">¿Dónde deseas ofrecer sus servicios?</label>
-            <select name="city" [(ngModel)]="selectedOption">
-              <option value="" disabled selected style="display: none">
-                ¿En qué ciudad?
-              </option>
-              <option *ngFor="let location of optionsLocationArr">
-                {{ location.city }}
-              </option>
-            </select>
-          </div>
-          <button class="btn-answer bg-blue-one">Publicar</button>
-        </form>
-      </div>
+<section class="modal" (click)="closeModal()"></section>
+<div class="wrapper">
+    <div class="message">
+      <form>
+        <div>
+          <label for="title">¿Qué título deseas poner en el anuncio?</label>
+          <input type="text" name="title" [(ngModel)]="titlePost" placeholder="Título del anuncio" value="" required/>
+        </div>
+        <div>
+          <label for="city">¿Dónde deseas ofrecer sus servicios?</label>
+          <select name="city" [(ngModel)]="selectedOption">
+            <option value="" disabled selected style="display: none">
+              ¿En qué ciudad?
+            </option>
+            <option *ngFor="let location of optionsLocationArr">
+              {{ location.city }}
+            </option>
+          </select>
+        </div>
+        <button class="btn-answer bg-blue-one">Publicar</button>
+      </form>
     </div>
 </div>
