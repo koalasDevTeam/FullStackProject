@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   getAllUsers(){
-    this.userService.getAllUsers().then(response =>{ console.log(this.users = response)});
+    this.userService.getAllUsers().then(response =>{this.users = response});
     
     }
 
