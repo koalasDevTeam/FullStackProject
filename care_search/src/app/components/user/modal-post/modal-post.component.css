@@ -9,62 +9,21 @@
     font-family: "Poppins", sans-serif;
 }
 
-label {
+form label {
     font-size: 16px;
     color: #002d5d;
     font-weight: 700;
 }
 
-textarea {
+form input, form select {
     width: 100%;
-    resize: none;
-    margin: 1em 0;
-    color: #6C727A;
+    margin: 0 0 1em 0;
+    color: #1b2126;
     font-weight: 300;
     padding: 0.7em 1em;
     border-radius: 8px;
     border: 1px solid #ebebeb;
     background-color: #fff;
-}
-
-.date-published {
-    font-weight: 500;
-    color: #00a5b5;
-    margin-right: 5px;
-}
-
-.title-published {
-    font-size: 18px;
-    color: #002d5d;
-    font-weight: 700;
-}
-
-.text-published {
-    font-size: 14px;
-    color: #6C727A;
-}
-
-.card-image {
-    margin-bottom: 20px;
-    align-items: center;
-}
-  
-.card-image img {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-    border-radius: 100%;
-}
-  
-.card-footer {
-    gap: 15px;
-    margin-top: 20px;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-  
-.card-image, .card-footer {
-    display: flex;
 }
 
 .modal {
