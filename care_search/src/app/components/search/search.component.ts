@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
  public users : any = [];
  resultsList : any = [];
  pressedSearchButton: boolean = false
+
  
 
   constructor(private  UsersService:UsersService) { 
@@ -43,6 +44,7 @@ export class SearchComponent implements OnInit {
 
    ngOnInit(): void { 
     this.getAllUsers();
+   
 
         
   }
@@ -53,6 +55,7 @@ export class SearchComponent implements OnInit {
     console.log(helperId)
     this.UsersService.selectHelper(helperId)
   }
+
 
 
 

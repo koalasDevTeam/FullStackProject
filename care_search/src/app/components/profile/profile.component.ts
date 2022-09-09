@@ -25,8 +25,6 @@ export class ProfileComponent implements OnInit {
       
     
     } 
-
-
   //to show contact modal
 
   setContactModal(helper:any){
