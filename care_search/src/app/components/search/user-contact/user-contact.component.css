@@ -38,6 +38,7 @@
 
 .form-content {
     width: 500px;
+    height: 485px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 20px;
@@ -57,7 +58,7 @@ button {
 .form-content textarea {
     padding: 0.5em;
     resize: none;
-    height: 120px;
+    height: 180px;
     border: 1px solid rgb(176, 176, 202);
     border-radius: 4px;
 }
@@ -69,7 +70,7 @@ button {
     color: white;
     border: none;
     border-radius: 4px;
-    margin: 10px 0;
+    margin: 20px 0 10px 0;
     line-height: 10px;
     font-weight: bolder;
     cursor: pointer;
@@ -212,6 +213,30 @@ textarea:focus {
     color: #fff;
 }
 
+.succes-message-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.succes-message-cont img{
+    width:150px;
+    margin: 0 0 2em 0;
+}
+.succes-message-cont h3{
+   text-align: center;
+   width: 90%;
+   margin: 1em auto 2em auto;
+   /* color: #0fdba8; */
+}
+
+.error-message{
+    color: red;
+    position: absolute;
+    bottom: 102px;
+}
 
 /*responsive*/
 

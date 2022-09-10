@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
   ifLogged:any
  
 
-  constructor(private  UsersService:UsersService) { 
+  constructor(private UsersService:UsersService) { 
    }
 
   optionsWorkArr = [

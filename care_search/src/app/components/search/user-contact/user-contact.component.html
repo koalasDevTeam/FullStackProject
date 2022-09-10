@@ -9,22 +9,24 @@
       <h3>Contacta con {{ helper?.name }}</h3>
       <button class="close-contact" (click)="closeContact()">&times;</button>
     </div>
-    <form class="form-contact">
-      <div class="form-group-one">
-        <div class="input-group">
-          <textarea
-            id="story"
-            name="story"
-            [(ngModel)]="petition"
-            rows="5"
-            cols="33"
-            required
-            placeholder="Me interesa contratar sus servicios..."
-          ></textarea>
+
+    <ng-container *ngIf="!messageSent">
+      <form class="form-contact">
+        <div class="form-group-one">
+          <div class="input-group">
+            <textarea
+              id="story"
+              name="story"
+              [(ngModel)]="petition"
+              rows="5"
+              cols="33"
+              required
+              placeholder="Me interesa contratar sus servicios..."
+            ></textarea>
+          </div>
         </div>
-      </div>
-      <div class="form-group-two">
-        <!-- <label>Your email</label> -->
+        <!-- <div class="form-group-two">
+       
         <div class="input-group">
           <input
             type="text"
@@ -34,10 +36,10 @@
             placeholder="Introduce tu nombre y apellidos"
           />
         </div>
-      </div>
-      <div class="form-group-three">
+      </div> -->
+        <!-- <div class="form-group-three">
         <div class="form-group_number">
-          <!-- <label>Your phone number</label> -->
+      
           <div class="input-group">
             <input
               type="email"
@@ -50,7 +52,7 @@
           </div>
         </div>
         <div class="form-group_name">
-          <!-- <label>Your name</label> -->
+          
           <div class="input-group">
             <input
               type="text"
@@ -63,30 +65,44 @@
             />
           </div>
         </div>
-      </div>
-      <div class="form-group-four">
-        <div class="input-group">
-          <div class="input-group_checkbox-one">
-            <input
-              type="checkbox"
-              [(ngModel)]="privacyUser"
-              name="privacy-policy"
-              id="privacy-policy"
-            />
-            <label for="privacy-policy" class="privacy-checkbox">&check;</label>
-            <label
-              >Acepto la
-              <a routerLink="/privacy-policy" class="link-privacy-policy"
-                >política de privacidad</a
-              ></label
-            >
+      </div> -->
+        <div class="form-group-four">
+          <div class="input-group">
+            <div class="input-group_checkbox-one">
+              <input
+                type="checkbox"
+                [(ngModel)]="privacyUser"
+                name="privacy-policy"
+                id="privacy-policy"
+              />
+              <label for="privacy-policy" class="privacy-checkbox"
+                >&check;</label
+              >
+              <label
+                >Acepto la
+                <a routerLink="/privacy-policy" class="link-privacy-policy"
+                  >política de privacidad</a
+                ></label
+              >
+            </div>
           </div>
         </div>
+        <!--<input class="contact-button" type="submit" value="Contactar">-->
+        <p *ngIf="emptyForm != ''" class="error-message">{{ emptyForm }}</p>
+        <p *ngIf="emptyPrivacy != ''" class="error-message">{{ emptyPrivacy }}</p>
+        <button class="contact-button" type="button" (click)="sendMessage()">
+          Contactar
+        </button>
+      </form>
+    </ng-container>
+
+    <ng-container *ngIf="messageSent">
+      <div class="succes-message-cont">
+        <!-- {{ petition }} -->
+        <img src="../../../../assets/img/check.svg" alt="" />
+        <h3>Su mensaje ha sido enviado</h3>
       </div>
-      <!--<input class="contact-button" type="submit" value="Contactar">-->
-      <button class="contact-button" type="button" (click)="save()">
-        Contactar
-      </button>
-    </form>
+    
+    </ng-container>
   </div>
 </div>
