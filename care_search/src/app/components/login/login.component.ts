@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
   public emptyForm: string = "";
   public newUser: any = {};
   public users : any =[];
+  
+
+
 
   constructor(private router: Router,
    private userService:UsersService, private formBuilder: FormBuilder) { }
@@ -36,36 +39,47 @@ export class LoginComponent implements OnInit {
     get message() {
       return this.loginForm.controls;
     }
- 
+
+
+
+     validateUserNameAndPassword(correctUser:any ){
+        console.log(correctUser)
+    
+        if(correctUser){
+          
+          localStorage.setItem('currentUser', JSON.stringify(correctUser))
+          this.userService.setCurrentUser(correctUser)
+
+          if(!this.userService.storage.currentUser.user_Status){
+            this.router.navigate(['/user'])
+          }else{
+            this.router.navigate(['/'])
+          }
+
+          
+        }
+        else{
+          this.emptyForm = "Error en las credenciales. Usuario no registrado.";
+        }
+    
+        this.submitted = true;
+          if (this.loginForm.invalid) {
+            return;
+          }
+          console.log(JSON.stringify(this.loginForm.value, null, 2));
+    
+      } 
+    
+  
 
   login() {
-    let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
-    //console.log('check: ', correctUSer)
-  
-      if(correctUSer){
-        localStorage.setItem('currentUser', JSON.stringify(correctUSer))
-        this.userService.setCurrentUser(correctUSer)
-
-        if(!this.userService.storage.currentUser.user_Status){
-          this.router.navigate(['/user'])
-        }else{
-          this.router.navigate(['/'])
-        }
-
-        
-      }
-      else{
-        this.emptyForm = "Error en las credenciales. Usuario no registrado.";
-      }
-  
-      this.submitted = true;
-        if (this.loginForm.invalid) {
-          return;
-        }
-        console.log(JSON.stringify(this.loginForm.value, null, 2));
-  
-    }
-    
+   /*  let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
+    console.log('check: ', correctUSer) */
+    //this.correctUser = this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser )
+    this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(response =>{
+      console.log(response)
+      this.validateUserNameAndPassword(response)
+    });
    
-
+  }
 }

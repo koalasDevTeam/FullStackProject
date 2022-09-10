@@ -68,6 +68,12 @@ this.idSelected = id
       });
   }
 
+   validateUserNameAndPassword(email:string, password:string){
+    return axios
+          .post(`${this.url}/api/users/email`, { email: email, pass: password })
+          .then((response) => (response.data));
+
+      }
   updatePassword(user: any) {
     const id = user._id;
     //console.log(user);

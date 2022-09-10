@@ -73,7 +73,7 @@ export class SearchComponent implements OnInit {
       img:string,
       job:string,
       name:string,
-      pass:string,
+      
       price:string,
       schedule:string,
       score:number,
