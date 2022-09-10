@@ -1,24 +1,43 @@
 <section class="modal" (click)="closeModal()"></section>
 <div class="wrapper">
-    <div class="message">
-        <div *ngIf="novisability">
-            <div class="card-image">
-                <img src="./assets/img/users/3.jpg">
-                <div>
-                    <p class="title-published">Maria Candela</p>
-                    <p class="date-published">10/05/22</p>
-                </div>
-            </div>
-            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <div class="card-footer">
-                <button class="btn-answer bg-blue-one" (click)="replyMessage()">Responder</button>
-                <button class="btn-delete bg-red" (click)="closeModal()">Descartar</button>
-            </div>
+  <div class="message">
+    <div *ngIf="novisability">
+      <div class="card-image">
+        <img src="{{ messageReceived.img_user_send }}" />
+        <div>
+          <p class="title-published">{{ messageReceived.name_user_send }}</p>
+          <p class="date-published">{{ messageReceived.date }}</p>
         </div>
-        <form *ngIf="visability">
-            <label for="reply">Responder a Maria Candela</label>
-            <textarea id="reply" name="reply" rows="5" cols="33" required></textarea>
-            <button class="btn-answer bg-blue-one">Enviar</button>
-        </form>
+      </div>
+      <p class="text-published">
+        {{ messageReceived.content }}
+      </p>
+    
+      <div class="card-footer">
+        <button class="btn-delete bg-red" (click)="closeModal()">
+          Cancelar
+        </button>
+        <button class="btn-answer bg-blue-one" (click)="replyMessage()">
+          Responder
+        </button>
+      </div>
     </div>
+    <form *ngIf="visability">
+      <label for="reply">Responder a {{ messageReceived.name_user_send }}</label>
+      <textarea   [(ngModel)]="petition" id="reply" name="reply" rows="5" cols="33" required></textarea>
+      <p *ngIf="emptyForm != ''" class="error-message">{{ emptyForm }}</p>
+      <div class="card-footer">
+        <button class="btn-delete bg-red" (click)="backMessage()">Atrás</button>
+        <button class="btn-answer bg-blue-one" (click)="sendMessage()">Enviar</button>
+      </div>
+    </form>
+    <ng-container *ngIf="messageSent">
+        <div class="succes-message-cont">
+          <!-- {{ petition }} -->
+          <img src="../../../../assets/img/check.svg" alt="" />
+          <h3>Su mensaje ha sido enviado</h3>
+        </div>
+      
+      </ng-container>
+  </div>
 </div>

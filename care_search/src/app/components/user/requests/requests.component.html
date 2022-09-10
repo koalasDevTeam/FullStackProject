@@ -1,55 +1,28 @@
 <div class="page-requests">
-    <h1>Solicitudes pendientes</h1>
-    <div class="content-requests">
-        <div class="card-request">
-            <div class="card-image">
-                <img src="./assets/img/users/3.jpg">
-                <p class="title-published">Maria Candela</p>
-            </div>
-            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <div class="card-footer">
-                <p class="date-published">10/05/22</p>
-                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
-            </div>
+  <h1>Solicitudes pendientes</h1>
+  <div class="content-requests">
+    <ng-container *ngFor="let message of userMessages">
+      <div class="card-request">
+        <div class="card-image">
+          <img src={{message.img_user_send}} />
+          <p class="title-published">{{message.name_user_send}}</p>
         </div>
-        <div class="card-request">
-            <div class="card-image">
-                <img src="./assets/img/users/3.jpg">
-                <p class="title-published">Maria Candela</p>
-            </div>
-            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <div class="card-footer">
-                <p class="date-published">10/05/22</p>
-                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
-            </div>
+        <p class="text-published">
+            {{message.content}}
+        </p>
+        <div class="card-footer">
+          <p class="date-published">{{message.date}}</p>
+          <button class="btn-view color-blue-two" (click)="setPostModal(message)">
+            Ver
+          </button>
         </div>
-        <div class="card-request">
-            <div class="card-image">
-                <img src="./assets/img/users/3.jpg">
-                <p class="title-published">Maria Candela</p>
-            </div>
-            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <div class="card-footer">
-                <p class="date-published">10/05/22</p>
-                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
-            </div>
-        </div>
-        <div class="card-request">
-            <div class="card-image">
-                <img src="./assets/img/users/3.jpg">
-                <p class="title-published">Maria Candela</p>
-            </div>
-            <p class="text-published">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <div class="card-footer">
-                <p class="date-published">10/05/22</p>
-                <button class="btn-view color-blue-two" (click)="setPostModal()">Ver</button>
-            </div>
-        </div>
-    </div>
+      </div>
+    </ng-container>
+  </div>
 </div>
 <!-- show message modal -->
 <ng-container *ngIf="showModal">
-    <app-modal-message
-      (event)="closeModal()"
-    ></app-modal-message>
+  <app-modal-message
+  [messageReceived]="messageSelected"
+   (event)="closeModal()"></app-modal-message>
 </ng-container>
