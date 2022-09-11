@@ -53,7 +53,7 @@ export class UserContactComponent implements OnInit {
   // }
 
   sendMessage() {
-    console.log('save');
+    //console.log('save');
     if (this.privacyUser == '') {
       this.emptyPrivacy = 'Debe aceptar la Política de Privacidad.';
       this.emptyForm = '';
@@ -65,7 +65,7 @@ export class UserContactComponent implements OnInit {
 
         const timeNow = Date.now();
         const today = new Date(timeNow);
-        console.log(today.toLocaleDateString())
+        //console.log(today.toLocaleDateString())
       
         this.newMessage ={
           user_send : `${this.UsersService.storage.currentUser._id}`,
@@ -77,8 +77,8 @@ export class UserContactComponent implements OnInit {
         }
        
         this.MessagesService.createNewMessage(this.newMessage).then((message)=>{
-          console.log(message)
-          console.log(this.newMessage)
+         // console.log(message)
+          //console.log(this.newMessage)
           this.messageSent = true;
         })
      

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
 
      validateUserNameAndPassword(correctUser:any ){
-        console.log(correctUser)
+        //console.log(correctUser)
     
         if(correctUser){
           
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
           if (this.loginForm.invalid) {
             return;
           }
-          console.log(JSON.stringify(this.loginForm.value, null, 2));
+          //console.log(JSON.stringify(this.loginForm.value, null, 2));
     
       } 
     
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
     console.log('check: ', correctUSer) */
     //this.correctUser = this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser )
     this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(response =>{
-      console.log(response)
+      //console.log(response)
       this.validateUserNameAndPassword(response)
     });
    

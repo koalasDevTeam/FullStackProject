@@ -38,14 +38,14 @@ export class ModalMessageComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log('save');
+   // console.log('save');
 
     if (this.petition == '') {
       this.emptyForm = 'El mensaje debe tener contenido';
     } else {
       const timeNow = Date.now();
       const today = new Date(timeNow);
-      console.log(today.toLocaleDateString());
+     // console.log(today.toLocaleDateString());
 
       this.newMessage = {
         user_send: `${this.UsersService.storage.currentUser._id}`,
@@ -57,8 +57,8 @@ export class ModalMessageComponent implements OnInit {
       };
 
       this.MessagesService.createNewMessage(this.newMessage).then((message) => {
-        console.log(message);
-        console.log(this.newMessage);
+        //console.log(message);
+        //console.log(this.newMessage);
         this.visability = false;
         this.messageSent = true;
       });

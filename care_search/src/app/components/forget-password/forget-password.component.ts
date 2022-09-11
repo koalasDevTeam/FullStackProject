@@ -71,13 +71,13 @@ export class ForgetPasswordComponent implements OnInit {
     if (this.forgetForm.invalid) {
       return;
     }
-    console.log(JSON.stringify(this.forgetForm.value, null, 2));
+    //console.log(JSON.stringify(this.forgetForm.value, null, 2));
   }
 
   save() {
     this.emptyForm = '';
     let user = this.users.find((correct:any) => correct.email === this.emailUser);
-    console.log(user?.lenght);
+    //console.log(user?.lenght);
     if (user) {
       if ((this.emailUser != '') && (this.passwordUser != '') && (this.passwordUser == this.passwordUserVerify)) {
         this.idUser = user.id;
@@ -113,7 +113,7 @@ export class ForgetPasswordComponent implements OnInit {
       if (this.forgetForm.invalid) {
         return;
       }
-      console.log(JSON.stringify(this.forgetForm.value, null, 2)); 
+      //console.log(JSON.stringify(this.forgetForm.value, null, 2)); 
   }
 
 }
