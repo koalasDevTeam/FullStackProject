@@ -37,10 +37,11 @@
           <div>
             <label class="label-form" for="fecha_nacimiento"
               >Fecha de nacimiento*
-              <small><i>ejemplo: 19/9/1999</i></small></label
-            >
+              <!-- <small><i>ejemplo: 19/9/1999</i></small> -->
+              </label
+>
             <input
-              type="text"
+              type="date"
               name="fecha_nacimiento"
               placeholder="Introduce tu fecha de nacimiento*"
               required
@@ -50,14 +51,14 @@
           </div>
           <div>
             <label class="label-form" for="ciudad">Ciudad*</label>
-            <input
-              type="text"
-              name="city"
-              placeholder="Introduce tu ciudad*"
-              required
-              [(ngModel)]="cityUser"
-              [ngModelOptions]="{ standalone: true }"
-            />
+            <select name="city" id="" [(ngModel)]="cityUser">
+              <option value="" disabled selected style="display: none">
+                Selecciona tu ciudad*
+              </option>
+              <option *ngFor="let location of optionsLocationArr">
+                {{ location.city }}
+              </option>
+            </select>
           </div>
           <div>
             <label class="label-form" for="ciudad">Calle</label>

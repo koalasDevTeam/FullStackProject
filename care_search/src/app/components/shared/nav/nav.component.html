@@ -57,11 +57,11 @@
     
       <ng-container *ngIf="this.storage.currentUser.hasOwnProperty('email')">
 
-      <p routerLink="/user" *ngIf=" this.storage.currentUser.name == ''" class="user">
+      <p routerLink="/user"  (click)="getMv(false)" *ngIf=" this.storage.currentUser.name == ''" class="user">
         ¡Hola {{this.storage?.currentUser.email}}!
       </p>
 
-      <p routerLink="/user" *ngIf="this.storage.currentUser.name != ''" class="user-name user">
+      <p routerLink="/user"  (click)="getMv(false)" *ngIf="this.storage.currentUser.name != ''" class="user-name user">
         ¡Hola {{this.storage?.currentUser.name.split(' ')[0]}}!
       </p>
 
@@ -70,7 +70,7 @@
       
 
       <div class="login-cont">
-        <span (click)="logOut()" *ngIf="this.storage.currentUser.hasOwnProperty('email')">
+        <span (click)="logOut(); getMv(false)" *ngIf="this.storage.currentUser.hasOwnProperty('email')">
           Salir
         </span>
         <ng-container *ngIf="!this.storage.currentUser.hasOwnProperty('email')">

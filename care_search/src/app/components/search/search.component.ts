@@ -46,9 +46,6 @@ export class SearchComponent implements OnInit {
   {city:"Mogán", value:11},
   {city:"Moya", value:12},
   {city:"Maspalomas", value:12},
-  
-  
-
 ]
 
 

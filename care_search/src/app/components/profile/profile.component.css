@@ -148,6 +148,13 @@
   text-align: center;
 }
 
+.contact-cont{
+  text-align: right;
+}
+.contact-cont h5{
+  margin: 0;
+}
+
 /* .contacts h6 {
   text-align: left;
   padding: 10px;
