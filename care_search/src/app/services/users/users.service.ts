@@ -5,7 +5,7 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class UsersService {
-  public url: any = 'http://caresearch.herokuapp.com';
+  public url: any = 'https://caresearch.herokuapp.com';
   public idSelected= 0;
   public users = []
 public setErrorMessage:string=""

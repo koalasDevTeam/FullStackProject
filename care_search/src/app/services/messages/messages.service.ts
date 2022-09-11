@@ -5,7 +5,7 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class MessagesService {
-  public url: any = 'http://caresearch.herokuapp.com';
+  public url: any = 'https://caresearch.herokuapp.com';
   public messages = []
   constructor() {
     
