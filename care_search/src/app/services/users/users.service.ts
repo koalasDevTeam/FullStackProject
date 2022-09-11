@@ -32,19 +32,27 @@ public setErrorMessage:string=""
    
   }
   public getHelpersById(){
-  const uniqueHelper = this.users.find((helper:any)=>{ 
 
-  return helper._id === this.idSelected 
+    if (localStorage.getItem('selectedUser')) {
+      const user =  JSON.parse(
+        localStorage.getItem('selectedUser') as string
+      )
 
- })
+      //this.idSelected = user.id
+      return user
+    }else{
+      return null
+    }
+  }
 
- return uniqueHelper
-
- }
   public selectHelper(id:any){
-this.idSelected = id
-//console.log(this.idSelected)
-} 
+    //this.idSelected = id
+    const selectedUser = this.users.find((helper:any)=>{ 
+        return helper._id ===  id
+      })
+    localStorage.setItem('selectedUser', JSON.stringify(selectedUser))
+
+  } 
 
 
   createNewUser(newUser: any) {

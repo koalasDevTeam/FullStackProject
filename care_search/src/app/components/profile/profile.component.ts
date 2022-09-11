@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   showHelperData(){
     let resultsHelper = this.userService.getHelpersById()
     this.helperObje =  resultsHelper
-    
+    //console.log(this.userService.getHelpersById())
     return this.helperObje =  resultsHelper
   }
     ngOnInit(){
