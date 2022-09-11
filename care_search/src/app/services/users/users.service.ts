@@ -5,7 +5,10 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class UsersService {
-  public url: any = 'https://caresearch.herokuapp.com';
+    //url when it is on prod:
+ // public url: any = 'https://caresearch.herokuapp.com';
+  //url when it is on local:
+  public url: any = 'http://localhost:3000';
   public idSelected= 0;
   public users = []
 public setErrorMessage:string=""
