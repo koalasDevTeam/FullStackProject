@@ -18,11 +18,13 @@ export class ProfileComponent implements OnInit {
   showHelperData(){
     let resultsHelper = this.userService.getHelpersById()
     this.helperObje =  resultsHelper
+    
     return this.helperObje =  resultsHelper
   }
     ngOnInit(){
       this.showHelperData()
        this.ifLogged = this.userService.storage
+        
    
     
     } 

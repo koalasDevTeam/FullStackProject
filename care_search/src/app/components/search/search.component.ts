@@ -37,7 +37,17 @@ export class SearchComponent implements OnInit {
   {city:"Mogan", value:2},
   {city:"Galdar", value:3},
   {city:"Arucas", value:4},
-  {city:"Tejeda", value:5}
+  {city:"Tejeda", value:5},
+  {city:"Artenara", value:6},
+  {city:"Agaete", value:7},
+  {city:"firgas", value:8},
+  {city:"Teror", value:9},
+  {city:"Valleseco", value:10},
+  {city:"Mogán", value:11},
+  {city:"Moya", value:12},
+  {city:"Maspalomas", value:12},
+  
+  
 
 ]
 

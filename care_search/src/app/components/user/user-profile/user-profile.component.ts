@@ -61,6 +61,7 @@ export class UserProfileComponent implements OnInit {
     { name: 'Mañana', value: 3 },
     { name: 'Tarde', value: 4 },
   ];
+  
 
   constructor(private userService: UsersService, private router: Router) {}
 
