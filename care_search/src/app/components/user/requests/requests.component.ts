@@ -29,13 +29,11 @@ export class RequestsComponent implements OnInit {
     this.showModal = false;
   }
 
-  getMessages() {
-    this.MessagesService.getAllMessages().then((response) => {
-      this.messages = response;
-      this.userMessages= this.messages.filter((message:any)=> {
-        return message.user_receive === this.UsersService.storage.currentUser._id
-        })
-
+  getMessages(){
+    this.MessagesService.getAllMessages(this.UsersService.storage.currentUser._id).then((response) => {
+      this.userMessages = response.reverse();
+      //console.log(this.userMessages)
+      
     });
   }
 
