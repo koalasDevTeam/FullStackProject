@@ -66,8 +66,8 @@ public setErrorMessage:string=""
 
   updateAnUser(user: any) {
     const _id = this.storage.currentUser._id;
-    //console.log(user);
-    //console.log(_id);
+    console.log(user);
+    console.log(_id);
     return axios
       .put(`${this.url}/api/users/${_id}`, user)
       .then((response) => response.data)

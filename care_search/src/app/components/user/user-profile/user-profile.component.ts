@@ -294,7 +294,7 @@ export class UserProfileComponent implements OnInit {
 
   //to disable account***********************************************************************/
   disableAccount(user: any) {
-   // console.log(`desabled:${user}`);
+    console.log(`desabled:${user}`)
     user = {
       _id:this.currentUser._id,
       user_Status: true,
@@ -313,7 +313,7 @@ export class UserProfileComponent implements OnInit {
       price: this.priceUser,
       schedule: this.schedule,
     };
-    //console.log(`desabled:${user}`);
+    console.log(`desabled 2:${user}`);
 
     this.userService.updateAnUser(user);
     localStorage.setItem('currentUser', JSON.stringify(user));
