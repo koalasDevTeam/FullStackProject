@@ -82,8 +82,13 @@ public setErrorMessage:string=""
    validateUserNameAndPassword(email:string, password:string){
     return axios
           .post(`${this.url}/api/users/email`, { email: email, pass: password })
-          .then((response) => (response.data));
-
+          .then((response) => (response.data))
+          .catch((error) => {
+            if (error.response) {
+            //console.log(error.response.data.message)
+            }
+           console.log(error);
+          });
       }
   updatePassword(user: any) {
     const id = user._id;

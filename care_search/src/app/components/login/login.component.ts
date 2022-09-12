@@ -61,12 +61,7 @@ export class LoginComponent implements OnInit {
         else{
           this.emptyForm = "Error en las credenciales. Usuario no registrado.";
         }
-    
-        this.submitted = true;
-          if (this.loginForm.invalid) {
-            return;
-          }
-          //console.log(JSON.stringify(this.loginForm.value, null, 2));
+        //console.log(JSON.stringify(this.loginForm.value, null, 2));
     
       } 
     
@@ -76,10 +71,20 @@ export class LoginComponent implements OnInit {
    /*  let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
     console.log('check: ', correctUSer) */
     //this.correctUser = this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser )
-    this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(response =>{
-      //console.log(response)
-      this.validateUserNameAndPassword(response)
-    });
-   
+    this.emptyForm = '';
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    } else if ((this.emailUser != '') && (this.passwordUser != '')) {
+      this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(response =>{
+        //console.log(response)
+        if(response){
+          this.validateUserNameAndPassword(response)
+        } else {
+          this.emptyForm = "Error en las credenciales. Usuario no registrado.";
+        }
+        
+      });
+    }
   }
 }
