@@ -82,7 +82,7 @@ public setErrorMessage:string=""
    validateUserNameAndPassword(email:string, password:string){
     return axios
           .post(`${this.url}/api/users/email`, { email: email, pass: password })
-          .then((response) => (response.data));
+          .then((response) => (console.log(response.data)));
 
       }
   updatePassword(user: any) {
