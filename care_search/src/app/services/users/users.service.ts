@@ -79,10 +79,16 @@ public setErrorMessage:string=""
       });
   }
 
+//only function that return o generate the TOKEN
    validateUserNameAndPassword(email:string, password:string){
+
     return axios
           .post(`${this.url}/api/users/email`, { email: email, pass: password })
-          .then((response) => (console.log(response.data)));
+          .then((response) => {
+            localStorage.setItem('jwt',(response.data));
+            axios.defaults.headers.common['authorization'] = `Bearer ${response.data}` // for all requests
+            return response.data}
+            );
 
       }
   updatePassword(user: any) {
