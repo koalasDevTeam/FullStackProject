@@ -87,11 +87,11 @@ export class LoginComponent implements OnInit {
 
     this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(token =>{
       //let token = localStorage.getItem('jwt')
-      console.log('antes: ',token)
+      //console.log('antes: ',token)
       let userObject = this.parseJwt(token) // we decoded the jwt payload
-      console.log('despues:',userObject)
+      //console.log('despues:',userObject)
       
-      this.validateUserNameAndPassword(userObject.user)
+      this.validateUserNameAndPassword(userObject)
 
     });
    

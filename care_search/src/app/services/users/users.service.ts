@@ -66,8 +66,7 @@ public setErrorMessage:string=""
 
   updateAnUser(user: any) {
     const _id = this.storage.currentUser._id;
-    console.log(user);
-    console.log(_id);
+    
     return axios
       .put(`${this.url}/api/users/${_id}`, user)
       .then((response) => response.data)
@@ -83,7 +82,7 @@ public setErrorMessage:string=""
    validateUserNameAndPassword(email:string, password:string){
 
     return axios
-          .post(`${this.url}/api/users/email`, { email: email, pass: password })
+          .post(`${this.url}/api/users/login`, { email: email, pass: password })
           .then((response) => {
             localStorage.setItem('jwt',(response.data));
             axios.defaults.headers.common['authorization'] = `Bearer ${response.data}` // for all requests
