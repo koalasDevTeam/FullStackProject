@@ -55,13 +55,8 @@ export class LoginComponent implements OnInit {
           }else{
             this.router.navigate(['/'])
           }
-
           
         }
-        else{
-          this.emptyForm = "Error en las credenciales. Usuario no registrado.";
-        }
-        //console.log(JSON.stringify(this.loginForm.value, null, 2));
     
       } 
     
