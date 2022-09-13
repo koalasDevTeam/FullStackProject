@@ -77,6 +77,9 @@ export class UserProfileComponent implements OnInit {
     {city:"Moya", value:12},
     {city:"Maspalomas", value:12},
   ]
+  //public today = ""
+
+  
   
 
   constructor(private userService: UsersService, private router: Router) {}
@@ -84,11 +87,23 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     // this.getAllUsers();
     this.initForm();
+   // this.calculatingCurrentDate()
     //console.log(this.currentUser);
    
     
    
   }
+  /* calculatingCurrentDate(){
+  let today:any = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  this.today = mm + '/' + dd + '/' + yyyy;
+  console.log(this.today)
+  
+  } */
+
 
   showPersonal() {
     this.optionSelected = 'personalData';
