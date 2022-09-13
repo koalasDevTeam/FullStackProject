@@ -20,8 +20,8 @@ export class MessagesService {
       .then((response) => response.data);
   }
 
-  getAllMessages() {
-    return axios.get(`${this.url}/api/messages/`).then((response) => this.messages = response.data);
+  getAllMessages(userId:string) {
+    return axios.get(`${this.url}/api/messages?userId=${userId}`).then((response) => this.messages = response.data);
   
   }
 

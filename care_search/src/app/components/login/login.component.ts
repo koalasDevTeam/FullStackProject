@@ -60,25 +60,30 @@ export class LoginComponent implements OnInit {
     
       } 
     
-  
+   parseJwt (token:any){
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+};
 
   login() {
-   /*  let correctUSer = this.users.find((correct:any) =>correct.email === this.emailUser && correct.pass === this.passwordUser)
-    console.log('check: ', correctUSer) */
-    //this.correctUser = this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser )
     this.emptyForm = '';
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     } else if ((this.emailUser != '') && (this.passwordUser != '')) {
-      this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(response =>{
+      this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(token =>{
         //console.log(response)
-        if(response){
-          this.validateUserNameAndPassword(response)
+        if(token){
+          let userObject = this.parseJwt(token)
+          this.validateUserNameAndPassword(userObject.token)
         } else {
           this.emptyForm = "Error en las credenciales. Usuario no registrado.";
         }
-        
       });
     }
   }

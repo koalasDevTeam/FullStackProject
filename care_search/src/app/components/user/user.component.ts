@@ -52,6 +52,8 @@ export class UserComponent implements OnInit {
       //console.log(img)
     })
     this.photoFile.push(file)
+    //console.log(this.photoFile)
+    
 
   }
 
