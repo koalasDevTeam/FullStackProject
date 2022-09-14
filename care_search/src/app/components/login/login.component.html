@@ -11,9 +11,16 @@
             [(ngModel)]="emailUser"
             placeholder="Correo electrónico"
           />
-          <div *ngIf="submitted && message.emailUser.errors" class="message-error">
-            <div *ngIf="message.emailUser.errors.required">El correo electrónico es obligatorio</div>
-            <div *ngIf="message.emailUser.errors.email">El correo electrónico debe ser válido</div>
+          <div
+            *ngIf="submitted && message.emailUser.errors"
+            class="message-error"
+          >
+            <div *ngIf="message.emailUser.errors.required">
+              El correo electrónico es obligatorio
+            </div>
+            <div *ngIf="message.emailUser.errors.email">
+              El correo electrónico debe ser válido
+            </div>
           </div>
           <input
             type="password"
@@ -21,13 +28,22 @@
             [(ngModel)]="passwordUser"
             placeholder="Contraseña"
           />
-          <div *ngIf="submitted && message.passwordUser.errors" class="message-error">
-            <div *ngIf="message.passwordUser.errors.required">La contraseña es obligatorio</div>
-            <div *ngIf="message.passwordUser.errors.minlength">La contraseña debería tener como mínimo 6 caracteres</div>
+          <div
+            *ngIf="submitted && message.passwordUser.errors"
+            class="message-error"
+          >
+            <div *ngIf="message.passwordUser.errors.required">
+              La contraseña es obligatorio
+            </div>
+            <div *ngIf="message.passwordUser.errors.minlength">
+              La contraseña debería tener como mínimo 6 caracteres
+            </div>
           </div>
           <!--<input type="submit" value="Log In">-->
           <button type="button" (click)="login()">Entrar</button>
-          <p>¿Has olvidado la <a routerLink="/forget-password">contraseña</a>?</p>
+          <p>
+            ¿Has olvidado la contraseña<!--  <a routerLink="/forget-password"></a> -->?
+          </p>
           <p>
             ¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>.
           </p>
