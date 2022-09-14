@@ -62,11 +62,11 @@ export class UserContactComponent implements OnInit {
           content: `${this.petition}`
         }
 
-        console.log('mensaje: ', this.newMessage)
+        console.log('mensaje: ', this.newMessage.content)
 
-        this.messages.push(this.newMessage)
+        this.messages.push(this.newMessage.content)
        
-        console.log('mensajesss: ', this.messages)
+        //console.log('mensajesss: ', this.messages)
        
        
         this.MessagesService.getAllConversations(this.helper._id,this.UsersService.storage.currentUser._id ).then((response) => {
@@ -78,11 +78,11 @@ export class UserContactComponent implements OnInit {
 
           
         })
-        // this.MessagesService.createNewMessage(this.newMessage).then((message)=>{
-        //  // console.log(message)
-        //   //console.log(this.newMessage)
+         this.MessagesService.createNewMessage(this.newMessage).then((message)=>{
+          console.log(message)
+          console.log(this.newMessage)
           
-        // })
+         })
 
        
 

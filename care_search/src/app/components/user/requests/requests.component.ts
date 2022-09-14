@@ -45,6 +45,7 @@ export class RequestsComponent implements OnInit {
       this.sendedMessages= this.userMessages.filter((message:any)=> {
         return message.user_receive !== this.UsersService.storage.currentUser._id
         })
+       
       
       
     });
