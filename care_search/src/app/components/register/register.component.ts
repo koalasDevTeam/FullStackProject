@@ -107,9 +107,9 @@ export class RegisterComponent implements OnInit {
       };
 
       this.userService.createNewUser(this.newUser).then((user) => {
-        localStorage.setItem('currentUser', JSON.stringify(user))
-        this.userService.setCurrentUser(user)
-        this.router.navigate(['/user']);
+        //localStorage.setItem('currentUser', JSON.stringify(user))
+        //this.userService.setCurrentUser(user)
+        this.router.navigate(['/login']);
       });
     }
     JSON.stringify(this.registerForm.value, null, 2);
