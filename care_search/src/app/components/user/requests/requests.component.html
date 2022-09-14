@@ -1,18 +1,54 @@
 <div class="page-requests">
-  <h1>Solicitudes pendientes</h1>
   <div class="content-requests">
-    <ng-container *ngFor="let message of userMessages">
-      <div class="card-request">
+    <ng-container *ngIf="userMessages.length < 1">
+      <div class="no-messages-text">
+        <h1> Todavía no tienes mensajes</h1>
+        <img src="{{noMessagesIllustration}}" alt="">
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let message of receivedMessages">
+      <div class="card-request received">
         <div class="card-image">
-          <img src={{message.img_user_send}} />
-          <p class="title-published">{{message.name_user_send}}</p>
+          <img src="{{ message.img_user_send }}" />
+          <p class="title-published">{{ message.name_user_send }}</p>
+          <p class="title-published">{{ message.name_user_receive }}</p>
         </div>
         <p class="text-published">
-            {{message.content}}
+          {{ message.content }}
         </p>
+        <p class="date-published">{{ message.user_receive  }}</p>
+        <p class="date-published">{{ message.user_send  }}</p>
         <div class="card-footer">
-          <p class="date-published">{{message.date}}</p>
-          <button class="btn-view color-blue-two" (click)="setPostModal(message)">
+          <p class="date-published">{{ message.date }}</p>
+         
+          <button
+            class="btn-view color-blue-two"
+            (click)="setPostModal(message)"
+          >
+            Ver
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    <br>
+    <ng-container *ngFor="let message of sendedMessages">
+      <div class="card-request sended">
+        <div class="card-image">
+          <img src="{{ message.img_user_send }}" />
+          <p class="title-published">{{ message.name_user_send }}</p>
+          <p class="title-published">{{ message.name_user_receive }}</p>
+        </div>
+        <p class="text-published">
+          {{ message.content }}
+        </p>
+        <p class="date-published">{{ message.user_receive  }}</p>
+        <p class="date-published">{{ message.user_send  }}</p>
+        <div class="card-footer">
+          <p class="date-published">{{ message.date }}</p>
+          <button
+            class="btn-view color-blue-two"
+            (click)="setPostModal(message)"
+          >
             Ver
           </button>
         </div>
@@ -23,6 +59,7 @@
 <!-- show message modal -->
 <ng-container *ngIf="showModal">
   <app-modal-message
-  [messageReceived]="messageSelected"
-   (event)="closeModal()"></app-modal-message>
+    [messageReceived]="messageSelected"
+    (event)="closeModal()"
+  ></app-modal-message>
 </ng-container>

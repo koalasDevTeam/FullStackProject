@@ -64,6 +64,8 @@ p {
     width: 100%;
     height: 607px;
     overflow-y: auto;
+    overflow-x: hidden;
+    
     padding: 0 0.5em;
 }
 
@@ -93,6 +95,14 @@ p {
     border-radius: 20px;
     background-color: #fff;
     margin: 0.5em;
+}
+
+.card-request.sended{
+    border: 5px solid blue;
+}
+
+.card-request.received{
+    border: 5px solid rgb(207, 83, 207);
 }
 
 .card-request img {
@@ -133,6 +143,25 @@ p {
     margin-bottom: 0.5em;
 }
 
+.no-messages-text{
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.no-messages-text h1{
+    margin-bottom: 0.3em;
+    width: 80%;
+}
+.no-messages-text img{
+   width: 600px;
+   margin: 0 auto;
+}
+
 /*responsive*/
 @media screen and (max-width: 1025px) {
     .card-request {
@@ -141,16 +170,43 @@ p {
 }
 
 @media screen and (max-width: 900px) {
-    .page-requests {
-        padding: 0;
-    }
+    .no-messages-text img{
+        width: 400px;
+     }
+      
 }
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
     .content-requests {
         flex-direction: column;
+        flex-wrap: nowrap;
     }
     .card-request {
         width: 100%;
     }
+      
+}
+
+@media screen and (max-width: 600px) {
+  
+
+    .card-image p{
+        width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: none
+    }
+    .no-messages-text img{
+        width: 280px;
+        margin-top: 2em;
+     }
+}
+@media screen and (max-width: 400px) {
+  
+
+    .no-messages-text img{
+        width: 280px;
+        margin-top: 2em;
+     }
+
+     
 }

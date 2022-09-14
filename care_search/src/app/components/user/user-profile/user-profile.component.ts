@@ -113,7 +113,7 @@ export class UserProfileComponent implements OnInit {
   // updating user
 
   onEditClick(user: any, informationType: string) {
-    user = {
+        user = {
       _id:this.currentUser._id,
       user_Status: false,
       email: this.emailUser,
@@ -158,7 +158,8 @@ export class UserProfileComponent implements OnInit {
         this.namelUser == '' ||
         this.dniUser == '' ||
         this.dniUser == '' ||
-        this.dateUser == '' 
+        this.dateUser == '' ||
+        this.cityUser == ''
         
       ) {
         this.showErrorMessage = true;
@@ -212,6 +213,7 @@ export class UserProfileComponent implements OnInit {
                 schedule: this.schedule,
                 oldPass:this.checkPasswordUser
               };
+              
 
               if(this.newPassword.length<6){
                 this.showErrorMessage = true;
