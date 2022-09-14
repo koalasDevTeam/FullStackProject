@@ -10,10 +10,8 @@ export class UserProfileComponent implements OnInit {
   @Input() currentUser?: any;
 
   public users: any = [];
-
   //delete account message******/
   public deleteMessage: boolean = false;
-
   //success and error message*************/
   public successMessage: string = '';
   public showSuccessMessage: boolean = false;
@@ -64,7 +62,7 @@ export class UserProfileComponent implements OnInit {
 
   optionsLocationArr = [
     {city:"Las Palmas", value:1},
-    {city:"Mogan", value:2},
+    {city:"Ingenio", value:2},
     {city:"Galdar", value:3},
     {city:"Arucas", value:4},
     {city:"Tejeda", value:5},
@@ -77,21 +75,11 @@ export class UserProfileComponent implements OnInit {
     {city:"Moya", value:12},
     {city:"Maspalomas", value:12},
   ]
-  //public today = ""
-
-  
-  
-
+ 
   constructor(private userService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
-    // this.getAllUsers();
     this.initForm();
-   // this.calculatingCurrentDate()
-    //console.log(this.currentUser);
-   
-    
-   
   }
   /* calculatingCurrentDate(){
   let today:any = new Date();
@@ -115,10 +103,6 @@ export class UserProfileComponent implements OnInit {
     this.optionSelected = 'acountData';
   }
 
-  /* 
-   getAllUsers(){
-  this.userService.getAllUsers().then(response => this.users = response);
-   } */
 
   incrementSalary() {}
 
@@ -126,14 +110,9 @@ export class UserProfileComponent implements OnInit {
     this.priceUser = $event.target.value;
   }
 
-  
-
   // updating user
 
   onEditClick(user: any, informationType: string) {
-     //console.log(`I'm here in update`);
-     //console.log(this.user)
-  
     user = {
       _id:this.currentUser._id,
       user_Status: false,
@@ -173,14 +152,14 @@ export class UserProfileComponent implements OnInit {
       localStorage.setItem('currentUser', JSON.stringify(user));
     }
    
-
     //***************************************************VALIDATIONS ON PERSONAL DATA********************************/
     if (this.optionSelected == 'personalData') {
       if (
         this.namelUser == '' ||
         this.dniUser == '' ||
         this.dniUser == '' ||
-        this.dateUser == ''
+        this.dateUser == '' 
+        
       ) {
         this.showErrorMessage = true;
         this.errorMessage = 'Debes rellenar los datos requeridos';
@@ -206,9 +185,9 @@ export class UserProfileComponent implements OnInit {
           this.errorMessage =
             'Para cambiar la contraseña debe introducir todos los campos';
         } else {
-          if (this.checkPasswordUser != this.currentUser.pass) {
+          if (this.checkPasswordUser === this.newPassword) {
             this.showErrorMessage = true;
-            this.errorMessage = 'Su antigua contraseña no es correcta';
+            this.errorMessage = 'Su contraseña actual tiene que ser diferente a la nueva';
           } else {
             if (this.newPassword != this.checkNewPassword) {
               this.showErrorMessage = true;
@@ -231,6 +210,7 @@ export class UserProfileComponent implements OnInit {
                 city: this.cityUser,
                 price: this.priceUser,
                 schedule: this.schedule,
+                oldPass:this.checkPasswordUser
               };
 
               if(this.newPassword.length<6){
@@ -244,7 +224,6 @@ export class UserProfileComponent implements OnInit {
                 this.showSuccessMessage = true;
               }
 
-              // console.log('guardado pass')
             }
           }
         }
@@ -278,6 +257,7 @@ export class UserProfileComponent implements OnInit {
     }
 
   }
+  
   /*init form values:****************************************************************************/
 
   initForm() {
@@ -291,7 +271,6 @@ export class UserProfileComponent implements OnInit {
     this.categoryUser = this.currentUser.job;
     this.schedule = this.currentUser.schedule;
     this.emailUser = this.currentUser.email;
-    //this.passwordUser = this.currentUser.pass;
   }
 
   closeMessage() {
@@ -309,7 +288,7 @@ export class UserProfileComponent implements OnInit {
 
   //to disable account***********************************************************************/
   disableAccount(user: any) {
-    console.log(`desabled:${user}`)
+    
     user = {
       _id:this.currentUser._id,
       user_Status: true,
@@ -328,7 +307,7 @@ export class UserProfileComponent implements OnInit {
       price: this.priceUser,
       schedule: this.schedule,
     };
-    console.log(`desabled 2:${user}`);
+    
 
     this.userService.updateAnUser(user);
     localStorage.setItem('currentUser', JSON.stringify(user));

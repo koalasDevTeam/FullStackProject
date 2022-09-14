@@ -11,7 +11,7 @@ export class UsersService {
   public url: any = 'http://localhost:3000';
   public idSelected= 0;
   public users = []
-public setErrorMessage:string=""
+  public setErrorMessage:string=""
   public storage: any = {
     currentUser: {},
     disabledUser: false,
@@ -40,8 +40,6 @@ public setErrorMessage:string=""
       const user =  JSON.parse(
         localStorage.getItem('selectedUser') as string
       )
-
-      //this.idSelected = user.id
       return user
     }else{
       return null
@@ -49,14 +47,12 @@ public setErrorMessage:string=""
   }
 
   public selectHelper(id:any){
-    //this.idSelected = id
     const selectedUser = this.users.find((helper:any)=>{ 
         return helper._id ===  id
       })
     localStorage.setItem('selectedUser', JSON.stringify(selectedUser))
 
   } 
-
 
   createNewUser(newUser: any) {
     return axios
@@ -66,16 +62,14 @@ public setErrorMessage:string=""
 
   updateAnUser(user: any) {
     const _id = this.storage.currentUser._id;
-    console.log(user);
-    console.log(_id);
     return axios
       .put(`${this.url}/api/users/${_id}`, user)
       .then((response) => response.data)
       .catch((error) => {
         if (error.response) {
-        //console.log(error.response.data.message)
+        console.log(error.response.data.message)
         }
-       console.log(error);
+        console.log(error);
       });
   }
 
@@ -83,7 +77,7 @@ public setErrorMessage:string=""
    validateUserNameAndPassword(email:string, password:string){
 
     return axios
-          .post(`${this.url}/api/users/email`, { email: email, pass: password })
+          .post(`${this.url}/api/users/login`, { email: email, pass: password })
           .then((response) => {
             localStorage.setItem('jwt',(response.data));
             axios.defaults.headers.common['authorization'] = `Bearer ${response.data}` // for all requests
@@ -96,11 +90,9 @@ public setErrorMessage:string=""
           });
       }
   updatePassword(user: any) {
-    const id = user._id;
-    //console.log(user);
-    //console.log(id);
+    const _id = user._id;
     return axios
-      .put(`${this.url}/api/users/${id}`, user)
+      .put(`${this.url}/api/users/${_id}`, user)
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);

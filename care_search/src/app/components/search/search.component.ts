@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
  pressedSearchButton: boolean = false
   ifLogged:any
  
-
   constructor(private UsersService:UsersService) { 
    }
 
@@ -34,7 +33,7 @@ export class SearchComponent implements OnInit {
 
   optionsLocationArr = [
   {city:"Las Palmas", value:1},
-  {city:"Mogan", value:2},
+  {city:"Ingenio", value:2},
   {city:"Galdar", value:3},
   {city:"Arucas", value:4},
   {city:"Tejeda", value:5},
@@ -47,25 +46,16 @@ export class SearchComponent implements OnInit {
   {city:"Moya", value:12},
   {city:"Maspalomas", value:12},
 ]
-
-
    ngOnInit(): void { 
     this.getAllUsers();
-    this.ifLogged = this.UsersService.storage
-   
-
-        
+    this.ifLogged = this.UsersService.storage    
   }
   
-
 // to find helper by Id
   sendHelper(helperId:number){
    
     this.UsersService.selectHelper(helperId)
   }
-
-
-
 
 // to get all helpers - function from services
   getAllUsers(){
@@ -80,22 +70,18 @@ export class SearchComponent implements OnInit {
       img:string,
       job:string,
       name:string,
-      
       price:string,
       schedule:string,
       score:number,
       worker:boolean
     }
     return this.UsersService.getAllUsers().then(response => {
-      //console.log(response)
       const filerUsersWithFullInfo = response.filter((user:Person) => user.full_info)
       this.users = filerUsersWithFullInfo;this.resultsList = this.users
     }
     ); 
     
   }
-
-   
   searchResult(){
   this.pressedSearchButton = true
   let filterList= this.users.filter((helper:any)=> {
@@ -107,7 +93,6 @@ export class SearchComponent implements OnInit {
  
   }
 
-
 //to clean the all list
   cleanList(){
     this.resultsList = this.users
@@ -116,7 +101,6 @@ export class SearchComponent implements OnInit {
   }
 
   //to show contact modal
-
   setContactModal(helper:any){
     this.showModal = true;
     this.helperSelected = helper;

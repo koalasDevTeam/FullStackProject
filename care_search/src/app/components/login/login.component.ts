@@ -77,10 +77,11 @@ export class LoginComponent implements OnInit {
       return;
     } else if ((this.emailUser != '') && (this.passwordUser != '')) {
       this.userService.validateUserNameAndPassword( this.emailUser, this.passwordUser ).then(token =>{
+        console.log("token")
         console.log(token)
         if(token){
           let userObject = this.parseJwt(token)
-          this.validateUserNameAndPassword(userObject.token)
+          this.validateUserNameAndPassword(userObject)
         } else {
           this.emptyForm = "Error en las credenciales. Usuario no registrado.";
         }
