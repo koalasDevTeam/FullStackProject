@@ -62,7 +62,7 @@ export class UserComponent implements OnInit {
   }*/
   uploadImage(): any {
     try{
-      const dataForm = new FormData();
+      let dataForm = new FormData();
       this.photoFiles.forEach((photoFile:any) => {
         console.log(photoFile);
         dataForm.append('profileImage', photoFile)
@@ -87,8 +87,9 @@ export class UserComponent implements OnInit {
     })
     this.photoFiles.push(file)
     this.uploadImage()
-    //console.log(this.photoFile)
-    //this.onFileChange(event);
+    this.photoFiles.pop()
+    //es necesario vaciar la variable si se quiere volver a cargar otra imagen
+    
 
   }
 
