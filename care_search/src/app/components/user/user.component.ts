@@ -2,6 +2,7 @@ import { ReadVarExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { UsersService } from '../../services/users/users.service';
+import axios from 'axios';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,9 @@ import { UsersService } from '../../services/users/users.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  
 
+  public url: any = 'http://localhost:3000';
   public showModal: boolean = false;
   public showMenu: boolean = false;
   public storage: any;
@@ -18,15 +21,17 @@ export class UserComponent implements OnInit {
   public noUserIllustration: string = "./assets/img/illustrations/no_user_illustration.svg"
   public photoUser: string = "";
   public previewPhoto: string='./assets/img/users/user-default.png';
-
+  //uploadedFiles: Array<File>;
   constructor(
     private UsersService:UsersService,
-    private sanitizer:DomSanitizer
+    private sanitizer:DomSanitizer,
+    //private rest: RestService,
+    //private uploadService: UsersService
     ) { }
 
 
   //aqui se guarda el archivo de la imagen:
-  public photoFile: any = [];
+  public photoFiles: any = [];
  
 
   ngOnInit(): void {
@@ -43,6 +48,35 @@ export class UserComponent implements OnInit {
   showNotifications(){
     this.pageSelected = 'notifications'
   }
+  /*onUpload(){
+    let formData = new FormData();
+    for (let i = 0; i < this.uploadedFiles.length; i++){
+      formData.append("uploads[]", this.uploadedFiles[i], this.uploadedFiles[i].name);
+    }
+    this.uploadService.uploadFile(formData).subscribe((res) => {console.log('Response:', res);
+  })
+  }
+  onFileChange(e:any){
+    this.uploadedFiles = e.target.files;
+    this.onUpload();
+  }*/
+  uploadImage(): any {
+    try{
+      const dataForm = new FormData();
+      this.photoFiles.forEach((photoFile:any) => {
+        console.log(photoFile);
+        dataForm.append('profileImage', photoFile)
+      });
+      return axios
+      .post('http://localhost:3000/api/uploads', dataForm)
+      
+      
+    }catch (e){
+      console.log('ERROR', e);
+    }
+  }
+  
+  
 
 //to show preview photo:
   takeNewPicture(event:any): any{
@@ -51,9 +85,10 @@ export class UserComponent implements OnInit {
       this.previewPhoto = img.base;
       //console.log(img)
     })
-    this.photoFile.push(file)
+    this.photoFiles.push(file)
+    this.uploadImage()
     //console.log(this.photoFile)
-    
+    //this.onFileChange(event);
 
   }
 
@@ -80,6 +115,10 @@ export class UserComponent implements OnInit {
       return null;
     }
   })
+
+  
+
+  
 
 
   setHideMenu(){

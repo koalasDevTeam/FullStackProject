@@ -1,105 +1,78 @@
-<div
-  class="user-page-cont"
-  [ngClass]="{ nouser: !this.storage.currentUser.hasOwnProperty('email') }"
->
-  <ng-container *ngIf="!this.storage.currentUser.hasOwnProperty('email')">
-    <img [src]="noUserIllustration" alt="" />
+<div class="user-page-cont" [ngClass]="{ nouser: !this.storage.currentUser.hasOwnProperty('email') }">
+    <ng-container *ngIf="!this.storage.currentUser.hasOwnProperty('email')">
+        <img [src]="noUserIllustration" alt="" />
 
-    <section>
-      <p>
-        Debes <a routerLink="/login">iniciar sesión</a> para ver este contenido
-      </p>
-      <p>¿No tienes cuenta? <a routerLink="/register"> Regístrate aquí</a></p>
-    </section>
-  </ng-container>
+        <section>
+            <p>
+                Debes <a routerLink="/login">iniciar sesión</a> para ver este contenido
+            </p>
+            <p>¿No tienes cuenta? <a routerLink="/register"> Regístrate aquí</a></p>
+        </section>
+    </ng-container>
 
-  <ng-container *ngIf="this.storage.currentUser.hasOwnProperty('email')">
-    <section class="user-page-left pc">
-      <div class="user-menu-top">
-        <div class="menu-user-header">
-          <div class="change-profile-img text-center">
-            <input
-              type="file"
-              [(ngModel)]="photoUser"
-              (change)="takeNewPicture($event)"
-              id="file-img"
-              name="imagen_perfil"
-            />
-            <label for="file-img"><img [src]="previewPhoto" /></label>
-            <!-- <i class="bx bxs-camera"></i> -->
-          </div>
-          <!-- <h4 *ngIf="storage.currentUser.name.length==''">{{ storage.currentUser.email }}</h4>
+    <ng-container *ngIf="this.storage.currentUser.hasOwnProperty('email')">
+        <section class="user-page-left pc">
+            <div class="user-menu-top">
+                <div class="menu-user-header">
+                    <div class="change-profile-img text-center">
+                        <input type="file" [(ngModel)]="photoUser" (change)="takeNewPicture($event)" id="file-img" name="profileImage" />
+                        <label for="file-img"><img [src]="previewPhoto" /></label>
+                        <!-- <i class="bx bxs-camera"></i> -->
+                    </div>
+                    <!-- <h4 *ngIf="storage.currentUser.name.length==''">{{ storage.currentUser.email }}</h4>
           <h4 *ngIf="storage.currentUser.name!=''" class="uppercase">{{ storage.currentUser.name.split(' ')[0] }}</h4> -->
-        </div>
-        <div class="menu-user-options">
-          <button
-            [ngClass]="{ active: pageSelected === 'profile' }"
-            (click)="showProfile()"
-          >
+                </div>
+                <div class="menu-user-options">
+                    <button [ngClass]="{ active: pageSelected === 'profile' }" (click)="showProfile()">
             Editar Perfil
           </button>
-          <!-- <button
+                    <!-- <button
             [ngClass]="{ active: pageSelected === 'history' }"
             (click)="showHistory()"
           >
             Ver Historial
           </button> -->
-          <button
-            [ngClass]="{ active: pageSelected === 'notifications' }"
-            (click)="showNotifications()"
-          >
+                    <button [ngClass]="{ active: pageSelected === 'notifications' }" (click)="showNotifications()">
             Mensajes
           </button>
-        </div>
-      </div>
-    </section>
+                </div>
+            </div>
+        </section>
 
-    <section class="user-page-left mv" *ngIf="showMenu">
-     
+        <section class="user-page-left mv" *ngIf="showMenu">
 
-      <div class="user-menu-top">
-        <div class="menu-user-header">
-          <button class="close-menu" (click)="setHideMenu()">&times;</button>
-          <div class="change-profile-img text-center">
-            <input
-              type="file"
-              [(ngModel)]="photoUser"
-              (change)="takeNewPicture($event)"
-              id="file-img"
-              name="imagen_perfil"
-            />
-            <label for="file-img"><img [src]="previewPhoto" /></label>
-            <!-- <i class="bx bxs-camera"></i> -->
-          </div>
-          <h4>{{ storage.currentUser.email }}</h4>
-        </div>
-        <div class="menu-user-options">
-          <button
-            [ngClass]="{ active: pageSelected === 'profile' }"
-            (click)="showProfile(); setHideMenu()"
-          >
+
+            <div class="user-menu-top">
+                <div class="menu-user-header">
+                    <button class="close-menu" (click)="setHideMenu()">&times;</button>
+                    <div class="change-profile-img text-center">
+                        <input type="file" [(ngModel)]="photoUser" (change)="takeNewPicture($event)" id="file-img" name="profileImage" />
+                        <label for="file-img"><img [src]="previewPhoto" /></label>
+                        <!-- <i class="bx bxs-camera"></i> -->
+                    </div>
+                    <h4>{{ storage.currentUser.email }}</h4>
+                </div>
+                <div class="menu-user-options">
+                    <button [ngClass]="{ active: pageSelected === 'profile' }" (click)="showProfile(); setHideMenu()">
             Editar Perfil
           </button>
-          <!-- <button
+                    <!-- <button
             [ngClass]="{ active: pageSelected === 'history' }"
             (click)="showHistory(); setHideMenu()"
           >
             Ver Historial
           </button> -->
-          <button
-            [ngClass]="{ active: pageSelected === 'notifications' }"
-            (click)="showNotifications(); setHideMenu()"
-          >
+                    <button [ngClass]="{ active: pageSelected === 'notifications' }" (click)="showNotifications(); setHideMenu()">
             Mensajes
           </button>
-        </div>
-      </div>
-    </section>
-    <section class="user-page-right">
-     
+                </div>
+            </div>
+        </section>
+        <section class="user-page-right">
 
-      <div class="user-intro" *ngIf="pageSelected === 'intro'">
-        <button class="btn-menu mv" (click)="setShowMenu()">
+
+            <div class="user-intro" *ngIf="pageSelected === 'intro'">
+                <button class="btn-menu mv" (click)="setShowMenu()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -109,23 +82,21 @@
             <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
           </svg>
         </button>
-        <!-- <h1>¡Hola {{storage.currentUser.email}}!</h1> -->
-        <h1>Este es tu perfil personal</h1>
-        <img [src]="userIntroIllustration" alt="" />
-        <h2>Edita tu perfil o explora el resto de opciones</h2>
-      </div>
+                <!-- <h1>¡Hola {{storage.currentUser.email}}!</h1> -->
+                <h1>Este es tu perfil personal</h1>
+                <img [src]="userIntroIllustration" alt="" />
+                <h2>Edita tu perfil o explora el resto de opciones</h2>
+            </div>
 
-      <div class="user-profile" *ngIf="pageSelected === 'profile'">
-        <app-user-profile
-          [currentUser]="storage.currentUser"
-        ></app-user-profile>
-      </div>
-      <div class="workinprogress" *ngIf="pageSelected === 'history'">
-        <app-history></app-history>
-      </div>
-      <div class="notifications-cont" *ngIf="pageSelected === 'notifications'">
-        <app-requests></app-requests>
-      </div>
-    </section>
-  </ng-container>
+            <div class="user-profile" *ngIf="pageSelected === 'profile'">
+                <app-user-profile [currentUser]="storage.currentUser"></app-user-profile>
+            </div>
+            <div class="workinprogress" *ngIf="pageSelected === 'history'">
+                <app-history></app-history>
+            </div>
+            <div class="notifications-cont" *ngIf="pageSelected === 'notifications'">
+                <app-requests></app-requests>
+            </div>
+        </section>
+    </ng-container>
 </div>

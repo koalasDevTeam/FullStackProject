@@ -32,7 +32,7 @@ import { RequestsComponent } from './components/user/requests/requests.component
 import { ModalMessageComponent } from './components/user/modal-message/modal-message.component';
 import { ModalFeedbackComponent } from './components/user/modal-feedback/modal-feedback.component';
 import { NoUserMessageComponent } from './components/search/no-user-message/no-user-message.component';
-
+//import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,6 +71,7 @@ import { NoUserMessageComponent } from './components/search/no-user-message/no-u
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule
+    //HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

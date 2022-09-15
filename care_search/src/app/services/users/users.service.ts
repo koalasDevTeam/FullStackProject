@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import axios from 'axios';
 
 @Injectable({
@@ -16,8 +17,10 @@ export class UsersService {
     currentUser: {},
     disabledUser: false,
   };
+  
 
   constructor() {
+    
     if (localStorage.getItem('currentUser')) {
       this.storage.currentUser = JSON.parse(
         localStorage.getItem('currentUser') as string
@@ -25,6 +28,7 @@ export class UsersService {
     }
     
   }
+
 
   getAllUsers() {
     return axios.get(`${this.url}/api/users/`).then((response) => this.users = response.data);
