@@ -61,6 +61,7 @@ export class UserComponent implements OnInit {
     this.onUpload();
   }*/
   uploadImage(): any {
+    console.log(this.storage.currentUser);
     try{
       let dataForm = new FormData();
       this.photoFiles.forEach((photoFile:any) => {
@@ -68,7 +69,7 @@ export class UserComponent implements OnInit {
         dataForm.append('profileImage', photoFile)
       });
       return axios
-      .post('http://localhost:3000/api/uploads', dataForm)
+      .post(`http://localhost:3000/api/uploads/${this.storage.currentUser._id}`, dataForm)
       
       
     }catch (e){
