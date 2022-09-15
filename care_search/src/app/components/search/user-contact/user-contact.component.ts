@@ -25,6 +25,7 @@ export class UserContactComponent implements OnInit {
   public messages:any =[];
   public previousMessages:any;
   public conversationExists : boolean = false;
+  public prueba : any;
 
   closeContact() {
     this.event.emit('holaa2222');
@@ -61,32 +62,52 @@ export class UserContactComponent implements OnInit {
           content: `${this.petition}`
         }
 
-        this.messages.push(this.newMessage)
-  
-       
         this.MessagesService.getAllConversations(this.helper._id,this.UsersService.storage.currentUser._id ).then((response) => {
 
          if(response.length>0){
+        console.log('esta mal?', response[0]._id, ' /' , response[0])
           this.conversationExists = true
+          this.prueba = response
+         
+          this.messages = [...this.prueba[0].messages, this.newMessage]
+          this.newConversation ={
+            _id:response[0]._id,
+            user_1:`${this.helper._id}`,
+            user_2:`${this.UsersService.storage.currentUser._id}`,
+            messages:this.messages
+          }
+          console.log('por queeeee', this.messages)
+
+          this.MessagesService.updateAnConversation(this.newConversation).then((conversation)=>{
+            this.messageSent = true;
+          })
+
          }
+         else{
+          this.messages.push(this.newMessage)
+
+          this.newConversation ={
+            user_1:`${this.helper._id}`,
+            user_2:`${this.UsersService.storage.currentUser._id}`,
+            messages:this.messages
+          }
+     
+          this.MessagesService.createNewConversation(this.newConversation).then((conversation)=>{
+            this.messageSent = true;
+          })
+        
+         }
+
+         console.log('exists: ', this.conversationExists)
           
         })
-         this.MessagesService.createNewMessage(this.newMessage).then((message)=>{
+        //  this.MessagesService.createNewMessage(this.newMessage).then((message)=>{
 
-        return message
+        // return message
           
-         })
+        //  })
 
         
-         this.newConversation ={
-           user_1:`${this.helper._id}`,
-           user_2:`${this.UsersService.storage.currentUser._id}`,
-           messages:this.messages
-         }
-    
-         this.MessagesService.createNewConversation(this.newConversation).then((conversation)=>{
-           this.messageSent = true;
-         })
        
       }
     }

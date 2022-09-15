@@ -6,8 +6,11 @@
         <img src="{{noMessagesIllustration}}" alt="">
       </div>
     </ng-container>
-    <ng-container *ngFor="let message of receivedMessages">
-      <div class="card-request received">
+    <ng-container *ngFor="let conversation of conversations">
+      <div>
+      {{conversation}}
+      </div>
+      <!-- <div class="card-request received">
         <div class="card-image">
           <img src="{{ message.img_user_send }}" />
           <p class="title-published">{{ message.name_user_send }}</p>
@@ -28,7 +31,7 @@
             Ver
           </button>
         </div>
-      </div>
+      </div> -->
     </ng-container>
     <br>
     <ng-container *ngFor="let message of sendedMessages">

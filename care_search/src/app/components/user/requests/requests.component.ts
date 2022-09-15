@@ -10,14 +10,15 @@ import { UsersService } from '../../../services/users/users.service';
 export class RequestsComponent implements OnInit {
   public showModal: boolean = false;
   public userMessages: any = [];
-  public receivedMessages: any=[];
+  //public receivedMessages: any=[];
+  public conversations: any = [];
   public sendedMessages: any=[];
   public messageSelected : any;
   public noMessagesIllustration: string = "../assets/img/illustrations/no-messages.svg"
   constructor(private MessagesService: MessagesService, private UsersService:UsersService) {}
 
   ngOnInit(): void {
-    this.getMessages();
+    //this.getMessages();
   }
 
   setPostModal(message:any) {
@@ -29,27 +30,27 @@ export class RequestsComponent implements OnInit {
     this.showModal = false;
   }
 
-  getMessages(){
-    this.MessagesService.getAllMessages(this.UsersService.storage.currentUser._id).then((response) => {
-      this.userMessages = response.reverse();
-      console.log(this.userMessages)
+  // getMessages(){
+  //   this.MessagesService.getAllMessages(this.UsersService.storage.currentUser._id).then((response) => {
+  //     this.userMessages = response.reverse();
+  //     console.log(this.userMessages)
 
-      // this.userMessages.filter(message =>{
+  //     // this.userMessages.filter(message =>{
 
-      // })
+  //     // })
 
-      this.receivedMessages= this.userMessages.filter((message:any)=> {
-        return message.user_receive === this.UsersService.storage.currentUser._id
-        })
+  //     this.receivedMessages= this.userMessages.filter((message:any)=> {
+  //       return message.user_receive === this.UsersService.storage.currentUser._id
+  //       })
       
-      this.sendedMessages= this.userMessages.filter((message:any)=> {
-        return message.user_receive !== this.UsersService.storage.currentUser._id
-        })
+  //     this.sendedMessages= this.userMessages.filter((message:any)=> {
+  //       return message.user_receive !== this.UsersService.storage.currentUser._id
+  //       })
        
       
       
-    });
-  }
+  //   });
+  // }
 
  
 }
